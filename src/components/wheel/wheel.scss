@@ -1,0 +1,9 @@
+.wheel {
+	.item {
+		list-style: none;
+
+		&.active {
+			font-weight: bold;
+		}
+	}
+}
