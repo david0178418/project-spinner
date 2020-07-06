@@ -35,7 +35,7 @@ const items = [
 	},
 ];
 
-const WINDOW_SIZE = 5;
+const WINDOW_SIZE = 7;
 const MID_POINT = Math.ceil(WINDOW_SIZE / 2);
 
 export
@@ -80,10 +80,18 @@ function Wheel() {
 		<div className="wheel">
 			<ul>
 				{visibleItems.map((item, i) => (
-					<li key={i} className={clsx('item',{
-						active: i === (MID_POINT - 1),
-					})}>
-						{item.label}
+					<li
+						key={item.label}
+						style={{
+							marginLeft: Math.abs(i - (MID_POINT - 1)) * 10,
+						}}
+						className={clsx('item',{
+							active: i === (MID_POINT - 1),
+						})}
+					>
+						<div className="item-content">
+							{item.label}
+						</div>
 					</li>
 				))}
 			</ul>

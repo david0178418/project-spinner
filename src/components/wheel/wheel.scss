@@ -1,9 +1,37 @@
 .wheel {
+	position: absolute;
+	height: 90%;
+
+	ul {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
 	.item {
+		display: flex;
 		list-style: none;
+		max-height: 20px;
+		overflow: hidden;
+		transition-property: max-height, margin;
+		transition-duration: .2s;
+
+		.item-content {
+			align-self: flex-end;
+		}
 
 		&.active {
 			font-weight: bold;
+		}
+
+		&:last-child,
+		&:nth-last-child(2) {
+			display: block;
+		}
+
+		&:first-child,
+		&:last-child {
+			max-height: 0;
 		}
 	}
 }
