@@ -1,42 +1,47 @@
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Key } from 'ts-key-enum';
 import clsx from 'clsx';
 import { useEventListener } from '@common/hooks';
+import { range } from '@common/utils';
 
 import './wheel.scss';
 
 const items = [
 	{
-		label: 'Foo',
+		label: '0 Foo',
 	}, {
-		label: 'Bar',
+		label: '1 Bar',
 	}, {
-		label: 'Baz',
+		label: '2 Baz',
 	}, {
-		label: 'Biz',
+		label: '3 Biz',
 	}, {
-		label: 'Foo',
+		label: '4 Foo',
 	}, {
-		label: 'Bar',
+		label: '5 Bar',
 	}, {
-		label: 'Baz',
+		label: '6 Baz',
 	}, {
-		label: 'Biz',
+		label: '7 Biz',
 	}, {
-		label: 'Foo',
+		label: '8 Foo',
 	}, {
-		label: 'Bar',
+		label: '9 Bar',
 	}, {
-		label: 'Baz',
+		label: '10 Baz',
 	}, {
-		label: 'Biz',
+		label: '11 Biz',
 	},
 ];
+
+const WINDOW_SIZE = 5;
+const MID_POINT = Math.ceil(WINDOW_SIZE / 2);
 
 export
 function Wheel() {
 	const [activeIndex, setActiveIndex] = useState(0);
+	const [visibleItems, setVisibleItems] = useState<any[]>([]);
 	const controls: any = {
 		[Key.ArrowUp]: useCallback(() => {
 			let newIndex = activeIndex - 1;
@@ -58,18 +63,25 @@ function Wheel() {
 		controls[key]?.();
 	}
 
-
 	useEventListener('keydown', (e) => {
 		runKey(e.key);
 	});
 
+	useEffect(() => {
+		setVisibleItems(
+			range(WINDOW_SIZE)
+				.map(i => {
+					return items[(activeIndex + i) % items.length]
+				})
+		);
+	}, [activeIndex]);
+
 	return (
 		<div className="wheel">
-			{activeIndex}
 			<ul>
-				{items.map((item, i) => (
+				{visibleItems.map((item, i) => (
 					<li key={i} className={clsx('item',{
-						active: activeIndex === i,
+						active: i === (MID_POINT - 1),
 					})}>
 						{item.label}
 					</li>
