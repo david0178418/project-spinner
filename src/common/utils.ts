@@ -9,7 +9,6 @@ function last<T>(list: T[]) {
 	return list[list.length - 1] || null;
 }
 
-
 export
 function notNull<TValue>(value: TValue | null | undefined): value is TValue {
     return value !== null && value !== undefined;

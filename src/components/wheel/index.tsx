@@ -2,8 +2,9 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { Key } from 'ts-key-enum';
 import clsx from 'clsx';
-import { useEventListener } from '@common/hooks';
+import { useEvent } from 'react-use';
 import { range } from '@common/utils';
+import { useDebounce } from '@common/hooks'
 
 import './wheel.scss';
 
@@ -51,7 +52,7 @@ function Foo(props: any) {
 			<div
 				className={className}
 				style={{
-					transform: `rotate(${foo * index - 90 + 20}deg) translateX(-100px)`,
+					transform: `rotate(${foo * index - 90 + 20}deg) translateX(-50px)`,
 				}}
 			>
 				{children}
@@ -62,8 +63,9 @@ function Foo(props: any) {
 
 export
 function Wheel() {
-	const [activeIndex, setActiveIndex] = useState(0);
+	const [rawActiveIndex, setActiveIndex] = useState(0);
 	const [visibleItems, setVisibleItems] = useState<any[]>([]);
+	const activeIndex = useDebounce(rawActiveIndex, 200);
 	const controls: any = {
 		[Key.ArrowUp]: useCallback(() => {
 			let newIndex = activeIndex - 1;
@@ -85,7 +87,8 @@ function Wheel() {
 		controls[key]?.();
 	}
 
-	useEventListener('keydown', (e) => {
+	useEvent('keydown', (e) => {
+		console.log
 		runKey(e.key);
 	});
 
