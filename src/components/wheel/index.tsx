@@ -38,6 +38,28 @@ const items = [
 const WINDOW_SIZE = 7;
 const MID_POINT = Math.ceil(WINDOW_SIZE / 2);
 
+function Foo(props: any) {
+	const {
+		className,
+		children,
+		index,
+	} = props;
+	const foo = 140 / (WINDOW_SIZE - 1);
+
+	return (
+		<>
+			<div
+				className={className}
+				style={{
+					transform: `rotate(${foo * index - 90 + 20}deg) translateX(-100px)`,
+				}}
+			>
+				{children}
+			</div>
+		</>
+	);
+}
+
 export
 function Wheel() {
 	const [activeIndex, setActiveIndex] = useState(0);
@@ -78,23 +100,19 @@ function Wheel() {
 
 	return (
 		<div className="wheel">
-			<ul>
+			<div>
 				{visibleItems.map((item, i) => (
-					<li
+					<Foo
 						key={item.label}
-						style={{
-							marginLeft: Math.abs(i - (MID_POINT - 1)) * 10,
-						}}
-						className={clsx('item',{
+						className={clsx('item', {
 							active: i === (MID_POINT - 1),
 						})}
+						index={i}
 					>
-						<div className="item-content">
-							{item.label}
-						</div>
-					</li>
+						{item.label}
+					</Foo>
 				))}
-			</ul>
+			</div>
 		</div>
 	);
 }
