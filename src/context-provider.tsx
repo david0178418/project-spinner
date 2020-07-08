@@ -1,14 +1,15 @@
-import React, { ReactNode } from 'react';
+import React, { FC } from 'react';
+import { ItemsContext } from '@common/contexts';
+import { items } from './data';
 
 interface Props {
-	children?: ReactNode;
 }
 
 export
-function ContextProvider(props: Props) {
+const ContextProvider: FC<Props> =  (props) => {
 	return (
-		<>
+		<ItemsContext.Provider value={items}>
 			{props.children}
-		</>
+		</ItemsContext.Provider>
 	);
 }

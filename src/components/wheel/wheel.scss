@@ -1,13 +1,15 @@
 .wheel {
-	position: absolute;
-	top: 200px;
-	left: 200px;
-	width: 150px;
+	height: var(--wheel-size);
+	overflow: hidden;
+	position: relative;
+	width: var(--wheel-size);
 
 	.item {
 		position: absolute;
+		right: 0;
+		top: 50%;
+		transform-origin: center left;
 		transition: all .5s;
-		left: 300px;
 		width: 50%;
 
 		&.active {

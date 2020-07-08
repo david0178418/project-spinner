@@ -1,5 +1,11 @@
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, {
+	useState,
+	useCallback,
+	useEffect,
+	FC,
+	useContext,
+} from 'react';
 import { Key } from 'ts-key-enum';
 import clsx from 'clsx';
 import { useEvent } from 'react-use';
@@ -7,52 +13,32 @@ import { range } from '@common/utils';
 import { useDebounce } from '@common/hooks'
 
 import './wheel.scss';
-
-const items = [
-	{
-		label: '0 Foo',
-	}, {
-		label: '1 Bar',
-	}, {
-		label: '2 Baz',
-	}, {
-		label: '3 Biz',
-	}, {
-		label: '4 Foo',
-	}, {
-		label: '5 Bar',
-	}, {
-		label: '6 Baz',
-	}, {
-		label: '7 Biz',
-	}, {
-		label: '8 Foo',
-	}, {
-		label: '9 Bar',
-	}, {
-		label: '10 Baz',
-	}, {
-		label: '11 Biz',
-	},
-];
+import { ItemsContext } from '@common/contexts';
 
 const WINDOW_SIZE = 7;
 const MID_POINT = Math.ceil(WINDOW_SIZE / 2);
 
-function Foo(props: any) {
+interface WheelItemProps {
+	index: number;
+	active?: boolean;
+}
+
+const WheelItem: FC<WheelItemProps> = (props) => {
 	const {
-		className,
 		children,
 		index,
+		active,
 	} = props;
 	const foo = 140 / (WINDOW_SIZE - 1);
 
 	return (
 		<>
 			<div
-				className={className}
+				className={clsx('item', {
+					active,
+				})}
 				style={{
-					transform: `rotate(${foo * index - 90 + 20}deg) translateX(-50px)`,
+					transform: `rotate(${foo * index - 90 + 20}deg) translate3d(-100%, 0, 0) scale(${active ? 2 : 1})`,
 				}}
 			>
 				{children}
@@ -63,6 +49,7 @@ function Foo(props: any) {
 
 export
 function Wheel() {
+	const items = useContext(ItemsContext);
 	const [rawActiveIndex, setActiveIndex] = useState(0);
 	const [visibleItems, setVisibleItems] = useState<any[]>([]);
 	const activeIndex = useDebounce(rawActiveIndex, 200);
@@ -87,10 +74,7 @@ function Wheel() {
 		controls[key]?.();
 	}
 
-	useEvent('keydown', (e) => {
-		console.log
-		runKey(e.key);
-	});
+	useEvent('keydown', (e) => runKey(e.key));
 
 	useEffect(() => {
 		setVisibleItems(
@@ -102,20 +86,21 @@ function Wheel() {
 	}, [activeIndex]);
 
 	return (
-		<div className="wheel">
-			<div>
-				{visibleItems.map((item, i) => (
-					<Foo
-						key={item.label}
-						className={clsx('item', {
-							active: i === (MID_POINT - 1),
-						})}
-						index={i}
-					>
-						{item.label}
-					</Foo>
-				))}
-			</div>
+		<div
+			className="wheel" 
+			style={{
+				['--wheel-size']: `${300}px`
+			} as any}
+		>
+			{visibleItems.map((item, i) => (
+				<WheelItem
+					key={item.label}
+					active={i === (MID_POINT - 1)}
+					index={i}
+				>
+					{item.label}
+				</WheelItem>
+			))}
 		</div>
 	);
 }
