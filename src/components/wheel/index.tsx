@@ -105,10 +105,10 @@ const Wheel: FC<Props> = (props) => {
 
 	useEvent('keydown', (e) => runKey(e.key));
 
-	useEffect(() => {
-		const selectedItem = items[MID_POINT]?.item;
-		selectedItem && onChange(selectedItem);
-	}, [activeIndex]);
+	// useEffect(() => {
+	// 	const selectedItem = items[MID_POINT]?.item;
+	// 	selectedItem && onChange(selectedItem);
+	// }, [activeIndex]);
 
 	useEffect(() => {
 		const foo = externalItems.length > WINDOW_SIZE ?
