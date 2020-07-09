@@ -3,28 +3,42 @@ import { PortfolioItem } from '@common/interfaces';
 export
 const items: PortfolioItem[] = [
 	{
-		label: '0 Foo',
+		// https://www.staging-typescript.org/branding/
+		label: 'typescript',
+		image: '/images/ts-logo-128.png',
 	}, {
-		label: '1 Bar',
+		label: 'node',
+		image: '/images/node-logo.png',
 	}, {
-		label: '2 Baz',
+		label: 'javascript',
+		image: '/images/javascript-logo.png',
 	}, {
-		label: '3 Biz',
+		label: 'pwa',
+		image: '/images/pwa-logo.png',
 	}, {
-		label: '4 Foo',
+		label: 'React',
+		image: '/images/react-logo.webp',
 	}, {
-		label: '5 Bar',
+		label: 'angular',
+		image: '/images/angular-logo.png',
+	},{
+		// https://www.staging-typescript.org/branding/
+		label: 'typescript',
+		image: '/images/ts-logo-128.png',
 	}, {
-		label: '6 Baz',
+		label: 'node',
+		image: '/images/node-logo.png',
 	}, {
-		label: '7 Biz',
+		label: 'javascript',
+		image: '/images/javascript-logo.png',
 	}, {
-		label: '8 Foo',
+		label: 'pwa',
+		image: '/images/pwa-logo.png',
 	}, {
-		label: '9 Bar',
+		label: 'React',
+		image: '/images/react-logo.webp',
 	}, {
-		label: '10 Baz',
-	}, {
-		label: '11 Biz',
-	},
-];
+		label: 'angular',
+		image: '/images/angular-logo.png',
+	}
+].reverse();
