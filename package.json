@@ -7,7 +7,9 @@
     "start": "NODE_ENV=development webpack-dev-server --host 0.0.0.0 --config webpack/webpack.config.js",
     "build:prod": "NODE_ENV=production webpack --config webpack/webpack.config.js",
     "lint": "eslint --ext .ts,tsx,.js,.jsx src/",
-    "lint:fix": "eslint --fix --ext .ts,tsx,.js,.jsx src/"
+    "lint:fix": "eslint --fix --ext .ts,tsx,.js,.jsx src/",
+    "deploy": "npm run build:prod && npm run deploy:hosting",
+    "deploy:hosting": "firebase deploy --only hosting:david-granado-portfolio"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +27,7 @@
     "eslint-plugin-react-app": "^6.2.2",
     "eslint-plugin-react-hooks": "^4.0.5",
     "file-loader": "^6.0.0",
+    "firebase-tools": "^8.5.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",

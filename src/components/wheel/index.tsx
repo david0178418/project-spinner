@@ -96,7 +96,6 @@ const Wheel: FC<Props> = (props) => {
 		}, [activeIndex, items]),
 		[Key.ArrowDown]: useCallback(() => {
 			let newIndex = activeIndex + 1;
-			console.log('newIndex', newIndex);
 			newIndex = newIndex > items.length - 1 ?
 				0:
 				newIndex;
