@@ -77,7 +77,7 @@ interface WheelItem {
 export
 const Wheel: FC<Props> = (props) => {
 	const {
-		onChange,
+		// onChange,
 		itemContent,
 		size,
 		items: externalItems
