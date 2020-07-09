@@ -52,7 +52,7 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 					active,
 				})}
 				style={{
-					zIndex: ((Math.abs(spacingRotationAdjust)) || 20) + 1,
+					zIndex: index === midIndex ? 20 : Math.abs(spacingRotationAdjust),
 					transform: `rotate(${rotation}deg) translate3d(-100%, ${spacingRotationAdjust * 15}px, 0) scale(${active ? 2 : 1})`,
 				}}
 			>
