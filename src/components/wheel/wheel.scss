@@ -1,4 +1,4 @@
-.wheel {
+.wheel-container {
 	height: var(--wheel-size);
 	overflow: hidden;
 	position: relative;
@@ -14,11 +14,21 @@
 
 		&.active {
 			font-weight: bold;
+			z-index: 10;
 		}
 
 		&:first-child,
 		&:last-child {
 			opacity: 0;
 		}
+
+		.wheel-logo {
+			height: 100%;
+		}
 	}
+}
+
+.portfolio-item {
+	display: flex;
+	height: calc(var(--wheel-size) / 6);
 }
