@@ -31,6 +31,11 @@ module.exports = merge(envConfig, {
 			'@components': resolve(__dirname, '../src/components/'),
 			'@pages': resolve(__dirname, '../src/pages/'),
 			'@root': resolve(__dirname, '../src/'),
+
+			// Preact aliases
+			'react': 'preact/compat',
+			'react-dom/test-utils': 'preact/test-utils',
+			'react-dom': 'preact/compat',
 		},
 	},
 	output: {

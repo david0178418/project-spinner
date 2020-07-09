@@ -29,14 +29,24 @@ export
 function App() {
 	return (
 		<ContextProvider>
-			<Wheel
-				size={600}
-				items={items}
-				onChange={console.log}
-				itemContent={(item) => (
-					<Foo item={item} />
-				)}
-			/>
+			<div className="layout">
+				<div>
+					foo
+				</div>
+				<div>
+					<Wheel
+						size={{
+							value: 90,
+							units: "vh"
+						}}
+						items={items}
+						onChange={console.log}
+						itemContent={(item) => (
+							<Foo item={item} />
+						)}
+					/>
+				</div>
+			</div>
 		</ContextProvider>
 	);
 }

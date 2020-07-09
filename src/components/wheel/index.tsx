@@ -63,7 +63,10 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 }
 
 interface Props {
-	size: number;
+	size: {
+		value: number;
+		units: string;
+	};
 	items: PortfolioItem[];
 	itemContent(item: PortfolioItem): ReactNode;
 	onChange(item: PortfolioItem): any;
@@ -141,7 +144,7 @@ const Wheel: FC<Props> = (props) => {
 			<div
 				className="wheel-container"
 				style={{
-					['--wheel-size']: `${size}px`,
+					['--wheel-size']: `${size.value}${size.units}`,
 				} as any}
 			>
 				{visibleItems
