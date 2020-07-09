@@ -45,7 +45,8 @@
   "dependencies": {
     "clsx": "^1.1.1",
     "eslint": "^7.4.0",
-    "preact": "^10.4.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-use": "^15.3.2",
     "ts-key-enum": "^2.0.3",
     "workbox-window": "^5.1.3"

@@ -1,4 +1,4 @@
-import React, { FC } from 'preact/compat';
+import React, { FC } from 'react';
 
 interface Props {
 }
