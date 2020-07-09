@@ -8,8 +8,8 @@
     "build:prod": "NODE_ENV=production webpack --config webpack/webpack.config.js",
     "lint": "eslint --ext .ts,tsx,.js,.jsx src/",
     "lint:fix": "eslint --fix --ext .ts,tsx,.js,.jsx src/",
-    "deploy": "npm run build:prod && npm run deploy:hosting",
-    "deploy:hosting": "firebase deploy --only hosting:david-granado-portfolio"
+    "deploy:hosting": "firebase deploy --only hosting:david-granado-portfolio",
+    "release": "npm run build:prod && npm run deploy:hosting"
   },
   "author": "",
   "license": "ISC",

@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Wheel } from '@components/wheel';
 import { ContextProvider } from './context-provider';
 import { items } from '@root/data';
