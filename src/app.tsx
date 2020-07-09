@@ -10,10 +10,6 @@ function Foo(props: any) {
 	const {
 		item,
 	} = props;
-	
-	useEffect(() => {
-		console.log('mount!');
-	}, []);
 
 	return (
 		(
