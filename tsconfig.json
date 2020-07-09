@@ -25,10 +25,7 @@
 			"@common/*": ["common/*"],
 			"@components/*": ["components/*"],
 			"@pages/*": ["pages/*"],
-			"@root/*": ["./*"],
-			"react": ["node_modules/preact/compat"],
-			"react-dom/test-utils": ["node_modules/preact/test-utils"],
-			"react-dom": ["node_modules/preact/compat"]
+			"@root/*": ["./*"]
 		}
 	},
 	"compileOnSave": false,
