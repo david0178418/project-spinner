@@ -44,7 +44,6 @@ function App() {
 			<div className="layout">
 				<div>
 					Active Index {selectedItemIndex}<br/>
-					Local Index {localIndex}<br/>
 					<div>
 						<button onClick={() => setSelectedItemIndex(selectedItemIndex + 1)}>
 							Up
