@@ -7,6 +7,7 @@ import { items } from '@root/data';
 import './app.scss';
 import { PortfolioItem } from '@common/interfaces';
 import clsx from 'clsx';
+import { useDebounce } from '@common/hooks'
 
 interface FooProps {
 	item: PortfolioItem;
@@ -34,9 +35,9 @@ function Foo(props: FooProps) {
 export
 function App() {
 	const [selectedItemIndex, setSelectedItemIndex] = useState(0);
-
-	const localIndex = selectedItemIndex % items.length;
-	const selectedItem = items[localIndex];
+	
+	const bufferedIndex = selectedItemIndex % items.length;
+	const localIndex = useDebounce(bufferedIndex, 500);
 
 	return (
 		<ContextProvider>
@@ -44,7 +45,6 @@ function App() {
 				<div>
 					Active Index {selectedItemIndex}<br/>
 					Local Index {localIndex}<br/>
-					{JSON.stringify(selectedItem)}<br/>
 					<div>
 						<button onClick={() => setSelectedItemIndex(selectedItemIndex + 1)}>
 							Up
@@ -62,7 +62,7 @@ function App() {
 								})}
 							>
 								{item.label}<br/>
-								<img src={item.mainImage} />
+								<img loading="lazy" src={item.mainImage} />
 							</div>
 						))}
 					</div>
