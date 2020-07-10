@@ -21,8 +21,8 @@ body {
 	background-color: #fff;
 }
 
-
 .layout {
 	display: grid;
-	grid-template-columns: auto 40%;
+	grid-template-columns: auto 50vh;
+	overflow: hidden;
 }

@@ -1,36 +1,40 @@
-.wheel-container {
+.wheel {
 	height: var(--wheel-size);
-	overflow: hidden;
-	position: relative;
-	width: var(--wheel-size);
+	width: calc(var(--wheel-size) / 2);
 
-	.item {
-		position: absolute;
-		right: 0;
-		top: 50%;
-		transform-origin: center left;
-		transition:
-			transform .5s,
-			opacity .5s;
-		width: 50%;
-
-		&.active {
-			font-weight: bold;
-			z-index: 10;
-		}
-
-		&:first-child,
-		&:last-child {
-			opacity: 0;
-		}
-
-		.wheel-logo {
-			height: 100%;
+	.wheel-container {
+		position: relative;
+		height: 100%;
+		width: 200%;
+	
+		.item {
+			position: absolute;
+			right: 0;
+			top: calc(50% - (var(--wheel-size) / (var(--wheel-item-count))) / 2 );
+			transform-origin: center left;
+			transition:
+				transform .3s,
+				opacity .3s;
+			width: 50%;
+	
+			&.active {
+				font-weight: bold;
+				z-index: 10;
+			}
+	
+			&:first-child,
+			&:last-child {
+				opacity: 0;
+			}
+	
+			.wheel-logo {
+				height: 100%;
+			}
 		}
 	}
-}
-
-.portfolio-item {
-	display: flex;
-	height: calc(var(--wheel-size) / 6);
+	
+	.portfolio-item {
+		display: flex;
+		height: calc(var(--wheel-size) / 6);
+	}
 }

@@ -51,7 +51,9 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 					active,
 				})}
 				style={{
-					zIndex: index === midIndex ? 20 : Math.abs(spacingRotationAdjust),
+					zIndex: index === midIndex ?
+						20 :
+						Math.abs(spacingRotationAdjust),
 					transform: `rotate(${rotation}deg) translate3d(-100%, ${spacingRotationAdjust * 15}px, 0) scale(${active ? 2 : 1})`,
 				}}
 			>
@@ -146,13 +148,14 @@ const Wheel: FC<Props> = (props) => {
 	}
 
 	return (
-		<div className="wheel">
-			<div
-				className="wheel-container"
-				style={{
-					['--wheel-size']: `${size.value}${size.units}`,
-				} as any}
-			>
+		<div
+			className="wheel"
+			style={{
+				'--wheel-size': `${size.value}${size.units}`,
+				'--wheel-item-count': WINDOW_SIZE,
+			} as any}
+		>
+			<div className="wheel-container">
 				{visibleItems
 					.map((item, i) => (
 					<WheelItem
@@ -163,9 +166,6 @@ const Wheel: FC<Props> = (props) => {
 						{item?.item && itemContent(item.item)}
 					</WheelItem>
 				))}
-			</div>
-			<div>
-				Active Index {selectedItemIndex}
 			</div>
 		</div>
 	);
