@@ -160,8 +160,7 @@ const Wheel: FC<Props> = (props) => {
 						active={i === (MID_POINT - 1)}
 						index={i}
 					>
-						{item?.item && itemContent(item.item)} <br/>
-						{item.key}
+						{item?.item && itemContent(item.item)}
 					</WheelItem>
 				))}
 			</div>
