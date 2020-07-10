@@ -5,8 +5,13 @@ import { ContextProvider } from './context-provider';
 import { items } from '@root/data';
 
 import './app.scss';
+import { PortfolioItem } from '@common/interfaces';
 
-function Foo(props: any) {
+interface FooProps {
+	item: PortfolioItem;
+}
+
+function Foo(props: FooProps) {
 	const {
 		item,
 	} = props;
@@ -14,8 +19,8 @@ function Foo(props: any) {
 	return (
 		(
 			<div className="portfolio-item">
-				{item.image && (
-					<img className="wheel-logo" src={item.image}/>
+				{item.wheelImage && (
+					<img className="wheel-logo" src={item.wheelImage}/>
 				)}
 				<div className="wheel-label">
 					{item.label}
