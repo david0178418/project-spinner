@@ -121,10 +121,23 @@ const Wheel: FC<Props> = (props) => {
 	};
 
 	useEvent('keydown', (e) => runKey(e.key));
-	
+
 	useEffect(() => {
+		console.log(activeIndex, selectedItemIndex);
 		(activeIndex !== selectedItemIndex) && onChange(activeIndex);
 	}, [activeIndex]);
+
+	useEffect(() => {
+		if(!items.length) {
+			return;
+		}
+
+		const newIndex = selectedItemIndex < 0 ?
+			items.length + selectedItemIndex:
+			selectedItemIndex % items.length;
+
+		(activeIndex !== newIndex) && onChange(newIndex);
+	}, [selectedItemIndex]);
 
 	useEffect(() => {
 		setItems(
@@ -156,16 +169,18 @@ const Wheel: FC<Props> = (props) => {
 			} as any}
 		>
 			<div className="wheel-container">
+				{selectedItemIndex}
 				{visibleItems
 					.map((item, i) => (
-					<WheelItem
-						key={item.key}
-						active={i === (MID_POINT - 1)}
-						index={i}
-					>
-						{item?.item && itemContent(item.item)}
-					</WheelItem>
-				))}
+						<WheelItem
+							key={item.key}
+							active={i === (MID_POINT - 1)}
+							index={i}
+						>
+							{item?.item && itemContent(item.item)}
+						</WheelItem>
+					))
+				}
 			</div>
 		</div>
 	);
