@@ -1,5 +1,6 @@
 export
 interface PortfolioItem {
 	label: string;
-	image: string;
+	wheelImage: string;
+	mainImage: string;
 }

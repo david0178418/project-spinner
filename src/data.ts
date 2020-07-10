@@ -5,40 +5,27 @@ const items: PortfolioItem[] = [
 	{
 		// https://www.staging-typescript.org/branding/
 		label: 'typescript',
-		image: '/images/ts-logo-128.png',
+		mainImage: 'https://www.placecage.com/c/600/600',
+		wheelImage: '/images/ts-logo-128.png',
 	}, {
 		label: 'node',
-		image: '/images/node-logo.png',
+		mainImage: 'https://www.placecage.com/c/500/500',
+		wheelImage: '/images/node-logo.png',
 	}, {
 		label: 'javascript',
-		image: '/images/javascript-logo.png',
+		mainImage: 'https://www.placecage.com/c/500/550',
+		wheelImage: '/images/javascript-logo.png',
 	}, {
 		label: 'pwa',
-		image: '/images/pwa-logo.png',
+		mainImage: 'https://www.placecage.com/c/700/550',
+		wheelImage: '/images/pwa-logo.png',
 	}, {
 		label: 'React',
-		image: '/images/react-logo.webp',
+		mainImage: 'https://www.placecage.com/600/600',
+		wheelImage: '/images/react-logo.webp',
 	}, {
 		label: 'angular',
-		image: '/images/angular-logo.png',
-	},{
-		// https://www.staging-typescript.org/branding/
-		label: 'typescript',
-		image: '/images/ts-logo-128.png',
-	}, {
-		label: 'node',
-		image: '/images/node-logo.png',
-	}, {
-		label: 'javascript',
-		image: '/images/javascript-logo.png',
-	}, {
-		label: 'pwa',
-		image: '/images/pwa-logo.png',
-	}, {
-		label: 'React',
-		image: '/images/react-logo.webp',
-	}, {
-		label: 'angular',
-		image: '/images/angular-logo.png',
-	}
+		mainImage: 'https://www.placecage.com/c/650/550',
+		wheelImage: '/images/angular-logo.png',
+	},
 ].reverse();
