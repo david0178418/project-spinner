@@ -102,7 +102,7 @@ const Wheel: FC<Props> = (props) => {
 
 	const [items, setItems] = useState<WheelItem[]>([]);
 	const [bufferIndex, setBufferIndex] = useState(selectedItemIndex);
-	const activeIndex = useDebounce(bufferIndex, 200);
+	const activeIndex = useDebounce(bufferIndex, 150);
 	const controls: any = {
 		[Key.ArrowUp]: useCallback(() => {
 			let newIndex = activeIndex - 1;
