@@ -34,11 +34,22 @@ export
 function App() {
 	const [selectedItemIndex, setSelectedItemIndex] = useState(0);
 
+	const selectedItem = items[selectedItemIndex % items.length];
+
 	return (
 		<ContextProvider>
 			<div className="layout">
 				<div>
-					Active Index {selectedItemIndex}
+					Active Index {selectedItemIndex}<br/>
+					{JSON.stringify(selectedItem)}<br/>
+					<div>
+						<button onClick={() => setSelectedItemIndex(selectedItemIndex + 1)}>
+							Up
+						</button>
+						<button onClick={() => setSelectedItemIndex(selectedItemIndex - 1)}>
+							Down
+						</button>
+					</div>
 				</div>
 				<div>
 					<Wheel
