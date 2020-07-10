@@ -9,7 +9,6 @@ import React, {
 import { Key } from 'ts-key-enum';
 import clsx from 'clsx';
 import { useEvent } from 'react-use';
-import { range } from '@common/utils';
 import { useDebounce } from '@common/hooks'
 import { PortfolioItem } from '@common/interfaces';
 
@@ -62,14 +61,15 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 	);
 }
 
-interface Props {
-	size: {
-		value: number;
-		units: string;
-	};
-	items: PortfolioItem[];
-	itemContent(item: PortfolioItem): ReactNode;
-	onChange(item: PortfolioItem): any;
+function wrapAroundList<T>(index: number, size: number, list: T[]) {
+	const offset = (size / 2) | 0;
+	const start = (index >= offset) ?
+		index - offset :
+		list.length - offset + index;
+	const a = list.slice(start, start + size);
+	const b = list.slice(0, size - a.length);
+
+	return a.concat(b);
 }
 
 interface WheelItem {
@@ -77,54 +77,61 @@ interface WheelItem {
 	item: PortfolioItem;
 }
 
+interface Props {
+	size: {
+		value: number;
+		units: string;
+	};
+	selectedItemIndex: number;
+	items: PortfolioItem[];
+	itemContent(item: PortfolioItem): ReactNode;
+	onChange(newIndex: number): any;
+}
+
 export
 const Wheel: FC<Props> = (props) => {
 	const {
-		// onChange,
+		onChange,
 		itemContent,
 		size,
+		selectedItemIndex,
 		items: externalItems
 	} = props;
 
 	const [items, setItems] = useState<WheelItem[]>([]);
-	const [rawActiveIndex, setActiveIndex] = useState(MID_POINT - 1 );
-	const activeIndex = useDebounce(rawActiveIndex, 200);
+	const [bufferIndex, setBufferIndex] = useState(selectedItemIndex);
+	const activeIndex = useDebounce(bufferIndex, 200);
 	const controls: any = {
 		[Key.ArrowUp]: useCallback(() => {
 			let newIndex = activeIndex - 1;
 			newIndex = newIndex < 0 ?
 				items.length - 1:
 				newIndex;
-			setActiveIndex(newIndex);
+			setBufferIndex(newIndex);
 		}, [activeIndex, items]),
 		[Key.ArrowDown]: useCallback(() => {
 			let newIndex = activeIndex + 1;
 			newIndex = newIndex > items.length - 1 ?
 				0:
 				newIndex;
-			setActiveIndex(newIndex);
+			setBufferIndex(newIndex);
 		}, [activeIndex, items]),
 	};
 
 	useEvent('keydown', (e) => runKey(e.key));
-
-	// useEffect(() => {
-	// 	const selectedItem = items[MID_POINT]?.item;
-	// 	selectedItem && onChange(selectedItem);
-	// }, [activeIndex]);
+	
+	useEffect(() => {
+		(activeIndex !== selectedItemIndex) && onChange(activeIndex);
+	}, [activeIndex]);
 
 	useEffect(() => {
-		const foo = externalItems.length > WINDOW_SIZE ?
-			externalItems:
-			range(WINDOW_SIZE + 1).map(v => (
-				externalItems[v % externalItems.length]
-			));
-
 		setItems(
-			foo.map((item, key) => ({
-				key,
-				item,
-			}))
+			externalItems
+				.concat(externalItems)
+				.map((item, key) => ({
+					key,
+					item,
+				}))
 		);
 	}, [externalItems]);
 
@@ -132,8 +139,7 @@ const Wheel: FC<Props> = (props) => {
 		return null;
 	}
 
-	const visibleItems = range(WINDOW_SIZE)
-			.map((i) => items[(activeIndex + i) % items.length]);
+	const visibleItems = wrapAroundList(selectedItemIndex, WINDOW_SIZE, items);
 
 	function runKey(key: string) {
 		controls[key]?.();
@@ -148,16 +154,6 @@ const Wheel: FC<Props> = (props) => {
 				} as any}
 			>
 				{visibleItems
-					// Used to get around some weird bug
-					// where the elements get recrated when
-					// scrolling through list in one direction
-					.filter((item, i, list) => {
-						if(items.length > WINDOW_SIZE) {
-							return true;
-						} else {
-							return i !== (list.length - 1)
-						}
-					})
 					.map((item, i) => (
 					<WheelItem
 						key={item.key}
@@ -165,11 +161,12 @@ const Wheel: FC<Props> = (props) => {
 						index={i}
 					>
 						{item?.item && itemContent(item.item)} <br/>
+						{item.key}
 					</WheelItem>
 				))}
 			</div>
 			<div>
-				Active Index {activeIndex}
+				Active Index {selectedItemIndex}
 			</div>
 		</div>
 	);

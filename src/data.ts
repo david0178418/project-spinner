@@ -3,7 +3,6 @@ import { PortfolioItem } from '@common/interfaces';
 export
 const items: PortfolioItem[] = [
 	{
-		// https://www.staging-typescript.org/branding/
 		label: 'typescript',
 		mainImage: 'https://www.placecage.com/c/600/600',
 		wheelImage: '/images/ts-logo-128.png',
@@ -28,4 +27,4 @@ const items: PortfolioItem[] = [
 		mainImage: 'https://www.placecage.com/c/650/550',
 		wheelImage: '/images/angular-logo.png',
 	},
-].reverse();
+];

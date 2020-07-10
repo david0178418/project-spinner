@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Wheel } from '@components/wheel';
 import { ContextProvider } from './context-provider';
 import { items } from '@root/data';
@@ -32,6 +32,8 @@ function Foo(props: FooProps) {
 
 export
 function App() {
+	const [selectedItemIndex, setSelectedItemIndex] = useState(0);
+
 	return (
 		<ContextProvider>
 			<div className="layout">
@@ -45,7 +47,11 @@ function App() {
 							units: "vh"
 						}}
 						items={items}
-						onChange={console.log}
+						selectedItemIndex={selectedItemIndex}
+						onChange={i => {
+							console.log(i);
+							setSelectedItemIndex(i);
+						}}
 						itemContent={(item) => (
 							<Foo item={item} />
 						)}
