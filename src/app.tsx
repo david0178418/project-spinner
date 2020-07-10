@@ -6,6 +6,7 @@ import { items } from '@root/data';
 
 import './app.scss';
 import { PortfolioItem } from '@common/interfaces';
+import clsx from 'clsx';
 
 interface FooProps {
 	item: PortfolioItem;
@@ -34,13 +35,15 @@ export
 function App() {
 	const [selectedItemIndex, setSelectedItemIndex] = useState(0);
 
-	const selectedItem = items[selectedItemIndex % items.length];
+	const localIndex = selectedItemIndex % items.length;
+	const selectedItem = items[localIndex];
 
 	return (
 		<ContextProvider>
 			<div className="layout">
 				<div>
 					Active Index {selectedItemIndex}<br/>
+					Local Index {localIndex}<br/>
 					{JSON.stringify(selectedItem)}<br/>
 					<div>
 						<button onClick={() => setSelectedItemIndex(selectedItemIndex + 1)}>
@@ -49,6 +52,19 @@ function App() {
 						<button onClick={() => setSelectedItemIndex(selectedItemIndex - 1)}>
 							Down
 						</button>
+					</div>
+					<div>
+						{items.map((item, i) => (
+							<div
+								key={i}
+								className={clsx('main-image-container', {
+									active: i === localIndex
+								})}
+							>
+								{item.label}<br/>
+								<img src={item.mainImage} />
+							</div>
+						))}
 					</div>
 				</div>
 				<div>

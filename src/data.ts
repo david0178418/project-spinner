@@ -24,7 +24,7 @@ const items: PortfolioItem[] = [
 		wheelImage: '/images/react-logo.webp',
 	}, {
 		label: 'angular',
-		mainImage: 'https://www.placecage.com/c/650/550',
+		mainImage: 'https://www.placecage.com/c/550/550',
 		wheelImage: '/images/angular-logo.png',
 	},
 ];
