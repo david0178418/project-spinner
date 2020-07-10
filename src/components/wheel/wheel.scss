@@ -1,4 +1,5 @@
 .wheel {
+	position: relative;
 	height: var(--wheel-size);
 	width: calc(var(--wheel-size) / 2);
 
@@ -31,6 +32,26 @@
 				height: 100%;
 			}
 		}
+	}
+
+	.wheel-up,
+	.wheel-down {
+		background-color: transparent;
+		border: none;
+		height: 50%;
+		left: 0;
+		outline-style: none;
+		position: absolute;
+		width: 100%;
+		z-index: 21;
+	}
+
+	.wheel-up {
+		top: 0;
+	}
+
+	.wheel-down {
+		bottom: 0;
 	}
 	
 	.portfolio-item {

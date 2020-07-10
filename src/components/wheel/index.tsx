@@ -169,7 +169,6 @@ const Wheel: FC<Props> = (props) => {
 			} as any}
 		>
 			<div className="wheel-container">
-				{selectedItemIndex}
 				{visibleItems
 					.map((item, i) => (
 						<WheelItem
@@ -182,6 +181,8 @@ const Wheel: FC<Props> = (props) => {
 					))
 				}
 			</div>
+			<button className="wheel-up" onClick={() => controls[Key.ArrowUp]()}/>
+			<button className="wheel-down" onClick={() => controls[Key.ArrowDown]()} />
 		</div>
 	);
 }
