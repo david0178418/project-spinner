@@ -38,12 +38,12 @@ function App() {
 		<ContextProvider>
 			<div className="layout">
 				<div>
-					foo
+					Active Index {selectedItemIndex}
 				</div>
 				<div>
 					<Wheel
 						size={{
-							value: 90,
+							value: 100,
 							units: "vh"
 						}}
 						items={items}
