@@ -42,7 +42,7 @@ function App() {
 	return (
 		<ContextProvider>
 			<div className="layout">
-				<div>
+				<div className="left-pane">
 					Active Index {selectedItemIndex}<br/>
 					<div>
 						<button onClick={() => setSelectedItemIndex(selectedItemIndex + 1)}>
@@ -52,19 +52,17 @@ function App() {
 							Down
 						</button>
 					</div>
-					<div>
-						{items.map((item, i) => (
-							<div
-								key={i}
-								className={clsx('main-image-container', {
-									active: i === localIndex
-								})}
-							>
-								{item.label}<br/>
-								<img loading="lazy" src={item.mainImage} />
-							</div>
-						))}
-					</div>
+					{items.map((item, i) => (
+						<div
+							key={i}
+							className={clsx('main-image-container', {
+								active: i === localIndex
+							})}
+						>
+							{item.label}<br/>
+							<img loading="lazy" src={item.mainImage} />
+						</div>
+					))}
 				</div>
 				<div>
 					<Wheel
