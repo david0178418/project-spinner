@@ -27,21 +27,29 @@ body {
 	overflow: hidden;
 }
 
+.left-pane {
+	height: 100%;
+	position: relative;
+}
+
 .main-image-container {
 	position: absolute;
-	left: 0;
+	left: 50%;
+	top: 50%;
+	transform: translate3D(-70%, -50%, 0);
 	opacity: 0;
-	width: 40%;
+	width: 80%;
+	max-width: 500px;
 	transition:
 		opacity .3s,
-		left .3s;
+		transform .3s;
 
 	img {
 		width: 100%;
 	}
 
 	&.active {
-		left: 100px;
+		transform: translate3D(-50%, -50%, 0);
 		opacity: 1;
 	}
 }
