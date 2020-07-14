@@ -22,43 +22,50 @@ body {
 }
 
 .layout {
+	display: grid;
+	overflow: hidden;
+
+	.left-pane {
+		position: relative;
+	}
+
+	.main-image-container {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		opacity: 0;
+		width: 80%;
+		max-width: 500px;
+		transition:
+		opacity .3s,
+		transform .3s;
+
+		img {
+			width: 100%;
+		}
+
+		&.active {
+			opacity: 1;
+		}
+	}
+
 	&.landscape {
-		display: grid;
 		grid-template-columns: auto 50vh;
-		overflow: hidden;
 		
 		.left-pane {
 			height: 100%;
-			position: relative;
 		}
 		
 		.main-image-container {
-			position: absolute;
-			left: 50%;
-			top: 50%;
 			transform: translate3D(-70%, -50%, 0);
-			opacity: 0;
-			width: 80%;
-			max-width: 500px;
-			transition:
-				opacity .3s,
-				transform .3s;
-		
-			img {
-				width: 100%;
-			}
 		
 			&.active {
 				transform: translate3D(-50%, -50%, 0);
-				opacity: 1;
 			}
 		}
-		
 	}
 
 	&.portrait {
-		display: grid;
-		overflow: hidden;
 		grid-template-rows: 50vw auto;
 		height: 100vh;
 
@@ -68,10 +75,8 @@ body {
 			position: relative;
 		}
 
-
 		.left-pane {
 			width: 100%;
-			position: relative;
 		}
 
 		.wheel {
@@ -81,24 +86,10 @@ body {
 		}
 
 		.main-image-container {
-			position: absolute;
-			left: 50%;
-			top: 50%;
 			transform: translate3D(-50%, -70%, 0);
-			opacity: 0;
-			width: 80%;
-			max-width: 500px;
-			transition:
-				opacity .3s,
-				transform .3s;
-
-			img {
-				width: 100%;
-			}
 
 			&.active {
 				transform: translate3D(-50%, 0%, 0);
-				opacity: 1;
 			}
 		}
 

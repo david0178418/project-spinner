@@ -1,50 +1,65 @@
 .wheel {
-	&.horizontal {
+	position: relative;
+
+	.wheel-container {
 		position: relative;
+		height: 100%;
+
+		.item {
+			position: absolute;
+			transition:
+				transform .3s,
+				opacity .3s;
+
+			&.active {
+				font-weight: bold;
+				z-index: 10;
+			}
+
+			&:first-child,
+			&:last-child {
+				opacity: 0;
+			}
+		}
+	}
+
+	.wheel-up,
+	.wheel-down {
+		background-color: transparent;
+		border: none;
+		outline-style: none;
+		position: absolute;
+		z-index: 15;
+	}
+
+	.portfolio-item {
+		display: flex;
+	}
+
+	&.horizontal {
 		height: var(--wheel-size);
 		width: calc(var(--wheel-size) / 2);
-	
+
 		.wheel-container {
-			position: relative;
-			height: 100%;
 			width: 200%;
 		
 			.item {
-				position: absolute;
 				right: 0;
 				top: calc(50% - (var(--wheel-size) / (var(--wheel-item-count))) / 2 );
 				transform-origin: center left;
-				transition:
-					transform .3s,
-					opacity .3s;
 				width: 50%;
-		
-				&.active {
-					font-weight: bold;
-					z-index: 10;
-				}
-		
-				&:first-child,
-				&:last-child {
-					opacity: 0;
-				}
 		
 				.wheel-logo {
 					height: 100%;
 				}
 			}
 		}
-	
+
 		.wheel-up,
 		.wheel-down {
-			background-color: transparent;
-			border: none;
 			height: 50%;
 			left: 0;
-			outline-style: none;
-			position: absolute;
 			width: 100%;
-			z-index: 15;
 		}
 	
 		.wheel-up {
@@ -56,42 +71,24 @@
 		}
 		
 		.portfolio-item {
-			display: flex;
 			height: calc(var(--wheel-size) / 6);
 		}
 	}
 
 	&.vertical {
-		position: relative;
-		width: var(--wheel-size);
 		height: calc(var(--wheel-size) / 2);
+		width: var(--wheel-size);
 	
 		.wheel-container {
-			position: relative;
-			height: 100%;
 			width: 100%;
 		
 			.item {
-				position: absolute;
 				bottom: -100%;
 				left: calc(50% - (var(--wheel-size) / (var(--wheel-item-count))) / 2 );
 				transform-origin: center;
-				transition:
-					transform .3s,
-					opacity .3s;
 				height: calc(var(--wheel-size));
 				width: calc(var(--wheel-size) / (var(--wheel-item-count)));
-	
-				&.active {
-					font-weight: bold;
-					z-index: 10;
-				}
-		
-				&:first-child,
-				&:last-child {
-					opacity: 0;
-				}
-		
+
 				.wheel-logo {
 					width: 100%;
 				}
@@ -104,26 +101,20 @@
 	
 		.wheel-up,
 		.wheel-down {
-			background-color: transparent;
-			border: none;
 			width: 50%;
 			top: 0;
-			outline-style: none;
-			position: absolute;
 			height: 100%;
-			z-index: 15;
 		}
 	
 		.wheel-up {
-			left: 0;
+			right: 0;
 		}
 	
 		.wheel-down {
-			right: 0;
+			left: 0;
 		}
 		
 		.portfolio-item {
-			display: flex;
 			flex-direction: column;
 			width: calc(var(--wheel-size) / 6);
 			position: absolute;
