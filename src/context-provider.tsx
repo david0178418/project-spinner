@@ -3,7 +3,6 @@ import { OrientationContext } from '@common/contexts';
 import { Orientation } from '@common/interfaces';
 
 function getOrientation() {
-	console.log(window.innerWidth / window.innerHeight, window.innerWidth, window.innerHeight);
 	return window.innerWidth / window.innerHeight < 3/4 ?
 		Orientation.Portrait :
 		Orientation.Landscape;
