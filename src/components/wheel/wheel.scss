@@ -36,7 +36,7 @@
 		display: flex;
 	}
 
-	&.horizontal {
+	&.vertical {
 		height: var(--wheel-size);
 		width: calc(var(--wheel-size) / 2);
 
@@ -75,7 +75,7 @@
 		}
 	}
 
-	&.vertical {
+	&.horizontal {
 		height: calc(var(--wheel-size) / 2);
 		width: var(--wheel-size);
 	

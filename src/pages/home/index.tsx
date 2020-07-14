@@ -4,7 +4,7 @@ import { Wheel } from '@components/wheel';
 import { items } from '@root/data';
 import { PortfolioItem, Orientation } from '@common/interfaces';
 import clsx from 'clsx';
-import { useDebounce } from '@common/hooks';
+import { MainContent } from '@components/main-content';
 import { OrientationContext } from '@common/contexts';
 
 import './home.scss';
@@ -36,9 +36,8 @@ export
 function HomePage() {
 	const [selectedItemIndex, setSelectedItemIndex] = useState(0);
 	const orientation = useContext(OrientationContext);
-
-	const bufferedIndex = selectedItemIndex % items.length;
-	const localIndex = useDebounce(bufferedIndex, 500);
+	const verticalWheel = orientation === Orientation.Landscape
+	const verticalMainContent = !verticalWheel;
 
 	return (
 		<div className={clsx('layout', {
@@ -46,35 +45,20 @@ function HomePage() {
 			landscape: orientation === Orientation.Landscape,
 		})}>
 			<div className="left-pane">
-				Active Index {selectedItemIndex}<br/>
-				<div>
-					<button onClick={() => setSelectedItemIndex(selectedItemIndex + 1)}>
-						Up
-					</button>
-					<button onClick={() => setSelectedItemIndex(selectedItemIndex - 1)}>
-						Down
-					</button>
-				</div>
-				{items.map((item, i) => (
-					<div
-						key={i}
-						className={clsx('main-image-container', {
-							active: i === localIndex
-						})}
-					>
-						{item.label}<br/>
-						<img loading="lazy" src={item.mainImage} />
-					</div>
-				))}
+				<MainContent
+					items={items}
+					selectedIndex={selectedItemIndex}
+					vertical={verticalMainContent}
+				/>
 			</div>
 			<div className="right-pane">
 				<Wheel
-					orientation={orientation}
+					vertical={verticalWheel}
 					items={items}
 					selectedItemIndex={selectedItemIndex}
 					size={{
 						value: 100,
-						units: orientation === Orientation.Landscape ?
+						units: verticalWheel ?
 							'vh' :
 							'vw',
 					}}

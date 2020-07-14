@@ -10,7 +10,7 @@ import { Key } from 'ts-key-enum';
 import clsx from 'clsx';
 import { useEvent } from 'react-use';
 import { useDebounce } from '@common/hooks'
-import { PortfolioItem, Orientation } from '@common/interfaces';
+import { PortfolioItem } from '@common/interfaces';
 
 import './wheel.scss';
 
@@ -19,7 +19,7 @@ const MID_POINT = Math.ceil(WINDOW_SIZE / 2);
 
 interface WheelItemProps {
 	index: number;
-	orientation: Orientation;
+	vertical?: boolean;
 	active?: boolean;
 }
 
@@ -28,7 +28,7 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 		children,
 		index,
 		active,
-		orientation,
+		vertical,
 	} = props;
 	const baseRotation = (
 		140 / (WINDOW_SIZE - 1)
@@ -45,7 +45,7 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 	}
 
 	const rotation = baseRotation - (spacingRotationAdjust * 7);
-	const transform = orientation === Orientation.Landscape ?
+	const transform = vertical ?
 			`rotate(${rotation}deg) translate3d(-100%, ${spacingRotationAdjust * 15}px, 0) scale(${active ? 2 : 1})` :
 			`rotate(${rotation}deg) translate3d(${spacingRotationAdjust * -15}px, ${active ? 'calc(var(--wheel-size) / (var(--wheel-item-count)) * 2)' : 0}, 0) scale(${active ? 1.5 : 1})`;
 
@@ -79,19 +79,20 @@ function wrapAroundList<T>(index: number, size: number, list: T[]) {
 	return a.concat(b);
 }
 
-interface WheelItem {
+
+interface ListItem {
 	key: number | string;
 	item: PortfolioItem;
 }
 
 interface Props {
-	orientation: Orientation;
 	size: {
 		value: number;
 		units: string;
 	};
 	selectedItemIndex: number;
 	items: PortfolioItem[];
+	vertical?: boolean;
 	itemContent(item: PortfolioItem): ReactNode;
 	onChange(newIndex: number): any;
 }
@@ -103,11 +104,11 @@ const Wheel: FC<Props> = (props) => {
 		itemContent,
 		size,
 		selectedItemIndex,
+		vertical,
 		items: externalItems,
-		orientation,
 	} = props;
 
-	const [items, setItems] = useState<WheelItem[]>([]);
+	const [items, setItems] = useState<ListItem[]>([]);
 	const [bufferIndex, setBufferIndex] = useState(selectedItemIndex);
 	const activeIndex = useDebounce(bufferIndex, 150);
 	const wheelUp = useCallback(() => {
@@ -174,8 +175,8 @@ const Wheel: FC<Props> = (props) => {
 	return (
 		<div
 			className={clsx('wheel', {
-				horizontal: orientation === Orientation.Landscape,
-				vertical: orientation === Orientation.Portrait,
+				horizontal: !vertical,
+				vertical,
 			})}
 			style={{
 				'--wheel-size': `${size.value}${size.units}`,
@@ -186,7 +187,7 @@ const Wheel: FC<Props> = (props) => {
 				{visibleItems
 					.map((item, i) => (
 						<WheelItem
-							orientation={orientation}
+							vertical={vertical}
 							key={item.key}
 							active={i === (MID_POINT - 1)}
 							index={i}

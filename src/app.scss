@@ -29,39 +29,11 @@ body {
 		position: relative;
 	}
 
-	.main-image-container {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		opacity: 0;
-		width: 80%;
-		max-width: 500px;
-		transition:
-		opacity .3s,
-		transform .3s;
-
-		img {
-			width: 100%;
-		}
-
-		&.active {
-			opacity: 1;
-		}
-	}
-
 	&.landscape {
 		grid-template-columns: auto 50vh;
 		
 		.left-pane {
 			height: 100%;
-		}
-		
-		.main-image-container {
-			transform: translate3D(-70%, -50%, 0);
-		
-			&.active {
-				transform: translate3D(-50%, -50%, 0);
-			}
 		}
 	}
 
@@ -84,14 +56,5 @@ body {
 			margin: 0 auto;
 			position: absolute;
 		}
-
-		.main-image-container {
-			transform: translate3D(-50%, -70%, 0);
-
-			&.active {
-				transform: translate3D(-50%, 0%, 0);
-			}
-		}
-
 	}
 }
