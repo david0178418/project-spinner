@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, StrictMode } from 'react';
 import { Wheel } from '@components/wheel';
 import { ContextProvider } from './context-provider';
 import { items } from '@root/data';
@@ -40,48 +40,50 @@ function App() {
 	const localIndex = useDebounce(bufferedIndex, 500);
 
 	return (
-		<ContextProvider>
-			<div className="layout">
-				<div className="left-pane">
-					Active Index {selectedItemIndex}<br/>
-					<div>
-						<button onClick={() => setSelectedItemIndex(selectedItemIndex + 1)}>
-							Up
-						</button>
-						<button onClick={() => setSelectedItemIndex(selectedItemIndex - 1)}>
-							Down
-						</button>
-					</div>
-					{items.map((item, i) => (
-						<div
-							key={i}
-							className={clsx('main-image-container', {
-								active: i === localIndex
-							})}
-						>
-							{item.label}<br/>
-							<img loading="lazy" src={item.mainImage} />
+		<StrictMode>
+			<ContextProvider>
+				<div className="layout">
+					<div className="left-pane">
+						Active Index {selectedItemIndex}<br/>
+						<div>
+							<button onClick={() => setSelectedItemIndex(selectedItemIndex + 1)}>
+								Up
+							</button>
+							<button onClick={() => setSelectedItemIndex(selectedItemIndex - 1)}>
+								Down
+							</button>
 						</div>
-					))}
+						{items.map((item, i) => (
+							<div
+								key={i}
+								className={clsx('main-image-container', {
+									active: i === localIndex
+								})}
+							>
+								{item.label}<br/>
+								<img loading="lazy" src={item.mainImage} />
+							</div>
+						))}
+					</div>
+					<div>
+						<Wheel
+							size={{
+								value: 100,
+								units: "vh"
+							}}
+							items={items}
+							selectedItemIndex={selectedItemIndex}
+							onChange={i => {
+								console.log(i);
+								setSelectedItemIndex(i);
+							}}
+							itemContent={(item) => (
+								<Foo item={item} />
+							)}
+						/>
+					</div>
 				</div>
-				<div>
-					<Wheel
-						size={{
-							value: 100,
-							units: "vh"
-						}}
-						items={items}
-						selectedItemIndex={selectedItemIndex}
-						onChange={i => {
-							console.log(i);
-							setSelectedItemIndex(i);
-						}}
-						itemContent={(item) => (
-							<Foo item={item} />
-						)}
-					/>
-				</div>
-			</div>
-		</ContextProvider>
+			</ContextProvider>
+		</StrictMode>
 	);
 }
