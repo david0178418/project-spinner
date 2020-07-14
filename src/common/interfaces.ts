@@ -4,3 +4,9 @@ interface PortfolioItem {
 	wheelImage: string;
 	mainImage: string;
 }
+
+export
+enum Orientation {
+	Landscape = 'landscape',
+	Portrait = 'portrait',
+}
