@@ -22,7 +22,7 @@ function MainContent(props: Props) {
 	const activeIndex = useDebounce(bufferedIndex, 500);
 
 	return (
-		<div className={clsx({
+		<div className={clsx('main-content', mainContentCls, {
 			vertical,
 			horizontal: !vertical,
 		})}>
@@ -35,7 +35,6 @@ function MainContent(props: Props) {
 						[verticalCss]: vertical,
 					})}
 				>
-					{item.label}<br/>
 					<img loading="lazy" src={item.mainImage} />
 				</div>
 			))}
@@ -43,38 +42,55 @@ function MainContent(props: Props) {
 	);
 }
 
+const mainContentCls = css`
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+`;
+
 const mainImageClass = css`
 	position: absolute;
-	left: 50%;
-	top: 50%;
+	margin: auto;
 	opacity: 0;
-	width: 80%;
-	max-width: 500px;
+	max-height: 80%;
+	max-width: 80%;
 	transition:
 	opacity .3s,
 	transform .3s;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	img {
-		width: 100%;
+		max-height: 100%;
+		max-width: 100%;
 	}
 
 	&.active {
 		opacity: 1;
+		z-index: 10;
 	}
 `;
 
 const verticalCss = css`
-	transform: translate3D(-50%, -70%, 0);
+	transform: translate3D(0, -20%, 0);
 
 	&.active {
-		transform: translate3D(-50%, 0%, 0);
+		transform: translate3D(0, 0%, 0);
 	}
 `;
 
 const horizontalCss = css`
-	transform: translate3D(-70%, -50%, 0);
+	transform: translate3D(-20%, 0, 0);
 
 	&.active {
-		transform: translate3D(-50%, -50%, 0);
+		transform: translate3D(0, 0, 0);
 	}
 `;
