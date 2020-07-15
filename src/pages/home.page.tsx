@@ -6,8 +6,45 @@ import { PortfolioItem, Orientation } from '@common/interfaces';
 import clsx from 'clsx';
 import { MainContent } from '@components/main-content';
 import { OrientationContext } from '@common/contexts';
+import { css } from 'linaria';
 
-import './home.scss';
+const layout = css`
+	display: grid;
+	overflow: hidden;
+
+	.left-pane {
+		position: relative;
+	}
+
+	&.landscape {
+		grid-template-columns: auto 50vh;
+		
+		.left-pane {
+			height: 100%;
+		}
+	}
+
+	&.portrait {
+		grid-template-rows: 50vw auto;
+		height: 100vh;
+
+		.left-pane,
+		.right-pane {
+			width: 100%;
+			position: relative;
+		}
+
+		.left-pane {
+			width: 100%;
+		}
+
+		.wheel {
+			bottom: 0;
+			margin: 0 auto;
+			position: absolute;
+		}
+	}
+`;
 
 interface FooProps {
 	item: PortfolioItem;
@@ -40,7 +77,7 @@ function HomePage() {
 	const verticalMainContent = !verticalWheel;
 
 	return (
-		<div className={clsx('layout', {
+		<div className={clsx('layout', layout, {
 			portrait: orientation === Orientation.Portrait,
 			landscape: orientation === Orientation.Landscape,
 		})}>

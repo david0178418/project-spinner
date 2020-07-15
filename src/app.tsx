@@ -1,10 +1,9 @@
 
 import React, { StrictMode } from 'react';
 import { ContextProvider } from './context-provider';
-import { HomePage } from '@pages/home';
+import { HomePage } from '@pages/home.page';
 
 import './app.scss';
-
 
 export
 function App() {
