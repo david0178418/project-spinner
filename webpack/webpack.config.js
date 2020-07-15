@@ -41,7 +41,15 @@ module.exports = merge(envConfig, {
 		rules: [
 			{
 				test: /\.tsx?$/,
-				use: 'ts-loader',
+				use: [
+					{
+						loader: 'linaria/loader',
+						options: {
+							sourceMap: process.env.NODE_ENV === 'production',
+						},
+					},
+					'ts-loader',
+				],
 				exclude: /node_modules/,
 			},
 			{

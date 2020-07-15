@@ -1,4 +1,3 @@
-
 import React, {
 	useState,
 	useCallback,
@@ -11,62 +10,11 @@ import clsx from 'clsx';
 import { useEvent } from 'react-use';
 import { useDebounce } from '@common/hooks'
 import { PortfolioItem } from '@common/interfaces';
-
-import './wheel.scss';
+import { css } from 'linaria';
+import { WheelItem } from './wheel-item';
 
 const WINDOW_SIZE = 7;
 const MID_POINT = Math.ceil(WINDOW_SIZE / 2);
-
-interface WheelItemProps {
-	index: number;
-	vertical?: boolean;
-	active?: boolean;
-}
-
-const WheelItem: FC<WheelItemProps> = (props) => {
-	const {
-		children,
-		index,
-		active,
-		vertical,
-	} = props;
-	const baseRotation = (
-		140 / (WINDOW_SIZE - 1)
-	) * index - 90 + 20;;
-
-	const midIndex = MID_POINT - 1;
-
-	let spacingRotationAdjust = 0;
-
-	if(index < midIndex) {
-		spacingRotationAdjust = index;
-	} else if(index > midIndex) {
-		spacingRotationAdjust = 2 * (midIndex - (midIndex - (index - midIndex))) - index; 
-	}
-
-	const rotation = baseRotation - (spacingRotationAdjust * 7);
-	const transform = vertical ?
-			`rotate(${rotation}deg) translate3d(-100%, ${spacingRotationAdjust * 15}px, 0) scale(${active ? 2 : 1})` :
-			`rotate(${rotation}deg) translate3d(${spacingRotationAdjust * -15}px, ${active ? 'calc(var(--wheel-size) / (var(--wheel-item-count)) * 2)' : 0}, 0) scale(${active ? 1.5 : 1})`;
-
-	return (
-		<>
-			<div
-				className={clsx('item', {
-					active,
-				})}
-				style={{
-					zIndex: index === midIndex ?
-						20 :
-						Math.abs(spacingRotationAdjust),
-					transform,
-				}}
-			>
-				{children}
-			</div>
-		</>
-	);
-}
 
 function wrapAroundList<T>(index: number, size: number, list: T[]) {
 	const offset = (size / 2) | 0;
@@ -78,7 +26,6 @@ function wrapAroundList<T>(index: number, size: number, list: T[]) {
 
 	return a.concat(b);
 }
-
 
 interface ListItem {
 	key: number | string;
@@ -174,9 +121,9 @@ const Wheel: FC<Props> = (props) => {
 
 	return (
 		<div
-			className={clsx('wheel', {
-				horizontal: !vertical,
-				vertical,
+			className={clsx('wheel', wheelCls, {
+				[horizontalCls]: !vertical,
+				[verticalCls]: vertical,
 			})}
 			style={{
 				'--wheel-size': `${size.value}${size.units}`,
@@ -202,3 +149,86 @@ const Wheel: FC<Props> = (props) => {
 		</div>
 	);
 }
+
+const wheelCls = css`
+	position: relative;
+
+	.wheel-container {
+		position: relative;
+		height: 100%;
+	}
+
+	.wheel-up,
+	.wheel-down {
+		background-color: transparent;
+		border: none;
+		outline-style: none;
+		position: absolute;
+		z-index: 15;
+	}
+
+	.portfolio-item {
+		display: flex;
+	}
+`;
+
+const verticalCls = css`
+	height: var(--wheel-size);
+	width: calc(var(--wheel-size) / 2);
+
+	.wheel-container {
+		width: 200%;
+	}
+
+	.wheel-up,
+	.wheel-down {
+		height: 50%;
+		left: 0;
+		width: 100%;
+	}
+
+	.wheel-up {
+		top: 0;
+	}
+
+	.wheel-down {
+		bottom: 0;
+	}
+	
+	.portfolio-item {
+		height: calc(var(--wheel-size) / 6);
+	}
+`;
+
+const horizontalCls = css`
+	height: calc(var(--wheel-size) / 2);
+	width: var(--wheel-size);
+
+	.wheel-container {
+		width: 100%;
+	}
+
+	.wheel-up,
+	.wheel-down {
+		width: 50%;
+		top: 0;
+		height: 100%;
+	}
+
+	.wheel-up {
+		right: 0;
+	}
+
+	.wheel-down {
+		left: 0;
+	}
+	
+	.portfolio-item {
+		flex-direction: column;
+		width: calc(var(--wheel-size) / 6);
+		position: absolute;
+		left: 50%;
+		margin: auto;
+		transform: translateX(-50%);
+	}
+`;

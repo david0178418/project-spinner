@@ -24,9 +24,15 @@ module.exports = {
 			{
 				test: /\.(s?css)$/i,
 				use: [
-					MiniCssExtractPlugin.loader,
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: process.env.NODE_ENV !== 'production',
+						},
+					},
 					'css-loader',
 					'sass-loader',
+					'linaria/loader',
 				],
 			},
 		],
