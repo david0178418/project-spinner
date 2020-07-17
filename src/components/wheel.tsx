@@ -57,7 +57,7 @@ const Wheel: FC<Props> = (props) => {
 
 	const [items, setItems] = useState<ListItem[]>([]);
 	const [bufferIndex, setBufferIndex] = useState(selectedItemIndex);
-	const activeIndex = useDebounce(bufferIndex, 150);
+	const activeIndex = useDebounce(bufferIndex, 250);
 	const wheelUp = useCallback(() => {
 		let newIndex = activeIndex - 1;
 		newIndex = newIndex < 0 ?
@@ -152,6 +152,7 @@ const Wheel: FC<Props> = (props) => {
 
 const wheelCls = css`
 	position: relative;
+	z-index: 10;
 
 	.wheel-container {
 		position: relative;
