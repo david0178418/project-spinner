@@ -166,10 +166,6 @@ const wheelCls = css`
 		position: absolute;
 		z-index: 15;
 	}
-
-	.portfolio-item {
-		display: flex;
-	}
 `;
 
 const verticalCls = css`
@@ -194,10 +190,6 @@ const verticalCls = css`
 	.wheel-down {
 		bottom: 0;
 	}
-	
-	.portfolio-item {
-		height: calc(var(--wheel-size) / 6);
-	}
 `;
 
 const horizontalCls = css`
@@ -221,14 +213,5 @@ const horizontalCls = css`
 
 	.wheel-down {
 		left: 0;
-	}
-	
-	.portfolio-item {
-		flex-direction: column;
-		width: calc(var(--wheel-size) / 6);
-		position: absolute;
-		left: 50%;
-		margin: auto;
-		transform: translateX(-50%);
 	}
 `;
