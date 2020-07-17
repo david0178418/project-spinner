@@ -41,7 +41,10 @@ function HomePage() {
 					}}
 					onChange={setSelectedItemIndex}
 					itemContent={(item) => (
-						<PortfolioWheelItem item={item} />
+						<PortfolioWheelItem
+							item={item}
+							vertical={!verticalWheel}
+						/>
 					)}
 				/>
 			</div>
