@@ -22,24 +22,31 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 		active,
 		vertical,
 	} = props;
-	const baseRotation = (
-		140 / (WINDOW_SIZE - 1)
-	) * index - 90 + 20;;
+	const visibleArc = vertical ? 60 : 70;
+
+	const rotation = (
+		visibleArc / (WINDOW_SIZE - 1)
+	) * index - 90 + (180 - visibleArc) / 2;
 
 	const midIndex = MID_POINT - 1;
+	let zIndex = 0
 
-	let spacingRotationAdjust = 0;
+	if(vertical) {
+		let foo = 0;
+		if(index < midIndex) {
+			foo = index;
+		} else if(index > midIndex) {
+			foo = 2 * (midIndex - (midIndex - (index - midIndex))) - index; 
+		}
 
-	if(index < midIndex) {
-		spacingRotationAdjust = index;
-	} else if(index > midIndex) {
-		spacingRotationAdjust = 2 * (midIndex - (midIndex - (index - midIndex))) - index; 
+		zIndex = index === midIndex ?
+			20 :
+			Math.abs(foo)
 	}
 
-	const rotation = baseRotation - (spacingRotationAdjust * 7);
 	const transform = vertical ?
-			`rotate(${rotation}deg) translate3d(-100%, ${spacingRotationAdjust * 15}px, 0) scale(${active ? 2 : 1})` :
-			`rotate(${rotation}deg) translate3d(${spacingRotationAdjust * -15}px, ${active ? 'calc(var(--wheel-size) / (var(--wheel-item-count)) * 2)' : 0}, 0) scale(${active ? 1.5 : 1})`;
+			`rotate(${rotation}deg) translate3d(-330%, 0, 0) scale(${active ? 1.2 : 1})` :
+			`rotate(${rotation}deg) translate3d(0, calc((var(--wheel-size) / -2) - ${active ? 40 : -30}px), 0) scale(${active ? 1.4 : 1})`;
 
 	return (
 		<>
@@ -50,9 +57,7 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 					[verticalCls]: vertical,
 				})}
 				style={{
-					zIndex: index === midIndex ?
-						20 :
-						Math.abs(spacingRotationAdjust),
+					zIndex,
 					transform,
 				}}
 			>
@@ -64,14 +69,11 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 
 const wheelItemCls = css`
 	position: absolute;
-	transition:
-		transform .3s,
-		opacity .3s;
-
-	&.active {
-		font-weight: bold;
-		z-index: 10;
-	}
+	transition-duration: .3s;
+	transition-property:
+		transform,
+		opacity,
+		z-index;
 
 	&:first-child,
 	&:last-child {
@@ -80,7 +82,7 @@ const wheelItemCls = css`
 `;
 
 const verticalCls = css`
-	right: 0;
+	right: calc(var(--wheel-size) * -1);
 	top: calc(50% - (var(--wheel-size) / (var(--wheel-item-count))) / 2 );
 	transform-origin: center left;
 	width: 50%;
@@ -88,9 +90,13 @@ const verticalCls = css`
 	.wheel-logo {
 		height: 100%;
 	}
+
+	&.active {
+		z-index: 10;
+	}
 `;
 const horizontalCls = css`
-	bottom: -100%;
+	bottom: calc(var(--wheel-size) * -1);
 	left: calc(50% - (var(--wheel-size) / (var(--wheel-item-count))) / 2 );
 	transform-origin: center;
 	height: calc(var(--wheel-size));
