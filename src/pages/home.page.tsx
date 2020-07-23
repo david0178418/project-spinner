@@ -78,6 +78,7 @@ const layout = css`
 		.right-pane {
 			width: 100%;
 			position: relative;
+			height: 30%;
 		}
 
 		.left-pane {
