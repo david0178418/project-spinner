@@ -64,7 +64,7 @@ const layout = css`
 	&.landscape {
 		flex-flow: row;
 		.right-pane {
-			min-width: 350px;
+			min-width: 300px;
 			max-width: 400px;
 			width: 30%;
 		}
