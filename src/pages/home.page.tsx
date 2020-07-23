@@ -61,11 +61,13 @@ const layout = css`
 		position: relative;
 	}
 
-	.right-pane {
-	}
-
 	&.landscape {
 		flex-flow: row;
+		.right-pane {
+			min-width: 350px;
+			max-width: 400px;
+			width: 30%;
+		}
 	}
 
 	&.portrait {
@@ -79,6 +81,7 @@ const layout = css`
 		}
 
 		.left-pane {
+			height: 30%;
 			width: 100%;
 		}
 	}
