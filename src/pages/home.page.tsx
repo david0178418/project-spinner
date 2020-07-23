@@ -13,7 +13,7 @@ export
 function HomePage() {
 	const [selectedItemIndex, setSelectedItemIndex] = useState(0);
 	const orientation = useContext(OrientationContext);
-	const verticalWheel = orientation === Orientation.Landscape
+	const verticalWheel = orientation === Orientation.Landscape;
 	const verticalMainContent = !verticalWheel;
 
 	return (

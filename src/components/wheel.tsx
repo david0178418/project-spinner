@@ -8,7 +8,7 @@ import React, {
 import { Key } from 'ts-key-enum';
 import clsx from 'clsx';
 import { useEvent } from 'react-use';
-import { useDebounce } from '@common/hooks'
+import { useDebounce } from '@common/hooks';
 import { PortfolioItem } from '@common/interfaces';
 import { css } from 'linaria';
 import { WheelItem } from './wheel-item';
@@ -115,7 +115,7 @@ const Wheel: FC<Props> = (props) => {
 				.map((item, key) => ({
 					key,
 					item,
-				}))
+				})),
 		);
 	}, [externalItems]);
 
@@ -131,7 +131,7 @@ const Wheel: FC<Props> = (props) => {
 
 	function measure() {
 		setScale(
-			Math.min(window.innerHeight, 800)/800
+			Math.min(window.innerHeight, 800)/800,
 		);
 	}
 
@@ -165,7 +165,7 @@ const Wheel: FC<Props> = (props) => {
 			<button className="wheel-down" onClick={() => controls[Key.ArrowDown]()} />
 		</div>
 	);
-}
+};
 
 const wheelCls = css`
 	position: relative;

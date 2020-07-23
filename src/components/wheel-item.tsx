@@ -67,7 +67,7 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 			</div>
 		</>
 	);
-}
+};
 
 const wheelItemCls = css`
 	height: calc(100% / var(--wheel-item-count));
