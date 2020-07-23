@@ -57,6 +57,7 @@ const Wheel: FC<Props> = (props) => {
 
 	const [items, setItems] = useState<ListItem[]>([]);
 	const [bufferIndex, setBufferIndex] = useState(selectedItemIndex);
+	const [scale, setScale] = useState(1);
 	const activeIndex = useDebounce(bufferIndex, 250);
 	const wheelUp = useCallback(() => {
 		let newIndex = activeIndex - 1;
@@ -81,9 +82,17 @@ const Wheel: FC<Props> = (props) => {
 	};
 
 	useEvent('keydown', (e) => runKey(e.key));
+	useEvent('resize', () => {
+		measure();
+	});
+
+	useEffect(() => {
+		measure();
+	}, []);
 
 	useEffect(() => {
 		(activeIndex !== selectedItemIndex) && onChange(activeIndex);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [activeIndex]);
 
 	useEffect(() => {
@@ -96,6 +105,7 @@ const Wheel: FC<Props> = (props) => {
 			selectedItemIndex % items.length;
 
 		(activeIndex !== newIndex) && onChange(newIndex);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [selectedItemIndex]);
 
 	useEffect(() => {
@@ -119,6 +129,12 @@ const Wheel: FC<Props> = (props) => {
 		controls[key]?.();
 	}
 
+	function measure() {
+		setScale(
+			Math.min(window.innerHeight, 800)/800
+		);
+	}
+
 	return (
 		<div
 			className={clsx('wheel', wheelCls, {
@@ -138,6 +154,7 @@ const Wheel: FC<Props> = (props) => {
 							key={item.key}
 							active={i === (MID_POINT - 1)}
 							index={i}
+							scale={scale}
 						>
 							{item?.item && itemContent(item.item)}
 						</WheelItem>
@@ -171,11 +188,7 @@ const wheelCls = css`
 
 const verticalCls = css`
 	height: var(--wheel-size);
-	width: calc(var(--wheel-size) / 2);
-
-	.wheel-container {
-		width: 200%;
-	}
+	width: 100%;
 
 	.wheel-up,
 	.wheel-down {
@@ -194,7 +207,7 @@ const verticalCls = css`
 `;
 
 const horizontalCls = css`
-	height: calc(var(--wheel-size) / 2);
+	height: 100%;
 	width: var(--wheel-size);
 
 	.wheel-container {

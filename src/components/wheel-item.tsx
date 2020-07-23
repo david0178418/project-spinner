@@ -12,6 +12,7 @@ interface WheelItemProps {
 	index: number;
 	vertical?: boolean;
 	active?: boolean;
+	scale: number;
 }
 
 export
@@ -21,15 +22,16 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 		index,
 		active,
 		vertical,
+		scale,
 	} = props;
-	const visibleArc = vertical ? 60 : 70;
+	const visibleArc = (vertical ? 60 : 70) * scale;
 
 	const rotation = (
 		visibleArc / (WINDOW_SIZE - 1)
 	) * index - 90 + (180 - visibleArc) / 2;
 
 	const midIndex = MID_POINT - 1;
-	let zIndex = 0
+	let zIndex = 0;
 
 	if(vertical) {
 		let foo = 0;
@@ -41,11 +43,11 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 
 		zIndex = index === midIndex ?
 			20 :
-			Math.abs(foo)
+			Math.abs(foo);
 	}
 
 	const transform = vertical ?
-			`rotate(${rotation}deg) translate3d(-330%, 0, 0) scale(${active ? 1.2 : 1})` :
+			`rotate(${rotation}deg) translate3d(-300%, 0, 0) scale(${(1/scale) * (active ? 1.2 : 1)})` :
 			`rotate(${rotation}deg) translate3d(0, calc((var(--wheel-size) / -2) - ${active ? 40 : -30}px), 0) scale(${active ? 1.4 : 1})`;
 
 	return (
@@ -68,6 +70,7 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 }
 
 const wheelItemCls = css`
+	height: calc(100% / var(--wheel-item-count));
 	position: absolute;
 	transition-duration: .3s;
 	transition-property:
@@ -82,10 +85,14 @@ const wheelItemCls = css`
 `;
 
 const verticalCls = css`
-	right: calc(var(--wheel-size) * -1);
-	top: calc(50% - (var(--wheel-size) / (var(--wheel-item-count))) / 2 );
+	right: -280%;
+	top: calc(50% - (
+		var(--wheel-size) / (
+			var(--wheel-item-count)
+		)
+	) / 2);
 	transform-origin: center left;
-	width: 50%;
+	width: 100%;
 
 	.wheel-logo {
 		height: 100%;

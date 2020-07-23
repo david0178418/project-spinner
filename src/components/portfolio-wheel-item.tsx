@@ -41,11 +41,12 @@ const porfolioItemCls = css`
 	border-radius: 5px;
 	border-image-source: linear-gradient(to right, lightgrey 0%, darkgrey 100%); 
 	border-image-slice: 5;
+	box-sizing: border-box;
 
 `;
 
 const horizontalCls = css`
-	height: calc(var(--wheel-size) / 6);
+	height: 100%;
 `;
 
 const verticalCls = css`
