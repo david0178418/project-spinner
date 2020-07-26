@@ -1,5 +1,8 @@
 export
 interface PortfolioItem {
+	parentCategories: string[];
+	directLink?: string;
+	id: string;
 	label: string;
 	wheelImage: string;
 	mainImage: string;

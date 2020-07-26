@@ -1,7 +1,7 @@
 import React from 'react';
-import { PortfolioItem } from '@common/interfaces';
 import { css } from 'linaria';
 import clsx from 'clsx';
+import { PortfolioItem } from '@common/interfaces';
 import { useDebounce } from '@common/hooks';
 
 interface Props {

@@ -1,12 +1,12 @@
 
 import React, { useState, useContext } from 'react';
+import clsx from 'clsx';
+import { css } from 'linaria';
 import { Wheel } from '@components/wheel';
 import { items } from '@root/data';
 import { Orientation } from '@common/interfaces';
-import clsx from 'clsx';
 import { MainContent } from '@components/main-content';
 import { OrientationContext } from '@common/contexts';
-import { css } from 'linaria';
 import { PortfolioWheelItem } from '@components/portfolio-wheel-item';
 
 export
