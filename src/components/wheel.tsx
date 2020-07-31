@@ -12,6 +12,7 @@ import { useDebounce } from '@common/hooks';
 import { PortfolioItem } from '@common/interfaces';
 import { css } from 'linaria';
 import { WheelItem } from './wheel-item';
+import { range } from '@common/utils';
 
 const WINDOW_SIZE = 7;
 const MID_POINT = Math.ceil(WINDOW_SIZE / 2);
@@ -109,14 +110,17 @@ const Wheel: FC<Props> = (props) => {
 	}, [selectedItemIndex]);
 
 	useEffect(() => {
-		setItems(
-			externalItems
-				.concat(externalItems)
-				.map((item, key) => ({
-					key,
-					item,
-				})),
-		);
+		const listMultiplier = externalItems.length ?
+			Math.ceil(WINDOW_SIZE / externalItems.length):
+			0;
+		const internalList = range(listMultiplier)
+			.flatMap(() => externalItems)
+			.map((item, key) => ({
+				key,
+				item,
+			}));
+		setItems(internalList);
+		
 	}, [externalItems]);
 
 	if(!items.length) {
