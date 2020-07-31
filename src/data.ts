@@ -17,6 +17,7 @@ const items: PortfolioItem[] = [
 		wheelImage: '/images/node-logo.png',
 		parentCategories: [
 			'root',
+			'typescript',
 		],
 	}, {
 		id: 'javascript',
@@ -25,6 +26,7 @@ const items: PortfolioItem[] = [
 		wheelImage: '/images/javascript-logo.png',
 		parentCategories: [
 			'root',
+			'typescript',
 		],
 	}, {
 		id: 'pwa',
@@ -33,6 +35,7 @@ const items: PortfolioItem[] = [
 		wheelImage: '/images/pwa-logo.png',
 		parentCategories: [
 			'root',
+			'typescript',
 		],
 	}, {
 		id: 'react',
