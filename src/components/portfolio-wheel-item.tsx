@@ -39,7 +39,7 @@ const porfolioItemCls = css`
 	border: 5px solid transparent;
 	padding: .5rem;
 	border-radius: 5px;
-	border-image-source: linear-gradient(to right, lightgrey 0%, darkgrey 100%); 
+	border-image-source: linear-gradient(to right, grey 0%, darkgrey 100%); 
 	border-image-slice: 5;
 	box-sizing: border-box;
 
