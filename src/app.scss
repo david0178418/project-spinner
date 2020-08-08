@@ -20,40 +20,42 @@ body {
 	text-align: left;
 	overflow: hidden;
 
-	$backgroundWidth: 600%;
+	$backgroundWidth: 500%;
+	$backgroundHeight: 500%;
 
 	&:before {
 		content: '';
 		width: $backgroundWidth;
-		height: 200%;
+		height: $backgroundHeight;
 		position: fixed;
-		top: 0;
-		left: -($backgroundWidth / 2);
+		top: -($backgroundHeight - 100%) / 2;
+		left: -($backgroundWidth - 100%) / 2;
 		background-image: 
 			linear-gradient(
 				-45deg,
 				#0d222b,
-				#0d222b54,
+				#406b7e2a,
 				#0d222b
 			),
 			linear-gradient(
 				45deg,
-				#0d222b,
+				#14a34b,
 				#1f586e,
-				#0d222b
+				#e20f0f
 			);
-		animation: bgMotion 20s ease infinite;
+		transform-origin: 50% 50%;
+		animation: bgMotion 15s ease infinite;
 	}
 }
 
 @keyframes bgMotion {
     0% {
-        transform: translate3D(0%, 0, 0);
+        transform: translate3D(-25%, 25%, 0) rotate(0);
     }
     50% {
-        transform: translate3D(50%, 0, 0);
+        transform: translate3D(25%, 25%, 0) rotate(-180deg);
     }
     100% {
-        transform: translate3D(0%, 0, 0);
+        transform: translate3D(-25%, 25%, 0) rotate(0);
     }
 }
