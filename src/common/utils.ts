@@ -1,4 +1,3 @@
-
 export
 function first<T>(list: T[]) {
 	return list[0] || null;

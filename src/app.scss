@@ -20,8 +20,8 @@ body {
 	text-align: left;
 	overflow: hidden;
 
-	$backgroundWidth: 500%;
-	$backgroundHeight: 500%;
+	$backgroundWidth: 400%;
+	$backgroundHeight: 400%;
 
 	&:before {
 		content: '';
@@ -45,6 +45,7 @@ body {
 			);
 		transform-origin: 50% 50%;
 		animation: bgMotion 15s ease infinite;
+		z-index: -1;
 	}
 }
 
@@ -53,7 +54,7 @@ body {
         transform: translate3D(-25%, 25%, 0) rotate(0);
     }
     50% {
-        transform: translate3D(25%, 25%, 0) rotate(-180deg);
+        transform: translate3D(25%, 50%, 0) rotate(-180deg);
     }
     100% {
         transform: translate3D(-25%, 25%, 0) rotate(-360deg);

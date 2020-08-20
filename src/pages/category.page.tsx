@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { WheelView } from '@components/wheel-view';
 import { items } from '@root/data';
 import { PageTransition } from '@components/page-transition';
+import { ContentView } from '@components/content-view';
 
 interface Params {
 	categoryId?: string;
@@ -14,24 +15,21 @@ function CategoryPage() {
 		categoryId = '',
 	} = useParams<Params>();
 
-	const categoryItems = items.filter(
-		i => i.parentCategories.includes(categoryId),
-	);
-
-	const leafNode = !categoryItems.length ?
-		items.find(i => i.id === categoryId) :
-		null;
+	const pageNode = items.find(i => i.id === categoryId)?.page || null;
 
 	return (
 		<PageTransition>
-			{leafNode && (
-				<div>
-					{JSON.stringify(leafNode)}
-				</div>
+			{pageNode && (
+				<ContentView content={pageNode} />
 			)}
-			{categoryItems && (
+			{!pageNode && (
 				<WheelView
-					items={categoryItems}
+					items={
+						items
+							.filter(
+								i => i.parentCategories.includes(categoryId),
+							)
+					}
 				/>
 			)}
 		</PageTransition>

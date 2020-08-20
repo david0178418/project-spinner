@@ -31,10 +31,9 @@ function useEventListener<T extends (...args: any[]) => void>(eventName: string,
 			element.removeEventListener(eventName, eventListener);
 		};
 	},
-	[eventName, element] // Re-run if eventName or element changes
+	[eventName, element], // Re-run if eventName or element changes
 	);
-};
-
+}
 
 export
 // source: https://usehooks.com/useDebounce/
