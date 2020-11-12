@@ -9,7 +9,7 @@ const PageTransition: FC = ({children}) => (
 		exit="exit"
 		variants={{
 			enter: {
-				translateY: 0,
+				translateY: '0%',
 				opacity: 1,
 				transition: {
 					ease: 'easeInOut',
