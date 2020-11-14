@@ -47,7 +47,7 @@ const WheelItem: FC<WheelItemProps> = (props) => {
 	}
 
 	const transform = vertical ?
-			`rotate(${rotation}deg) translate3d(-300%, 0, 0) scale(${(1/scale) * (active ? 1.2 : 1)})` :
+			`rotate(${rotation}deg) translate3d(-${active ? 320 : 300}%, 0, 0) scale(${(1/scale) * (active ? 1.2 : 1)})` :
 			`rotate(${rotation}deg) translate3d(0, calc((var(--wheel-size) / -2) - ${active ? 40 : -30}px), 0) scale(${active ? 1.4 : 1})`;
 
 	return (

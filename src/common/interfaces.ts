@@ -1,30 +1,48 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
+
+declare global {
+	namespace JSX {
+		interface IntrinsicElements {
+			'ion-icon': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> & {
+				name?: string;
+				ios?: string;
+				md?: string;
+				size?: 'large' | 'small'
+			};
+		}
+	}
+}
+
 export
 interface PortfolioItem {
-	label: string;
-	wheelImage: string;
-	mainImage: string;
 	id: string;
+	label: string;
 	link?: string;
-	parentCategories: string[];
+	mainImage: string;
 	page?: PageContent;
+	parentCategories: string[];
+	wheelIcon?: string;
+	wheelIconColor?: string;
+	wheelImage?: string;
 }
 
 interface ImagePreview {
-	url: string;
 	description: string;
+	url: string;
 }
 
 interface ResourceLink {
-	url: string;
 	label: string;
+	url: string;
 }
 
 export
 interface PageContent {
-	title: string;
 	description: string;
 	imagePreviews: ImagePreview[];
 	links: ResourceLink[];
+	title: string;
 }
 
 export

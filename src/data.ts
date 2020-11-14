@@ -3,6 +3,24 @@ import { PortfolioItem } from '@common/interfaces';
 export
 const items: PortfolioItem[] = [
 	{
+		id: 'projects',
+		label: 'Projects',
+		mainImage: 'https://via.placeholder.com/600x600?text=Projects',
+		wheelIcon: 'folder-open',
+		wheelIconColor: 'red',
+		parentCategories: [
+			'root',
+		],
+	}, {
+		id: 'work-history',
+		label: 'Work History',
+		mainImage: 'https://via.placeholder.com/600x600?text=Projects',
+		wheelIcon: 'business-outline',
+		wheelIconColor: 'blue',
+		parentCategories: [
+			'root',
+		],
+	}, {
 		id: 'typescript',
 		label: 'typescript',
 		mainImage: 'https://via.placeholder.com/600x600?text=Typescript',
