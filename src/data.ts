@@ -7,7 +7,6 @@ const items: PortfolioItem[] = [
 		label: 'Projects',
 		mainImage: 'https://via.placeholder.com/600x600?text=Projects',
 		wheelIcon: 'folder-open',
-		wheelIconColor: 'red',
 		parentCategories: [
 			'root',
 		],
@@ -15,16 +14,15 @@ const items: PortfolioItem[] = [
 		id: 'work-history',
 		label: 'Work History',
 		mainImage: 'https://via.placeholder.com/600x600?text=Projects',
-		wheelIcon: 'business-outline',
-		wheelIconColor: 'blue',
+		wheelIcon: 'business',
 		parentCategories: [
 			'root',
 		],
 	}, {
-		id: 'typescript',
-		label: 'typescript',
-		mainImage: 'https://via.placeholder.com/600x600?text=Typescript',
-		wheelImage: '/images/ts-logo-128.png',
+		id: 'about',
+		label: 'About Me',
+		mainImage: 'https://via.placeholder.com/600x600?text=Projects',
+		wheelIcon: 'help-circle',
 		parentCategories: [
 			'root',
 		],

@@ -83,15 +83,29 @@ const horizontalCls = css`
 `;
 
 const verticalCls = css`
+	background: linear-gradient(357deg, rgba(19,16,16,1) 0%, rgba(68,59,59,1) 160%);
+	border: 5px solid transparent;
+	border-radius: 5px;
+	border-image-source: linear-gradient(to right, grey 0%, darkgrey 100%); 
+	border-image-slice: 5;
 	flex-direction: column;
-	width: calc(var(--wheel-size) / 6);
-	position: absolute;
 	left: 50%;
 	margin: auto;
+	position: absolute;
 	transform: translateX(-50%);
+	width: calc(var(--wheel-size) / 6);
+
 
 	ion-icon {
 		width: 100%;
 		height: 50px;
+	}
+
+
+	.wheel-label {
+		font-size: 14px;
+		font-style: italic;
+		justify-content: center;
+		display: flex;
 	}
 `;
