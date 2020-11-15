@@ -9,20 +9,20 @@ const WINDOW_SIZE = 7;
 const MID_POINT = Math.ceil(WINDOW_SIZE / 2);
 
 interface WheelItemProps {
-	index: number;
-	vertical?: boolean;
 	active?: boolean;
+	index: number;
 	scale: number;
+	vertical?: boolean;
 }
 
 export
 const WheelItem: FC<WheelItemProps> = (props) => {
 	const {
+		active,
 		children,
 		index,
-		active,
-		vertical,
 		scale,
+		vertical,
 	} = props;
 	const visibleArc = (vertical ? 60 : 70) * scale;
 

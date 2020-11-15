@@ -3,6 +3,7 @@ import React from 'react';
 import { css } from 'linaria';
 import clsx from 'clsx';
 import { PortfolioItem } from '@common/interfaces';
+import { Link } from 'react-router-dom';
 
 interface Props {
 	item: PortfolioItem;
@@ -18,36 +19,67 @@ function PortfolioWheelItem(props: Props) {
 
 	return (
 		(
-			<div className={clsx('portfolio-item', porfolioItemCls, {
-				[verticalCls]: vertical,
-				[horizontalCls]: !vertical,
-			})}>
-				<div className="wheel-logo">
-					{item.wheelIcon && (
-						<ion-icon
-							name={item.wheelIcon}
-							style={{
-								color: item.wheelIconColor || 'white',
-							}}
-						/>
-					)}
-					{item.wheelImage && (
-						<img src={item.wheelImage}/>
-					)}
-				</div>
-				<div className="wheel-label">
-					{item.label}
-				</div>
-			</div>
+			<>
+				{!!item.link && (
+					<a className={clsx('portfolio-item', porfolioItemCls, {
+						[verticalCls]: vertical,
+						[horizontalCls]: !vertical,
+					})}>
+						<div className="wheel-logo">
+							{item.wheelIcon && (
+								<ion-icon
+									name={item.wheelIcon}
+									style={{
+										color: item.wheelIconColor || 'white',
+									}}
+								/>
+							)}
+							{item.wheelImage && (
+								<img src={item.wheelImage}/>
+							)}
+						</div>
+						<div className="wheel-label">
+							{item.label}
+						</div>
+					</a>
+				)}
+				{!item.link && (
+					<Link
+						to={`/category/${item.id}`}
+						className={clsx('portfolio-item', porfolioItemCls, {
+							[verticalCls]: vertical,
+							[horizontalCls]: !vertical,
+						})}
+					>
+						<div className="wheel-logo">
+							{item.wheelIcon && (
+								<ion-icon
+									name={item.wheelIcon}
+									style={{
+										color: item.wheelIconColor || 'white',
+									}}
+								/>
+							)}
+							{item.wheelImage && (
+								<img src={item.wheelImage}/>
+							)}
+						</div>
+						<div className="wheel-label">
+							{item.label}
+						</div>
+					</Link>
+				)}
+			</>
 		)
 	);
 }
 
 const porfolioItemCls = css`
+	box-sizing: border-box;
 	color: white;
 	display: flex;
 	padding: .5rem;
-	box-sizing: border-box;
+	text-decoration: none;
 
 	.wheel-logo {
 		& > img {
@@ -93,19 +125,19 @@ const verticalCls = css`
 	margin: auto;
 	position: absolute;
 	transform: translateX(-50%);
-	width: calc(var(--wheel-size) / 6);
-
+	width: calc(var(--wheel-size) / 5);
 
 	ion-icon {
 		width: 100%;
 		height: 50px;
 	}
 
-
 	.wheel-label {
+		display: flex;
 		font-size: 14px;
 		font-style: italic;
 		justify-content: center;
-		display: flex;
+		line-height: 1.2em;
+		min-height: 2.4em;
 	}
 `;

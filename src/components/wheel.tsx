@@ -152,15 +152,15 @@ const Wheel: FC<Props> = (props) => {
 		>
 			<div className="wheel-container">
 				{visibleItems
-					.map((item, i) => (
+					.map((data, i) => (
 						<WheelItem
 							vertical={vertical}
-							key={item.key}
+							key={data.key}
 							active={i === (MID_POINT - 1)}
 							index={i}
 							scale={scale}
 						>
-							{item?.item && itemContent(item.item)}
+							{data?.item && itemContent(data.item)}
 						</WheelItem>
 					))
 				}
