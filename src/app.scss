@@ -44,7 +44,7 @@ body {
 				#e20f0f
 			);
 		transform-origin: 50% 50%;
-		animation: bgMotion 15s ease infinite;
+		animation: bgMotion 15s ease-in-out infinite;
 		z-index: -1;
 	}
 }
