@@ -7,6 +7,7 @@ const items: PortfolioItem[] = [
 		label: 'Projects',
 		mainImage: 'https://via.placeholder.com/600x600?text=Projects',
 		wheelIcon: 'folder-open',
+		wheelIconColor: '#f1d592',
 		parentCategories: [
 			'root',
 		],
@@ -15,6 +16,15 @@ const items: PortfolioItem[] = [
 		label: 'Work History',
 		mainImage: 'https://via.placeholder.com/600x600?text=Projects',
 		wheelIcon: 'business',
+		wheelIconColor: '#aaaaaa',
+		parentCategories: [
+			'root',
+		],
+	}, {
+		id: 'contact',
+		label: 'Contact',
+		mainImage: 'https://via.placeholder.com/600x600?text=Projects',
+		wheelIcon: 'person',
 		parentCategories: [
 			'root',
 		],
@@ -23,6 +33,7 @@ const items: PortfolioItem[] = [
 		label: 'About Me',
 		mainImage: 'https://via.placeholder.com/600x600?text=Projects',
 		wheelIcon: 'help-circle',
+		wheelIconColor: '#24a0ed',
 		parentCategories: [
 			'root',
 		],
@@ -32,7 +43,6 @@ const items: PortfolioItem[] = [
 		mainImage: 'https://via.placeholder.com/500x500?text=Node',
 		wheelImage: '/images/node-logo.png',
 		parentCategories: [
-			'root',
 			'typescript',
 		],
 		page: {
@@ -56,7 +66,6 @@ const items: PortfolioItem[] = [
 		mainImage: 'https://via.placeholder.com/500x550?text=Javascript',
 		wheelImage: '/images/javascript-logo.png',
 		parentCategories: [
-			'root',
 			'typescript',
 		],
 	}, {
@@ -65,7 +74,6 @@ const items: PortfolioItem[] = [
 		mainImage: 'https://via.placeholder.com/700x550?text=PWA',
 		wheelImage: '/images/pwa-logo.png',
 		parentCategories: [
-			'root',
 			'typescript',
 		],
 	}, {
@@ -74,7 +82,6 @@ const items: PortfolioItem[] = [
 		mainImage: 'https://via.placeholder.com/600x600?text=React',
 		wheelImage: '/images/react-logo.webp',
 		parentCategories: [
-			'root',
 		],
 	}, {
 		id: 'angular',
@@ -82,7 +89,6 @@ const items: PortfolioItem[] = [
 		mainImage: 'https://via.placeholder.com/550x550?text=Angular',
 		wheelImage: '/images/angular-logo.png',
 		parentCategories: [
-			'root',
 		],
 	},
 ];
