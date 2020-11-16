@@ -165,8 +165,12 @@ const Wheel: FC<Props> = (props) => {
 					))
 				}
 			</div>
-			<button className="wheel-up" onClick={() => controls[Key.ArrowUp]()}/>
-			<button className="wheel-down" onClick={() => controls[Key.ArrowDown]()} />
+			<button className="wheel-up" onClick={() => controls[Key.ArrowUp]()}>
+				<ion-icon name={`arrow-${vertical ? 'up' : 'forward'}-outline`} />
+			</button>
+			<button className="wheel-down" onClick={() => controls[Key.ArrowDown]()}>
+				<ion-icon name={`arrow-${vertical ? 'down' : 'back'}-outline`} />
+			</button>
 		</div>
 	);
 };
@@ -187,6 +191,18 @@ const wheelCls = css`
 		outline-style: none;
 		position: absolute;
 		z-index: 15;
+		opacity: 0;
+		transition: opacity 0.1s;
+
+		ion-icon {
+			color: white;
+			height: 80%;
+			width: 80%;
+		}
+
+		&:active {
+			opacity: .5;
+		}
 	}
 `;
 
