@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { css } from 'linaria';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useInterval } from 'react-use';
+import { motion, AnimatePresence } from 'framer-motion';
 import { PageContent } from '@common/interfaces';
 
 interface Props {
@@ -57,9 +57,6 @@ function ContentView(props: Props) {
 						}}
 					>
 						<img src={imagePreview.url} key={activeImageIndex} />
-						<div>
-							111{imagePreview.description}
-						</div>
 					</motion.div>
 				</AnimatePresence>
 			</div>
