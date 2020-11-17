@@ -7,12 +7,13 @@ import React, {
 } from 'react';
 import { Key } from 'ts-key-enum';
 import clsx from 'clsx';
-import { useEvent } from 'react-use';
+import { useEvent, useKey } from 'react-use';
 import { useDebounce } from '@common/hooks';
 import { PortfolioItem } from '@common/interfaces';
 import { css } from 'linaria';
 import { WheelItem } from './wheel-item';
 import { range } from '@common/utils';
+import { useHistory } from 'react-router-dom';
 
 const WINDOW_SIZE = 7;
 const MID_POINT = Math.ceil(WINDOW_SIZE / 2);
@@ -56,6 +57,7 @@ const Wheel: FC<Props> = (props) => {
 		items: externalItems,
 	} = props;
 
+	const history = useHistory();
 	const [items, setItems] = useState<ListItem[]>([]);
 	const [bufferIndex, setBufferIndex] = useState(selectedItemIndex);
 	const [scale, setScale] = useState(1);
@@ -74,6 +76,10 @@ const Wheel: FC<Props> = (props) => {
 			newIndex;
 			setBufferIndex(newIndex);
 		}, [activeIndex, items]);
+	const selectItem = useCallback(() => {
+		history.push(`/category/${items[activeIndex].item.id}`);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [activeIndex, items]);
 
 	const controls: any = {
 		[Key.ArrowUp]: wheelUp,
@@ -122,6 +128,8 @@ const Wheel: FC<Props> = (props) => {
 		setItems(internalList);
 		
 	}, [externalItems]);
+
+	useKey(Key.Enter, selectItem, {}, [selectItem]);
 
 	if(!items.length) {
 		return null;
