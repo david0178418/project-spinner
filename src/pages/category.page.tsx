@@ -52,8 +52,8 @@ const backButtonCls = css`{
 	left: 40px;
 	position: absolute;
 	top: 40px;
-	z-index: 10;
-	transition: transform .2s;
+	z-index: 20;
+	transition: transform .1s;
 
 	&:active {
 		transform: scale(.9);
@@ -63,5 +63,12 @@ const backButtonCls = css`{
 		left: 30px;
 		position: absolute;
 		top: 30px;
+
+		ion-icon {
+			background-color: #dddddd;
+			border-radius: 50%;
+			color: #333333;
+			opacity: .85;
+		}
 	}
 }`;
