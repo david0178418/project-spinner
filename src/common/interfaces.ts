@@ -37,9 +37,15 @@ interface ResourceLink {
 	url: string;
 }
 
+interface TabbedContent {
+	label: string;
+	content: string;
+}
+
 export
 interface PageContent {
 	description: string;
+	tabbedContents?: TabbedContent[];
 	imagePreviews: ImagePreview[];
 	links: ResourceLink[];
 	title: string;

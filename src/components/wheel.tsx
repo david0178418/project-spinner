@@ -77,9 +77,9 @@ const Wheel: FC<Props> = (props) => {
 			setBufferIndex(newIndex);
 		}, [activeIndex, items]);
 	const selectItem = useCallback(() => {
-		history.push(`/category/${items[activeIndex].item.id}`);
+		history.push(`/category/${items[bufferIndex].item.id}`);
 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [activeIndex, items]);
+	}, [bufferIndex, items]);
 
 	const controls: any = {
 		[Key.ArrowUp]: wheelUp,
