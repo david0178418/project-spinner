@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import clsx from 'clsx';
 import { css } from 'linaria';
 import { Wheel } from '@components/wheel';
 import { Orientation, PortfolioItem } from '@common/interfaces';
@@ -19,10 +18,7 @@ function WheelView({items}: Props) {
 	const verticalMainContent = !verticalWheel;
 
 	return (
-		<div className={clsx('layout', layout, {
-			portrait: orientation === Orientation.Portrait,
-			landscape: orientation === Orientation.Landscape,
-		})}>
+		<div className={`layout ${layout}`}>
 			<div className="left-pane">
 				<MainContent
 					items={items}
@@ -54,7 +50,7 @@ function WheelView({items}: Props) {
 	);
 }
 
-const layout = css`
+const layout = css`{
 	display: flex;
 	overflow: hidden;
 
@@ -63,7 +59,7 @@ const layout = css`
 		position: relative;
 	}
 
-	&.landscape {
+	.landscape & {
 		flex-flow: row;
 		.right-pane {
 			min-width: 300px;
@@ -72,7 +68,7 @@ const layout = css`
 		}
 	}
 
-	&.portrait {
+	.portrait & {
 		flex-flow: column;
 		height: 100vh;
 
@@ -88,4 +84,4 @@ const layout = css`
 			width: 100%;
 		}
 	}
-`;
+}`;

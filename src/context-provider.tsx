@@ -13,7 +13,7 @@ interface Props {
 
 export
 const ContextProvider: FC<Props> =  (props) => {
-	const [orientation, setOrientation] = useState(Orientation.Portrait)
+	const [orientation, setOrientation] = useState(Orientation.Portrait);
 
 	useEffect(() => {
 		setOrientation(getOrientation());
@@ -28,4 +28,4 @@ const ContextProvider: FC<Props> =  (props) => {
 			</OrientationContext.Provider>
 		</>
 	);
-}
+};
