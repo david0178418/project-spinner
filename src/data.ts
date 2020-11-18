@@ -165,6 +165,16 @@ const ProjectApps: PortfolioItem[] = [
 			'projects-apps',
 			'projects-all',
 		],
+	}, {
+		id: 'projects-apps-oncrex',
+		label: 'Oncrex',
+		mainImage: 'https://via.placeholder.com/500x500?text=Node',
+		wheelIcon: 'globe-outline',
+		wheelIconColor: '#0077be',
+		parentCategories: [
+			'projects-apps',
+			'projects-all',
+		],
 	},
 ];
 
