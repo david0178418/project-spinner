@@ -64,7 +64,7 @@ function ContentView(props: Props) {
 	);
 }
 
-const contentViewCls = css`
+const contentViewCls = css`{
 	display: grid;
 	grid-template-rows: 1fr 300px 20fr 5fr;
 	grid-gap: 10px;
@@ -107,14 +107,14 @@ const contentViewCls = css`
 	@media (min-width: 1280px) {
 		grid-template-columns: 350px 2fr 1fr 350px;
 	}
-`;
+}`;
 
-const previewCls = css`
+const previewCls = css`{
 	position: relative;
 	width: 100%;
-`;
+}`;
 
-const imageContainer = css`
+const imageContainer = css`{
 	position: absolute;
 	top: 0;
 	height: 100%;
@@ -128,4 +128,4 @@ const imageContainer = css`
 		align-content: center;
 		object-fit: contain;
 	}
-`;
+}`;
