@@ -44,6 +44,7 @@
     "workbox-webpack-plugin": "^5.1.4"
   },
   "dependencies": {
+    "@types/url-join": "^4.0.0",
     "clsx": "^1.1.1",
     "eslint": "^7.13.0",
     "framer-motion": "^2.9.4",
@@ -54,6 +55,7 @@
     "react-router-dom": "^5.2.0",
     "react-use": "^15.3.4",
     "ts-key-enum": "^3.0.4",
+    "url-join": "^4.0.1",
     "workbox-window": "^5.1.4"
   }
 }

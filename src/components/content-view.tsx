@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { css } from 'linaria';
 import { useInterval } from 'react-use';
 import { motion, AnimatePresence } from 'framer-motion';
-import { PageContent } from '@common/interfaces';
+import { PageContent } from '@common/types';
 
 interface Props {
 	content: PageContent;

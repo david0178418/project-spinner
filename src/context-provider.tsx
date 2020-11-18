@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import { OrientationContext } from '@common/contexts';
-import { Orientation } from '@common/interfaces';
+import { Orientation } from '@common/types';
 
 function getOrientation() {
 	return window.innerWidth / window.innerHeight < 3/4 ?

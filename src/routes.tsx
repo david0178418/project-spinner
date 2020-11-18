@@ -4,10 +4,13 @@ import {
 	Route,
 	BrowserRouter as Router,
 } from 'react-router-dom';
+import urlJoin from 'url-join';
 import { AnimatePresence } from 'framer-motion';
 import { HomePage } from '@pages/home.page';
 import { CategoryPage } from '@pages/category.page';
+import { RoutePaths } from '@common/types';
 
+const CategoryPath = urlJoin(RoutePaths.Category, ':categoryId');
 
 export
 function Routes() {
@@ -19,7 +22,7 @@ function Routes() {
 						<Switch location={location} key={location.pathname}>
 							<Route
 								exact
-								path="/category/:categoryId"
+								path={CategoryPath}
 								component={CategoryPage}
 							/>
 							<Route

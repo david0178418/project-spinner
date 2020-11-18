@@ -1,7 +1,7 @@
+import React, { FC, useContext } from 'react';
+import clsx from 'clsx';
 import { OrientationContext } from '@common/contexts';
-import { Orientation } from '@common/interfaces';
-import clsx from 'clsx'
-import React,  { FC, useContext } from 'react';
+import { Orientation } from '@common/types';
 
 export
 const OrientationWrapper: FC = ({children}) => {

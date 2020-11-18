@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { css } from 'linaria';
 import { Wheel } from '@components/wheel';
-import { Orientation, PortfolioItem } from '@common/interfaces';
+import { Orientation, PortfolioItem } from '@common/types';
 import { MainContent } from '@components/main-content';
 import { OrientationContext } from '@common/contexts';
 import { PortfolioWheelItem } from '@components/portfolio-wheel-item';

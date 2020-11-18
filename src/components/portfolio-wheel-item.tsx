@@ -2,8 +2,9 @@
 import React from 'react';
 import { css } from 'linaria';
 import clsx from 'clsx';
-import { PortfolioItem } from '@common/interfaces';
 import { Link } from 'react-router-dom';
+import urlJoin from 'url-join';
+import { PortfolioItem, RoutePaths } from '@common/types';
 
 interface Props {
 	item: PortfolioItem;
@@ -45,7 +46,7 @@ function PortfolioWheelItem(props: Props) {
 				)}
 				{!item.link && (
 					<Link
-						to={`/category/${item.id}`}
+						to={urlJoin(RoutePaths.Category, item.id)}
 						className={clsx('portfolio-item', porfolioItemCls, {
 							[verticalCls]: vertical,
 							[horizontalCls]: !vertical,

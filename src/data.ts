@@ -1,4 +1,4 @@
-import { PortfolioItem } from '@common/interfaces';
+import { PortfolioItem } from '@common/types';
 
 const Root: PortfolioItem[] = [
 	{

@@ -56,3 +56,8 @@ enum Orientation {
 	Landscape = 'landscape',
 	Portrait = 'portrait',
 }
+
+export
+enum RoutePaths {
+	Category = '/c',
+}

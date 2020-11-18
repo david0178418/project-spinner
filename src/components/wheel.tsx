@@ -5,11 +5,12 @@ import React, {
 	FC,
 	ReactNode,
 } from 'react';
+import urlJoin from 'url-join';
 import { Key } from 'ts-key-enum';
 import clsx from 'clsx';
 import { useEvent, useKey } from 'react-use';
 import { useDebounce } from '@common/hooks';
-import { PortfolioItem } from '@common/interfaces';
+import { PortfolioItem, RoutePaths } from '@common/types';
 import { css } from 'linaria';
 import { WheelItem } from './wheel-item';
 import { range } from '@common/utils';
@@ -77,7 +78,7 @@ const Wheel: FC<Props> = (props) => {
 			setBufferIndex(newIndex);
 		}, [activeIndex, items]);
 	const selectItem = useCallback(() => {
-		history.push(`/category/${items[bufferIndex].item.id}`);
+		history.push(urlJoin(RoutePaths.Category, items[bufferIndex].item.id));
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [bufferIndex, items]);
 

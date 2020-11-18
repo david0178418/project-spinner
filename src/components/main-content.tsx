@@ -1,9 +1,10 @@
 import React from 'react';
 import { css } from 'linaria';
 import clsx from 'clsx';
-import { PortfolioItem } from '@common/interfaces';
-import { useDebounce } from '@common/hooks';
 import { Link } from 'react-router-dom';
+import urlJoin from 'url-join';
+import { PortfolioItem, RoutePaths } from '@common/types';
+import { useDebounce } from '@common/hooks';
 
 interface Props {
 	items: PortfolioItem[];
@@ -36,7 +37,7 @@ function MainContent(props: Props) {
 						[verticalCss]: vertical,
 					})}
 				>
-					<Link to={`/category/${item.id}`}>
+					<Link to={urlJoin(RoutePaths.Category,item.id)}>
 						<img loading="lazy" src={item.mainImage} />
 					</Link>
 				</div>
