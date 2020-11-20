@@ -140,15 +140,15 @@ const ProjectSites: PortfolioItem[] = [
 			imagePreviews: [
 				{
 					description: 'Home',
-					url: '/images/wheel-logos/preview-images/old-portfolio/old-portfolio-1.png',
+					url: '/images/preview-images/old-portfolio/old-portfolio-1.png',
 				},
 				{
 					description: 'Home - Heading',
-					url: '/images/wheel-logos/preview-images/old-portfolio/old-portfolio-2.png',
+					url: '/images/preview-images/old-portfolio/old-portfolio-2.png',
 				},
 				{
 					description: 'Work History',
-					url: '/images/wheel-logos/preview-images/old-portfolio/old-portfolio-3.png',
+					url: '/images/preview-images/old-portfolio/old-portfolio-3.png',
 				},
 			],
 		},

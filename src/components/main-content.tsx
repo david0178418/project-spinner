@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { css } from 'linaria';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import urlJoin from 'url-join';
-import { PortfolioItem, RoutePaths } from '@common/types';
+import { Orientation, PortfolioItem, RoutePaths } from '@common/types';
 import { useDebounce } from '@common/hooks';
+import { AnimatePresence, motion } from 'framer-motion';
+import { OrientationContext } from '@common/contexts';
 
 interface Props {
 	items: PortfolioItem[];
@@ -19,95 +21,94 @@ function MainContent(props: Props) {
 		selectedIndex,
 		vertical,
 	} = props;
-
+	const orientation = useContext(OrientationContext);
 	const bufferedIndex = selectedIndex % items.length;
 	const activeIndex = useDebounce(bufferedIndex, 500);
+	const selectedItem = items[activeIndex];
+	const isPortrait = orientation === Orientation.Portrait;
 
 	return (
-		<div className={clsx('main-content', mainContentCls, {
-			vertical,
-			horizontal: !vertical,
-		})}>
-			{items.map((item, i) => (
-				<div
-					key={i}
-					className={clsx(mainImageClass, {
-						active: i === activeIndex,
-						[horizontalCss]: !vertical,
-						[verticalCss]: vertical,
-					})}
+		<div
+			className={clsx('main-content', mainContentCls, {
+				vertical,
+				horizontal: !vertical,
+			})}
+		>
+			<AnimatePresence>
+				<motion.div
+					key={selectedItem.id}
+					className={mainImageClass}
+					animate="enter"
+					initial="exit"
+					exit="exit"
+					variants={{
+						enter: {
+							opacity: 1,
+							left: 0,
+							top: 0,
+							transition: {
+								ease: 'easeInOut',
+								duration: .3,
+							},
+						},
+						exit: {
+							opacity: 0,
+							left: isPortrait ? 0 : '-20%',
+							top: isPortrait ? '-20%' : 0,
+							transition: {
+								ease: 'easeInOut',
+								duration: .3,
+							},
+						},
+					}}
 				>
-					<Link to={urlJoin(RoutePaths.Category,item.id)}>
-						{item.mainImage && (
-							<img loading="lazy" src={item.mainImage} />
+					<Link to={urlJoin(RoutePaths.Category,selectedItem.id)}>
+						{selectedItem.mainImage && (
+							<img loading="lazy" src={selectedItem.mainImage} />
 						)}
 						
-						{item.mainVideo && (
+						{selectedItem.mainVideo && (
 							<video autoPlay loop>
 								<source
 									type="video/mp4"
-									src={item.mainVideo}
+									src={selectedItem.mainVideo}
 								/>
 								Sorry, your browser doesn't support embedded videos.
 							</video>
 						)}
 					</Link>
-				</div>
-			))}
+				</motion.div>
+			</AnimatePresence>
 		</div>
 	);
 }
 
-const mainContentCls = css`
+const mainContentCls = css`{
 	width: 100%;
 	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: absolute;
-`;
+}`;
 
-const mainImageClass = css`
-	position: absolute;
-	margin: auto;
-	opacity: 0;
-	max-height: 80%;
-	max-width: 80%;
-	transition:
-	opacity .3s,
-	transform .3s;
-	top: 0;
+const mainImageClass = css`{
+	align-items: center;
 	bottom: 0;
-	left: 0;
-	right: 0;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	left: 0;
+	margin: auto;
+	max-height: 80%;
+	max-width: 80%;
+	position: absolute;
+	right: 0;
+	top: 0;
 
 	img,
 	video {
+		border-radius: 10px;
 		max-height: 100%;
 		max-width: 100%;
 	}
-
-	&.active {
-		opacity: 1;
-		z-index: 10;
-	}
-`;
-
-const verticalCss = css`
-	transform: translate3D(0, -20%, 0);
-
-	&.active {
-		transform: translate3D(0, 0%, 0);
-	}
-`;
-
-const horizontalCss = css`
-	transform: translate3D(-20%, 0, 0);
-
-	&.active {
-		transform: translate3D(0, 0, 0);
-	}
-`;
+}`;
