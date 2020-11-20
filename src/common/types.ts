@@ -19,7 +19,8 @@ interface PortfolioItem {
 	id: string;
 	label: string;
 	link?: string;
-	mainImage: string;
+	mainImage?: string;
+	mainVideo?: string;
 	page?: PageContent;
 	parentCategories: string[];
 	wheelIcon?: string;

@@ -38,7 +38,19 @@ function MainContent(props: Props) {
 					})}
 				>
 					<Link to={urlJoin(RoutePaths.Category,item.id)}>
-						<img loading="lazy" src={item.mainImage} />
+						{item.mainImage && (
+							<img loading="lazy" src={item.mainImage} />
+						)}
+						
+						{item.mainVideo && (
+							<video autoPlay loop>
+								<source
+									type="video/mp4"
+									src={item.mainVideo}
+								/>
+								Sorry, your browser doesn't support embedded videos.
+							</video>
+						)}
 					</Link>
 				</div>
 			))}
@@ -72,7 +84,8 @@ const mainImageClass = css`
 	justify-content: center;
 	align-items: center;
 
-	img {
+	img,
+	video {
 		max-height: 100%;
 		max-width: 100%;
 	}

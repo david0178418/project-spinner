@@ -85,7 +85,7 @@ const ProjectSites: PortfolioItem[] = [
 		id: 'projects-sites-blog',
 		label: 'Personal Blog',
 		mainImage: 'https://via.placeholder.com/500x500?text=Node',
-		wheelImage: '/images/blog-avatar.png',
+		wheelImage: '/images/wheel-logos/blog-avatar.png',
 		parentCategories: [
 			'projects-sites',
 			'projects-all',
@@ -95,7 +95,7 @@ const ProjectSites: PortfolioItem[] = [
 		id: 'projects-sites-indiecomicrack',
 		label: 'IndieComic Rack',
 		mainImage: 'https://via.placeholder.com/500x500?text=Node',
-		wheelImage: '/images/icr-logo.jpg',
+		wheelImage: '/images/wheel-logos/icr-logo.jpg',
 		parentCategories: [
 			'projects-sites',
 			'projects-all',
@@ -105,7 +105,7 @@ const ProjectSites: PortfolioItem[] = [
 		id: 'projects-sites-fullviewnews',
 		label: 'FullView News',
 		mainImage: 'https://via.placeholder.com/500x500?text=Node',
-		wheelImage: '/images/fvn-logo.jpg',
+		wheelImage: '/images/wheel-logos/fvn-logo.jpg',
 		parentCategories: [
 			'projects-sites',
 			'projects-all',
@@ -114,13 +114,44 @@ const ProjectSites: PortfolioItem[] = [
 	{
 		id: 'projects-sites-old-portfolio',
 		label: 'Old Portfolio',
-		mainImage: 'https://via.placeholder.com/500x500?text=Node',
+		mainVideo: '/preview-videos/old-portfolio.mp4',
 		wheelIcon: 'folder',
 		wheelIconColor: '#999999',
 		parentCategories: [
 			'projects-sites',
 			'projects-all',
 		],
+		page: {
+			description: `
+				This is pretty self explanitory.  This is a portfolio of work I'd put together in pretty
+				short order.  It wasn't meant to be more utilitarian.  That's to say, it's absolutely <em>hideous</em>
+				but got the job done of collecting much of my work into one spot.
+			`,
+			links: [
+				{
+					label: 'Open',
+					url: 'https://davidgranado.com/portfolio/',
+				},
+				{
+					label: 'Open',
+					url: 'https://davidgranado.com/portfolio23/',
+				},
+			],
+			imagePreviews: [
+				{
+					description: 'Home',
+					url: '/images/wheel-logos/preview-images/old-portfolio/old-portfolio-1.png',
+				},
+				{
+					description: 'Home - Heading',
+					url: '/images/wheel-logos/preview-images/old-portfolio/old-portfolio-2.png',
+				},
+				{
+					description: 'Work History',
+					url: '/images/wheel-logos/preview-images/old-portfolio/old-portfolio-3.png',
+				},
+			],
+		},
 	},
 	{
 		id: 'projects-sites-portfolio',
@@ -175,7 +206,7 @@ const ProjectApps: PortfolioItem[] = [
 		id: 'projects-apps-shoplystr',
 		label: 'ArgDigger',
 		mainImage: 'https://via.placeholder.com/500x500?text=Node',
-		wheelImage: '/images/sl-logo.png',
+		wheelImage: '/images/wheel-logos/sl-logo.png',
 		parentCategories: [
 			'projects-apps',
 			'projects-all',
@@ -184,7 +215,7 @@ const ProjectApps: PortfolioItem[] = [
 		id: 'projects-apps-phungible',
 		label: 'Phungible',
 		mainImage: 'https://via.placeholder.com/500x500?text=Node',
-		wheelImage: '/images/p-logo.png',
+		wheelImage: '/images/wheel-logos/p-logo.png',
 		parentCategories: [
 			'projects-apps',
 			'projects-all',
@@ -207,7 +238,7 @@ const ProjectFunGames: PortfolioItem[] = [
 		id: 'project-demos-set',
 		label: 'Set',
 		mainImage: 'https://via.placeholder.com/500x500?text=Node',
-		wheelImage: '/images/set-card.png',
+		wheelImage: '/images/wheel-logos/set-card.png',
 		parentCategories: [
 			'projects-demos',
 			'projects-all',
@@ -294,7 +325,7 @@ const items = [
 // 		id: 'javascript',
 // 		label: 'javascript',
 // 		mainImage: 'https://via.placeholder.com/500x550?text=Javascript',
-// 		wheelImage: '/images/javascript-logo.png',
+// 		wheelImage: '/images/wheel-logos/javascript-logo.png',
 // 		parentCategories: [
 // 			'typescript',
 // 		],
@@ -302,7 +333,7 @@ const items = [
 // 		id: 'pwa',
 // 		label: 'pwa',
 // 		mainImage: 'https://via.placeholder.com/700x550?text=PWA',
-// 		wheelImage: '/images/pwa-logo.png',
+// 		wheelImage: '/images/wheel-logos/pwa-logo.png',
 // 		parentCategories: [
 // 			'typescript',
 // 		],
@@ -310,14 +341,14 @@ const items = [
 // 		id: 'react',
 // 		label: 'React',
 // 		mainImage: 'https://via.placeholder.com/600x600?text=React',
-// 		wheelImage: '/images/react-logo.webp',
+// 		wheelImage: '/images/wheel-logos/react-logo.webp',
 // 		parentCategories: [
 // 		],
 // 	}, {
 // 		id: 'angular',
 // 		label: 'angular',
 // 		mainImage: 'https://via.placeholder.com/550x550?text=Angular',
-// 		wheelImage: '/images/angular-logo.png',
+// 		wheelImage: '/images/wheel-logos/angular-logo.png',
 // 		parentCategories: [
 // 		],
 // 	},

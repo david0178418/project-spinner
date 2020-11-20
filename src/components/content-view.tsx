@@ -107,9 +107,16 @@ function ContentView(props: Props) {
 				<h2>
 					{title}
 				</h2>
-				<p>
-					{content.description}
-				</p>
+				{!!content.links.length && (
+					<ul className="links">
+						{content.links.map((l, i) => (
+							<li key={i}>
+								<a href={l.url}>{l.label}</a>
+							</li>
+						))}
+					</ul>
+				)}
+				<p dangerouslySetInnerHTML={{__html: content.description}}/>
 				{content.subContents && (
 					<TabbedContent
 						content={content.subContents}
@@ -154,8 +161,30 @@ const contentViewCls = css`{
 	grid-template-rows: 1fr 300px 20fr 5fr;
 	grid-gap: 25px;
 	height: 100vh;
-
 	grid-template-columns: 0 1fr 0;
+
+	.links {
+		padding: 0 10px;
+
+		li {
+			list-style: none;
+		}
+
+		a {
+			font-style: italic;
+			font-weight: bold;
+
+			&:visited {
+				color: hotpink;
+			}
+		}
+
+		.portrait & {
+			li {
+				margin: 15px 0;
+			}
+		}
+	}
 
 	.content {
 		color: #dddddd;
