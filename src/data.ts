@@ -128,6 +128,31 @@ const ProjectSites: PortfolioItem[] = [
 		mainImage: 'https://via.placeholder.com/500x500?text=Node',
 		wheelIcon: 'folder',
 		wheelIconColor: '#f1d592',
+		page: {
+			title: 'AAAAA',
+			description: 'foooo',
+			imagePreviews: [
+				{
+					description: 'asdfasdfsa',
+					url: 'https://via.placeholder.com/500x500?text=Node',
+				},
+			],
+			links: [],
+			subContents: [
+				{
+					label: 'Fooooo 1',
+					content: 'Baaaar 1',
+				},
+				{
+					label: 'Fooooo 2',
+					content: 'Baaaar 2',
+				},
+				{
+					label: 'Fooooo 3',
+					content: 'Baaaar 3',
+				},
+			],
+		},
 		parentCategories: [
 			'projects-sites',
 			'projects-all',

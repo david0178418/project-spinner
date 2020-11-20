@@ -37,7 +37,8 @@ interface ResourceLink {
 	url: string;
 }
 
-interface TabbedContent {
+export
+interface PageSubContent {
 	label: string;
 	content: string;
 }
@@ -45,7 +46,7 @@ interface TabbedContent {
 export
 interface PageContent {
 	description: string;
-	tabbedContents?: TabbedContent[];
+	subContents?: PageSubContent[];
 	imagePreviews: ImagePreview[];
 	links: ResourceLink[];
 	title: string;

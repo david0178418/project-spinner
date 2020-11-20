@@ -2,7 +2,85 @@ import React, { useState } from 'react';
 import { css } from 'linaria';
 import { useInterval } from 'react-use';
 import { motion, AnimatePresence } from 'framer-motion';
-import { PageContent } from '@common/types';
+import { PageContent, PageSubContent } from '@common/types';
+import clsx from 'clsx';
+
+interface TabbedContentProps {
+	content: PageSubContent[];
+}
+
+function TabbedContent(props: TabbedContentProps) {
+	const [selectedIndex, setSelectedIndex] = useState(0);
+	const {
+		content,
+	} = props;
+
+	if(!content.length) {
+		return null;
+	}
+
+	const selectedContent = content[selectedIndex];
+
+	return (
+		<div className={tabbedContentCls}>
+			<div className="tab-container">
+				{content.map(({label}, i) => (
+					<div
+						key={i}
+						onClick={() => setSelectedIndex(i)}
+						className={clsx('tab', {
+							selected: i === selectedIndex,
+						})}
+					>
+						{label}
+					</div>
+				))}
+			</div>
+			<div className="tab-content">
+				{selectedContent.content}
+			</div>
+		</div>
+	);
+}
+
+const tabbedContentCls = css`{
+	.tab-container {
+		background-color: #ffffff1a;
+		display: flex;
+		font-size: 22px;
+	}
+
+	.tab {
+		cursor: pointer;
+		flex: 1;
+		padding: 10px;
+		position: relative;
+		text-align: center;
+
+		&:after {
+			border-bottom: 5px solid #24aec6;
+			bottom: 0;
+			content: '';
+			left: 50%;
+			position: absolute;
+			transform: translateX(-50%);
+			transition: width .2s linear;
+			width: 0;
+		}
+
+		&.selected {
+			font-weight: bold;
+
+			&:after {
+				width: 80%;
+			}
+		}
+	}
+
+	.tab-content {
+		padding: 20px;
+	}
+}`;
 
 interface Props {
 	content: PageContent;
@@ -30,6 +108,11 @@ function ContentView(props: Props) {
 				<p>
 					{content.description}
 				</p>
+				{content.subContents && (
+					<TabbedContent
+						content={content.subContents}
+					/>
+				)}
 			</div>
 			<div className={`preview ${previewCls}`}>
 				<AnimatePresence>
@@ -67,12 +150,13 @@ function ContentView(props: Props) {
 const contentViewCls = css`{
 	display: grid;
 	grid-template-rows: 1fr 300px 20fr 5fr;
-	grid-gap: 10px;
+	grid-gap: 25px;
 	height: 100vh;
 
 	grid-template-columns: 0 1fr 0;
 
 	.content {
+		color: #dddddd;
 		grid-column-start: 2;
 		grid-row-start: 3;
 	}
