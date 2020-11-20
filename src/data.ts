@@ -129,7 +129,6 @@ const ProjectSites: PortfolioItem[] = [
 		wheelIcon: 'folder',
 		wheelIconColor: '#f1d592',
 		page: {
-			title: 'AAAAA',
 			description: 'foooo',
 			imagePreviews: [
 				{
@@ -253,6 +252,31 @@ const ProjectFunGames: PortfolioItem[] = [
 			'projects-demos',
 			'projects-all',
 		],
+	},
+	{
+		id: 'project-demos-rts',
+		label: 'Place Value Illustrator',
+		mainImage: 'https://via.placeholder.com/500x500?text=Node',
+		wheelIcon: 'game-controller',
+		parentCategories: [
+			'projects-demos',
+			'projects-all',
+		],
+		page: {
+			description: '',
+			links: [
+				{
+					label: 'Open',
+					url: 'https://davidgranado.com/projects/counter/',
+				},
+			],
+			imagePreviews: [
+				{
+					description: 'asdfasdfsa',
+					url: 'https://via.placeholder.com/500x500?text=Node',
+				},
+			],
+		},
 	},
 ];
 

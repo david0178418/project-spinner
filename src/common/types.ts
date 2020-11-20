@@ -49,7 +49,6 @@ interface PageContent {
 	subContents?: PageSubContent[];
 	imagePreviews: ImagePreview[];
 	links: ResourceLink[];
-	title: string;
 }
 
 export

@@ -83,6 +83,7 @@ const tabbedContentCls = css`{
 }`;
 
 interface Props {
+	title: string;
 	content: PageContent;
 }
 
@@ -90,6 +91,7 @@ export
 function ContentView(props: Props) {
 	const [activeImageIndex, setActiveImageIndex] = useState(0);
 	const {
+		title,
 		content,
 	} = props;
 
@@ -103,7 +105,7 @@ function ContentView(props: Props) {
 		<div className={contentViewCls}>
 			<div className="content">
 				<h2>
-					{content.title}
+					{title}
 				</h2>
 				<p>
 					{content.description}

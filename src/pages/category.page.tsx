@@ -17,7 +17,8 @@ function CategoryPage() {
 		categoryId = '',
 	} = useParams<Params>();
 
-	const pageNode = items.find(i => i.id === categoryId)?.page || null;
+	const item = items.find(i => i.id === categoryId);
+	const pageNode = item?.page || null;
 
 	return (
 		<PageTransition>
@@ -27,8 +28,8 @@ function CategoryPage() {
 			>
 				<ion-icon name="arrow-back-circle-outline"></ion-icon>
 			</button>
-			{pageNode && (
-				<ContentView content={pageNode} />
+			{item && pageNode && (
+				<ContentView title={item?.label} content={pageNode} />
 			)}
 			{!pageNode && (
 				<WheelView
