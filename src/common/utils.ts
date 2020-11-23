@@ -1,3 +1,5 @@
+import { Orientation } from './types';
+
 export
 function first<T>(list: T[]) {
 	return list[0] || null;
@@ -30,4 +32,15 @@ function uuid() {
 		const r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
 		return v.toString(16);
 	});
+}
+
+
+export
+function getOrientation() {
+	const x = window.innerWidth / window.innerHeight < 3/4 ?
+		Orientation.Portrait :
+		Orientation.Landscape;
+
+	console.log(x, window.innerWidth, window.innerHeight);
+	return x;
 }

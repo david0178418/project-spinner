@@ -44,8 +44,8 @@ function MainContent(props: Props) {
 					variants={{
 						enter: {
 							opacity: 1,
-							left: 0,
-							top: 0,
+							x: 0,
+							y: 0,
 							transition: {
 								ease: 'easeInOut',
 								duration: .3,
@@ -53,8 +53,8 @@ function MainContent(props: Props) {
 						},
 						exit: {
 							opacity: 0,
-							left: isPortrait ? 0 : '-20%',
-							top: isPortrait ? '-20%' : 0,
+							x: isPortrait ? 0 : '-20%',
+							y: isPortrait ? '-20%' : 0,
 							transition: {
 								ease: 'easeInOut',
 								duration: .3,
@@ -68,7 +68,7 @@ function MainContent(props: Props) {
 						)}
 						
 						{selectedItem.mainVideo && (
-							<video autoPlay loop>
+							<video autoPlay muted loop playsInline>
 								<source
 									type="video/mp4"
 									src={selectedItem.mainVideo}

@@ -1,23 +1,15 @@
 import React, { FC, useEffect, useState } from 'react';
 import { OrientationContext } from '@common/contexts';
-import { Orientation } from '@common/types';
-
-function getOrientation() {
-	return window.innerWidth / window.innerHeight < 3/4 ?
-		Orientation.Portrait :
-		Orientation.Landscape;
-}
+import { getOrientation } from '@common/utils';
 
 interface Props {
 }
 
 export
 const ContextProvider: FC<Props> =  (props) => {
-	const [orientation, setOrientation] = useState(Orientation.Portrait);
+	const [orientation, setOrientation] = useState(getOrientation);
 
 	useEffect(() => {
-		setOrientation(getOrientation());
-
 		window.addEventListener('resize', () => setOrientation(getOrientation()));
 	}, []);
 
