@@ -88,6 +88,20 @@ const porfolioItemCls = css`
 			max-width: 100%;
 		}
 	}
+
+	@media (max-width: 768px) {
+		.landscape & {
+			ion-icon {
+				font-size: 48px;
+			}
+
+			.wheel-label {
+				flex: 5;
+				font-size: 16px;
+				padding-left: 0;
+			}
+		}
+	}
 `;
 
 const horizontalCls = css`
