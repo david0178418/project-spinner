@@ -37,10 +37,7 @@ function uuid() {
 
 export
 function getOrientation() {
-	const x = window.innerWidth / window.innerHeight < 3/4 ?
+	return window.innerWidth / window.innerHeight < 3/4 ?
 		Orientation.Portrait :
 		Orientation.Landscape;
-
-	console.log(x, window.innerWidth, window.innerHeight);
-	return x;
 }

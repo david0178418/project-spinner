@@ -89,7 +89,7 @@ const porfolioItemCls = css`
 		}
 	}
 
-	@media (orientation:landscape) {
+	@media (orientation:landscape) and (max-width: 1024px) {
 		.landscape & {
 			ion-icon {
 				font-size: 48px;
