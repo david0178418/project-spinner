@@ -89,6 +89,11 @@ const Wheel: FC<Props> = (props) => {
 		[Key.ArrowLeft]: wheelDown,
 	};
 
+	useEvent('swiped-up', wheelUp);
+	useEvent('swiped-right', wheelUp);
+	useEvent('swiped-down', wheelDown);
+	useEvent('swiped-left', wheelDown);
+
 	useEvent('keydown', (e) => runKey(e.key));
 	useEvent('resize', () => {
 		measure();

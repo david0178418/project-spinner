@@ -96,6 +96,14 @@ const ProjectSites: PortfolioItem[] = [
 		label: 'IndieComic Rack',
 		mainImage: 'https://via.placeholder.com/768x576?text=Node',
 		wheelImage: '/images/wheel-logos/icr-logo.jpg',
+		page: {
+			description: '',
+			imagePreviews: [{
+				url: '',
+				description: '',
+			}],
+			links: [],
+		},
 		parentCategories: [
 			'projects-sites',
 			'projects-all',
@@ -106,6 +114,11 @@ const ProjectSites: PortfolioItem[] = [
 		label: 'FullView News',
 		mainImage: 'https://via.placeholder.com/768x576?text=Node',
 		wheelImage: '/images/wheel-logos/fvn-logo.jpg',
+		page: {
+			description: '',
+			imagePreviews: [],
+			links: [],
+		},
 		parentCategories: [
 			'projects-sites',
 			'projects-all',

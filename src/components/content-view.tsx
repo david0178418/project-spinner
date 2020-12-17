@@ -123,35 +123,38 @@ function ContentView(props: Props) {
 					/>
 				)}
 			</div>
-			<div className={`preview ${previewCls}`}>
-				<AnimatePresence>
-					<motion.div
-						key={activeImageIndex}
-						className={imageContainer}
-						animate="enter"
-						initial="exit"
-						exit="exit"
-						variants={{
-							enter: {
-								opacity: 1,
-								transition: {
-									ease: 'easeOut',
-									duration: 1,
+			{imagePreview && (
+
+				<div className={`preview ${previewCls}`}>
+					<AnimatePresence>
+						<motion.div
+							key={activeImageIndex}
+							className={imageContainer}
+							animate="enter"
+							initial="exit"
+							exit="exit"
+							variants={{
+								enter: {
+									opacity: 1,
+									transition: {
+										ease: 'easeOut',
+										duration: 1,
+									},
 								},
-							},
-							exit: {
-								opacity: 0,
-								transition: {
-									ease: 'easeIn',
-									duration: 1,
+								exit: {
+									opacity: 0,
+									transition: {
+										ease: 'easeIn',
+										duration: 1,
+									},
 								},
-							},
-						}}
-					>
-						<img src={imagePreview.url} key={activeImageIndex} />
-					</motion.div>
-				</AnimatePresence>
-			</div>
+							}}
+						>
+							<img src={imagePreview.url} key={activeImageIndex} />
+						</motion.div>
+					</AnimatePresence>
+				</div>
+			)}
 		</div>
 	);
 }

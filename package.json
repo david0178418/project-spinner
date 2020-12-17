@@ -54,6 +54,7 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-use": "^15.3.4",
+    "swiped-events": "^1.1.4",
     "ts-key-enum": "^3.0.5",
     "url-join": "^4.0.1",
     "workbox-window": "^6.0.2"
