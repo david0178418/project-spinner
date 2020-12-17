@@ -19,59 +19,57 @@ function PortfolioWheelItem(props: Props) {
 	} = props;
 
 	return (
-		(
-			<>
-				{!!item.link && (
-					<a className={clsx('portfolio-item', porfolioItemCls, {
+		<>
+			{!!item.link && (
+				<a className={clsx('portfolio-item', porfolioItemCls, {
+					[verticalCls]: vertical,
+					[horizontalCls]: !vertical,
+				})}>
+					<div className="wheel-logo">
+						{item.wheelIcon && (
+							<ion-icon
+								name={item.wheelIcon}
+								style={{
+									color: item.wheelIconColor || 'white',
+								}}
+							/>
+						)}
+						{item.wheelImage && (
+							<img src={item.wheelImage}/>
+						)}
+					</div>
+					<div className="wheel-label">
+						{item.label}
+					</div>
+				</a>
+			)}
+			{!item.link && (
+				<Link
+					to={urlJoin(RoutePaths.Category, item.id)}
+					className={clsx('portfolio-item', porfolioItemCls, {
 						[verticalCls]: vertical,
 						[horizontalCls]: !vertical,
-					})}>
-						<div className="wheel-logo">
-							{item.wheelIcon && (
-								<ion-icon
-									name={item.wheelIcon}
-									style={{
-										color: item.wheelIconColor || 'white',
-									}}
-								/>
-							)}
-							{item.wheelImage && (
-								<img src={item.wheelImage}/>
-							)}
-						</div>
-						<div className="wheel-label">
-							{item.label}
-						</div>
-					</a>
-				)}
-				{!item.link && (
-					<Link
-						to={urlJoin(RoutePaths.Category, item.id)}
-						className={clsx('portfolio-item', porfolioItemCls, {
-							[verticalCls]: vertical,
-							[horizontalCls]: !vertical,
-						})}
-					>
-						<div className="wheel-logo">
-							{item.wheelIcon && (
-								<ion-icon
-									name={item.wheelIcon}
-									style={{
-										color: item.wheelIconColor || 'white',
-									}}
-								/>
-							)}
-							{item.wheelImage && (
-								<img src={item.wheelImage}/>
-							)}
-						</div>
-						<div className="wheel-label">
-							{item.label}
-						</div>
-					</Link>
-				)}
-			</>
-		)
+					})}
+				>
+					<div className="wheel-logo">
+						{item.wheelIcon && (
+							<ion-icon
+								name={item.wheelIcon}
+								style={{
+									color: item.wheelIconColor || 'white',
+								}}
+							/>
+						)}
+						{item.wheelImage && (
+							<img src={item.wheelImage}/>
+						)}
+					</div>
+					<div className="wheel-label">
+						{item.label}
+					</div>
+				</Link>
+			)}
+		</>
 	);
 }
 

@@ -7,6 +7,7 @@ import { Orientation, PortfolioItem, RoutePaths } from '@common/types';
 import { useDebounce } from '@common/hooks';
 import { AnimatePresence, motion } from 'framer-motion';
 import { OrientationContext } from '@common/contexts';
+import { VideoWithPreview } from './video-with-preview';
 
 interface Props {
 	items: PortfolioItem[];
@@ -26,6 +27,10 @@ function MainContent(props: Props) {
 	const activeIndex = useDebounce(bufferedIndex, 500);
 	const selectedItem = items[activeIndex];
 	const isPortrait = orientation === Orientation.Portrait;
+	const {
+		mainImage,
+		mainVideo,
+	} = selectedItem;
 
 	return (
 		<div
@@ -63,17 +68,21 @@ function MainContent(props: Props) {
 					}}
 				>
 					<Link to={urlJoin(RoutePaths.Category,selectedItem.id)}>
-						{selectedItem.mainImage && (
-							<img loading="lazy" src={selectedItem.mainImage} />
+						{!!(mainImage && mainVideo) && (
+							<VideoWithPreview
+								previewImageUrl={mainImage}
+								videoUrl={mainVideo}
+							/>
 						)}
-						
-						{selectedItem.mainVideo && (
-							<video autoPlay muted loop playsInline>
+						{!!(mainImage && !mainVideo) && (
+							<img loading="lazy" src={mainImage} />
+						)}
+						{!!(!mainImage && mainVideo) && (
+							<video muted loop playsInline onCanPlay={() => console.log(111)} onLoadedData={() => console.log(222)}>
 								<source
 									type="video/mp4"
-									src={selectedItem.mainVideo}
+									src={mainVideo}
 								/>
-								Sorry, your browser doesn't support embedded videos.
 							</video>
 						)}
 					</Link>
