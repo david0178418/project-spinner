@@ -19,6 +19,7 @@ interface PortfolioItem {
 	id: string;
 	label: string;
 	link?: string;
+	// 768x576
 	mainImage?: string;
 	mainVideo?: string;
 	page?: PageContent;
