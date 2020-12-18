@@ -23,12 +23,10 @@ function VideoWithPreview(props: Props) {
 
 		console.log('happened');
 		const timeoutId = setTimeout(() => {
-			console.log('playing', videoRef.current);
 			videoRef.current?.play();
-		}, 1000);
+		}, 1500);
 
 		return () => {
-			console.log('timeout cleared');
 			clearTimeout(timeoutId);
 		};
 	}, [canPlay]);
@@ -54,7 +52,7 @@ function VideoWithPreview(props: Props) {
 					<motion.div
 						className="foo-image"
 						transition={{
-							delay: .5,
+							delay: 1,
 							duration: .5,
 						}}
 						initial={{ opacity: 1 }}
