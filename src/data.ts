@@ -219,7 +219,8 @@ const ProjectApps: PortfolioItem[] = [
 	{
 		id: 'projects-apps-shoplystr',
 		label: 'ShopLystr',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/shoplystr.png',
+		mainVideo: '/preview-videos/shoplystr.mp4',
 		wheelImage: '/images/wheel-logos/sl-logo.png',
 		parentCategories: [
 			'projects-apps',
