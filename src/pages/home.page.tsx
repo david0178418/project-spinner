@@ -1,4 +1,3 @@
-import React from 'react';
 import { WheelView } from '@components/wheel-view';
 import { items } from '@root/data';
 import { PageTransition } from '@components/page-transition';

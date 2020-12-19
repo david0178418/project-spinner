@@ -1,4 +1,4 @@
-import React, { StrictMode } from 'react';
+import { StrictMode } from 'react';
 import { ContextProvider } from './context-provider';
 import { Routes } from './routes';
 import { OrientationWrapper } from '@components/orientation-wrapper';

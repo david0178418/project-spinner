@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import { FC, useContext } from 'react';
 import clsx from 'clsx';
 import { OrientationContext } from '@common/contexts';
 import { Orientation } from '@common/types';

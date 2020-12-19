@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { css } from 'linaria';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';

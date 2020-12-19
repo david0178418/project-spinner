@@ -45,10 +45,15 @@ module.exports = merge(envConfig, {
 					{
 						loader: 'linaria/loader',
 						options: {
-							sourceMap: process.env.NODE_ENV === 'production',
+							sourceMap: !IS_DEV,
 						},
 					},
-					'ts-loader',
+					{
+						loader: 'ts-loader',
+						options: {
+							configFile: IS_DEV ? 'tsconfig.json' : 'tsconfig.prod.json',
+						},
+					},
 				],
 				exclude: /node_modules/,
 			},

@@ -13,7 +13,7 @@
 		"strict": true,
 		"sourceMap": true,
 		"target": "es2015",
-		"jsx": "react",
+		"jsx": "react-jsxdev",
 		"typeRoots": [
 			"node_modules/@types"
 		],

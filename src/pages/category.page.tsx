@@ -1,4 +1,3 @@
-import React from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { WheelView } from '@components/wheel-view';
 import { items } from '@root/data';
