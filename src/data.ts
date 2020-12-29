@@ -229,7 +229,8 @@ const ProjectApps: PortfolioItem[] = [
 	}, {
 		id: 'projects-apps-phungible',
 		label: 'Phungible',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainVideo: '/preview-videos/phungible.mp4',
+		mainImage: '/images/wheel-main-images/phungible.png',
 		wheelImage: '/images/wheel-logos/p-logo.png',
 		parentCategories: [
 			'projects-apps',
