@@ -28,6 +28,13 @@ const Root: PortfolioItem[] = [
 		parentCategories: [
 			'root',
 		],
+		page: {
+			description: `
+			`,
+			imagePreviews: [],
+			subContents: [],
+			links: [],
+		},
 	}, {
 		id: 'about',
 		label: 'About Me',
@@ -102,6 +109,7 @@ const ProjectSites: PortfolioItem[] = [
 				url: '',
 				description: '',
 			}],
+			subContents: [],
 			links: [],
 		},
 		parentCategories: [
@@ -117,6 +125,7 @@ const ProjectSites: PortfolioItem[] = [
 		page: {
 			description: '',
 			imagePreviews: [],
+			subContents: [],
 			links: [],
 		},
 		parentCategories: [
@@ -141,6 +150,7 @@ const ProjectSites: PortfolioItem[] = [
 				short order.  It wasn't meant to be more utilitarian.  That's to say, it's absolutely <em>hideous</em>
 				but got the job done of collecting much of my work into one spot.
 			`,
+			subContents: [],
 			links: [
 				{
 					label: 'Open',
@@ -259,6 +269,18 @@ const ProjectFunGames: PortfolioItem[] = [
 			'projects-demos',
 			'projects-all',
 		],
+		page: {
+			description: '',
+			subContents: [],
+			imagePreviews: [],
+			links: [{
+				label: 'Play it now',
+				url: '/projects/make-a-set/',
+			}, {
+				label: 'Blog entry',
+				url: 'https://blog.davidgranado.com/2016/10/06/set/',
+			}],
+		},
 	},
 	{
 		id: 'project-demos-meteor',
@@ -311,6 +333,7 @@ const ProjectFunGames: PortfolioItem[] = [
 		],
 		page: {
 			description: '',
+			subContents: [],
 			links: [
 				{
 					label: 'Open',

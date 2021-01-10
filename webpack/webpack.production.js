@@ -1,6 +1,4 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 
 /**
 * @typedef { import('webpack').Configuration } Configuration
@@ -9,12 +7,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 */
 module.exports = {
 	mode: 'production',
-	optimization: {
-		minimizer: [
-			new TerserPlugin(),
-			new OptimizeCssAssetsPlugin(),
-		],
-	},
 	output: {
 		filename: '[name].[contenthash:8].js',
 	},

@@ -48,7 +48,7 @@ interface PageSubContent {
 export
 interface PageContent {
 	description: string;
-	subContents?: PageSubContent[];
+	subContents: PageSubContent[];
 	imagePreviews: ImagePreview[];
 	links: ResourceLink[];
 }

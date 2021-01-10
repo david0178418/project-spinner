@@ -33,7 +33,6 @@
 		"./src"
 	],
 	"exclude": [
-		"./src/app",
 		"./src/static"
 	]
 }

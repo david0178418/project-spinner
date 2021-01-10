@@ -55,7 +55,10 @@ module.exports = merge(envConfig, {
 						},
 					},
 				],
-				exclude: /node_modules/,
+				exclude: [
+					/static/,
+					/node_modules/,
+				],
 			},
 			{
 				test: /\.(png|svg|jpg|gif)$/,

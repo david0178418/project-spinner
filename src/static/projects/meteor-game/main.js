@@ -1,20 +1,19 @@
 requirejs.config({
-	//urlArgs: "bust=" +  (new Date()).getTime(),	//cache-bust if needed
+		//urlArgs: "bust=" +  (new Date()).getTime(),	//cache-bust if needed
 	baseUrl: 'src',
 	paths: {
-		Phaser: '../libs/phaser-official/build/phaser',
-		lodash: '../libs/lodash/dist/lodash'
+			Phaser: '../libs/phaser.min',
+		lodash: '../libs/lodash.min'
 	},
 	map: {
-		'*': {
-			phaser: 'Phaser'
+			'*': {
+				phaser: 'Phaser'
 		}
 	}
 });
-
 require(['app'],
 	function(App) {
-		"use strict";
+			"use strict";
 		var app = new App('#app');
 	}
 );
