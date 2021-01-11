@@ -20,6 +20,12 @@ const Root: PortfolioItem[] = [
 		parentCategories: [
 			'root',
 		],
+		page: {
+			description: '',
+			imagePreviews: [],
+			subContents: [],
+			links: [],
+		},
 	}, {
 		id: 'contact',
 		label: 'Contact',

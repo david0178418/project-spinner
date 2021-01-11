@@ -75,13 +75,15 @@ module.exports = merge(envConfig, {
 			},
 		}),
 		new CleanWebpackPlugin(),
-		new CopyPlugin({
-			patterns: [
-				{
-					from: resolve(__dirname, '../src/static'),
-				},
-			],
-		}),
+		// Replacing with bash command since this is weirdly minifying
+		// which in turn is creating more weird issues with requirejs
+		// new CopyPlugin({
+		// 	patterns: [
+		// 		{
+		// 			from: resolve(__dirname, '../src/static'),
+		// 		},
+		// 	],
+		// }),
 		new HtmlWebpackPlugin({
 			template: resolve(__dirname, '../src/index.html'),
 		}),
