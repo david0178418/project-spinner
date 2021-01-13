@@ -22,10 +22,7 @@ const Root: PortfolioItem[] = [
 		],
 		page: {
 			description: '',
-			imagePreviews: [{
-				description: 'asdfasdf',
-				url: 'https://via.placeholder.com/600x600?text=Projects',
-			}],
+			imagePreviews: [],
 			subContents: [{
 				label: '8/2015 - 4/2018',
 				content: /*html*/`
@@ -201,10 +198,7 @@ const ProjectSites: PortfolioItem[] = [
 		wheelImage: '/images/wheel-logos/icr-logo.jpg',
 		page: {
 			description: '',
-			imagePreviews: [{
-				url: '',
-				description: '',
-			}],
+			imagePreviews: [],
 			subContents: [],
 			links: [],
 		},
@@ -252,24 +246,20 @@ const ProjectSites: PortfolioItem[] = [
 					label: 'Open',
 					url: 'https://davidgranado.com/portfolio/',
 				},
-				{
-					label: 'Open',
-					url: 'https://davidgranado.com/portfolio23/',
-				},
 			],
 			imagePreviews: [
-				{
-					description: 'Home',
-					url: '/images/preview-images/old-portfolio/old-portfolio-1.png',
-				},
-				{
-					description: 'Home - Heading',
-					url: '/images/preview-images/old-portfolio/old-portfolio-2.png',
-				},
-				{
-					description: 'Work History',
-					url: '/images/preview-images/old-portfolio/old-portfolio-3.png',
-				},
+				// {
+				// 	description: 'Home',
+				// 	url: '/images/preview-images/old-portfolio/old-portfolio-1.png',
+				// },
+				// {
+				// 	description: 'Home - Heading',
+				// 	url: '/images/preview-images/old-portfolio/old-portfolio-2.png',
+				// },
+				// {
+				// 	description: 'Work History',
+				// 	url: '/images/preview-images/old-portfolio/old-portfolio-3.png',
+				// },
 			],
 		},
 	},
