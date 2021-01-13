@@ -75,7 +75,8 @@ module.exports = merge(envConfig, {
 		}),
 		new CleanWebpackPlugin(),
 		// Replacing with bash command since this is weirdly minifying
-		// which in turn is creating more weird issues with requirejs
+		// which in turn is creating more weird issues with requirejs.
+		// Making dev only
 		// new CopyPlugin({
 		// 	patterns: [
 		// 		{

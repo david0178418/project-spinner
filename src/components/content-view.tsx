@@ -2,85 +2,9 @@ import { useState } from 'react';
 import { css } from 'linaria';
 import { useInterval } from 'react-use';
 import { motion, AnimatePresence } from 'framer-motion';
-import { PageContent, PageSubContent } from '@common/types';
-import clsx from 'clsx';
-
-interface TabbedContentProps {
-	content: PageSubContent[];
-}
-
-function TabbedContent(props: TabbedContentProps) {
-	const [selectedIndex, setSelectedIndex] = useState(0);
-	const {
-		content,
-	} = props;
-
-	if(!content.length) {
-		return null;
-	}
-
-	const selectedContent = content[selectedIndex];
-
-	return (
-		<div className={tabbedContentCls}>
-			<div className="tab-container">
-				{content.map(({label}, i) => (
-					<div
-						key={i}
-						onClick={() => setSelectedIndex(i)}
-						className={clsx('tab', {
-							selected: i === selectedIndex,
-						})}
-					>
-						{label}
-					</div>
-				))}
-			</div>
-			<div className="tab-content">
-				{selectedContent.content}
-			</div>
-		</div>
-	);
-}
-
-const tabbedContentCls = css`{
-	.tab-container {
-		background-color: #ffffff1a;
-		display: flex;
-		font-size: 22px;
-	}
-
-	.tab {
-		cursor: pointer;
-		flex: 1;
-		padding: 10px;
-		position: relative;
-		text-align: center;
-
-		&:after {
-			border-bottom: 5px solid #24aec6;
-			bottom: 0;
-			content: '';
-			left: 50%;
-			position: absolute;
-			transform: translateX(-50%);
-			transition: width .2s linear;
-			width: 0;
-		}
-
-		&.selected {
-			font-weight: bold;
-
-			&:after {
-				width: 80%;
-			}
-		}
-	}
-
-	.tab-content {
-		padding: 20px;
-	}
-}`;
+import { PageContent } from '@common/types';
+import { TabbedContent } from './tabbed-content';
+import { Container } from 'react-bootstrap';
 
 interface Props {
 	title: string;
@@ -102,8 +26,8 @@ function ContentView(props: Props) {
 	const imagePreview = content.imagePreviews[activeImageIndex];
 
 	return (
-		<div className={contentViewCls}>
-			<div className="content">
+		<div className={`${contentViewCls} ${imagePreview ? 'with-images' : ''}`}>
+			<Container className="content">
 				<h2>
 					{title}
 				</h2>
@@ -122,9 +46,8 @@ function ContentView(props: Props) {
 						content={content.subContents}
 					/>
 				)}
-			</div>
+			</Container>
 			{imagePreview && (
-
 				<div className={`preview ${previewCls}`}>
 					<AnimatePresence>
 						<motion.div
@@ -160,11 +83,70 @@ function ContentView(props: Props) {
 }
 
 const contentViewCls = css`{
-	display: grid;
-	grid-template-rows: 1fr 300px 20fr 5fr;
-	grid-gap: 25px;
 	height: 100vh;
-	grid-template-columns: 0 1fr 0;
+
+	.content {
+		color: #dddddd;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding-top: 100px;
+	}
+
+	.preview {
+		grid-column-start: 2;
+		grid-row-start: 2;
+	}
+
+	@media (max-width: 768px) {
+		grid-gap: 10px;
+		grid-template-rows: 60px 1fr;
+		grid-template-columns: 1fr;
+
+		.content {
+			grid-column-start: 1;
+		}
+	}
+
+	&.with-images {
+		grid-template-rows: 1fr 300px 20fr 5fr;
+
+		.content {
+			grid-column-start: 2;
+			grid-row-start: 3;
+		}
+
+		.preview {
+			grid-column-start: 2;
+			grid-row-start: 2;
+		}
+
+		@media (min-width: 640px) {
+			grid-template-rows: 5fr 20fr 5fr;
+			grid-template-columns: 50px 2fr 1fr 50px;
+
+			.preview {
+				grid-column-start: 3;
+				grid-row-start: 2;
+			}
+			.content {
+				grid-column-start: 2;
+				grid-row-start: 2;
+			}
+		}
+
+		@media (min-width: 768px) {
+			grid-template-columns: 150px 2fr 1fr 150px;
+		}
+
+		@media (min-width: 1024px) {
+			grid-template-columns: 250px 2fr 1fr 250px;
+		}
+
+		@media (min-width: 1280px) {
+			grid-template-columns: 350px 2fr 1fr 350px;
+		}
+	}
 
 	.links {
 		padding: 0 10px;
@@ -187,43 +169,6 @@ const contentViewCls = css`{
 				margin: 15px 0;
 			}
 		}
-	}
-
-	.content {
-		color: #dddddd;
-		grid-column-start: 2;
-		grid-row-start: 3;
-	}
-
-	.preview {
-		grid-column-start: 2;
-		grid-row-start: 2;
-	}
-
-	@media (min-width: 640px) {
-		grid-template-rows: 5fr 20fr 5fr;
-		grid-template-columns: 50px 2fr 1fr 50px;
-
-		.preview {
-			grid-column-start: 3;
-			grid-row-start: 2;
-		}
-		.content {
-			grid-column-start: 2;
-			grid-row-start: 2;
-		}
-	}
-
-	@media (min-width: 768px) {
-		grid-template-columns: 150px 2fr 1fr 150px;
-	}
-
-	@media (min-width: 1024px) {
-		grid-template-columns: 250px 2fr 1fr 250px;
-	}
-
-	@media (min-width: 1280px) {
-		grid-template-columns: 350px 2fr 1fr 350px;
 	}
 }`;
 

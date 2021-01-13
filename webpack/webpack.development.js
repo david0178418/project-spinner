@@ -1,5 +1,7 @@
 const path = require('path');
+const { resolve } = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 /**
 * @typedef { import('webpack').Configuration } Configuration
@@ -36,6 +38,14 @@ module.exports = {
 		],
 	},
 	plugins: [
+		// Temporarily making this dev only
+		new CopyPlugin({
+			patterns: [
+				{
+					from: resolve(__dirname, '../src/static'),
+				},
+			],
+		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash:8].css',
 		}),

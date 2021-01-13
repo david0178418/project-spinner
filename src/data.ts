@@ -22,8 +22,98 @@ const Root: PortfolioItem[] = [
 		],
 		page: {
 			description: '',
-			imagePreviews: [],
-			subContents: [],
+			imagePreviews: [{
+				description: 'asdfasdf',
+				url: 'https://via.placeholder.com/600x600?text=Projects',
+			}],
+			subContents: [{
+				label: '8/2015 - 4/2018',
+				content: /*html*/`
+					<h3>Staff UI Engineer - HomeAway</h3>
+					<p>
+						Austin, TX
+					</p>
+
+					<h4>Responsibilities/Accomplishments</h4>
+					<ul>
+						<li>
+							Responsible for moving the state of the art forward through collaboration with other lead engineers.
+						</li>
+						<li>
+							Responsible for developing junior engineers.
+						</li>
+						<li>
+							Advancing organizational conversation around burgeoning Progressive Web App standards.
+						</li>
+						<li>
+							Organized cross-team efforts to increase page performance.
+						</li>
+						<li>
+							Early adopter of GraphQL and part of larger strategic effort to spread the technology across the company.
+						</li>
+						<li>
+							Created first sharable, full vertical slice of user functionality, aided by GraphQL adoption.
+						</li>
+						<li>
+							Paved the way for teams to migrate from Java to Node by resolving critical first-adopter issues.
+						</li>
+						<li>
+							Deployed first production React application in company migration from BackboneJS to Node.
+						</li>
+						<li>
+							Worked closely with recruiting during engineering organization expansion to oversee interview panels.
+						</li>
+					</ul>
+
+					<h4>Technologies</h4>
+					<ul>
+						<li>
+							React
+						</li>
+						<li>
+							Redux
+						</li>
+						<li>
+							BackboneJS
+						</li>
+						<li>
+							Typescript
+						</li>
+						<li>
+							GraphQL
+						</li>
+						<li>
+							Apollo
+						</li>
+						<li>
+							Babel
+						</li>
+						<li>
+							Webpack
+						</li>
+						<li>
+							NodeJS
+						</li>
+						<li>
+							HapiJS
+						</li>
+						<li>
+							Less
+						</li>
+						<li>
+							Gulp
+						</li>
+						<li>
+							RequireJS
+						</li>
+					</ul>
+				`,
+			}, {
+				label: '4/2012 - 8/2015',
+				content: /*html*/`
+					
+				`,
+			}],
 			links: [],
 		},
 	}, {
@@ -248,16 +338,6 @@ const ProjectApps: PortfolioItem[] = [
 		mainVideo: '/preview-videos/phungible.mp4',
 		mainImage: '/images/wheel-main-images/phungible.png',
 		wheelImage: '/images/wheel-logos/p-logo.png',
-		parentCategories: [
-			'projects-apps',
-			'projects-all',
-		],
-	}, {
-		id: 'projects-apps-oncrex',
-		label: 'Oncrex',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
-		wheelIcon: 'globe-outline',
-		wheelIconColor: '#0077be',
 		parentCategories: [
 			'projects-apps',
 			'projects-all',
