@@ -4,7 +4,7 @@ const Root: PortfolioItem[] = [
 	{
 		id: 'projects',
 		label: 'Projects',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/projects.jpg',
 		wheelIcon: 'folder-open',
 		wheelIconColor: '#f1d592',
 		parentCategories: [
@@ -14,7 +14,7 @@ const Root: PortfolioItem[] = [
 	{
 		id: 'work-history',
 		label: 'Work History',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/work-history.jpg',
 		wheelIcon: 'business',
 		wheelIconColor: '#aaaaaa',
 		parentCategories: [
@@ -369,7 +369,7 @@ const ProjectSites: PortfolioItem[] = [
 	{
 		id: 'projects-sites-old-portfolio',
 		label: 'Old Portfolio',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/old-portfolio.png',
 		mainVideo: '/preview-videos/old-portfolio.mp4',
 		wheelIcon: 'folder',
 		wheelIconColor: '#999999',
