@@ -497,7 +497,7 @@ const ProjectFunGames: PortfolioItem[] = [
 	{
 		id: 'project-demos-set',
 		label: 'Set',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/set.png',
 		wheelImage: '/images/wheel-logos/set-card.png',
 		parentCategories: [
 			'projects-demos',
@@ -519,7 +519,7 @@ const ProjectFunGames: PortfolioItem[] = [
 	{
 		id: 'project-demos-meteor',
 		label: 'Meteor',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/meteor.png',
 		wheelIcon: 'game-controller',
 		parentCategories: [
 			'projects-demos',
@@ -540,7 +540,7 @@ const ProjectFunGames: PortfolioItem[] = [
 	{
 		id: 'project-demos-snake',
 		label: 'Snake',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/snake.png',
 		wheelIcon: 'game-controller',
 		parentCategories: [
 			'projects-demos',
@@ -561,7 +561,7 @@ const ProjectFunGames: PortfolioItem[] = [
 	{
 		id: 'project-demos-Worm',
 		label: 'Worm',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/worm.png',
 		wheelIcon: 'game-controller',
 		parentCategories: [
 			'projects-demos',
@@ -585,7 +585,7 @@ const ProjectFunGames: PortfolioItem[] = [
 	{
 		id: 'project-demos-rts',
 		label: 'Space RTS',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/space-rts.png',
 		wheelIcon: 'game-controller',
 		parentCategories: [
 			'projects-demos',
@@ -614,7 +614,7 @@ const ProjectFunGames: PortfolioItem[] = [
 	{
 		id: 'place-value-illustrator',
 		label: 'Place Value Illustrator',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/number-illustrator.png',
 		wheelIcon: 'game-controller',
 		parentCategories: [
 			'projects-demos',
