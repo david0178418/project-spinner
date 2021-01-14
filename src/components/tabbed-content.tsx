@@ -23,7 +23,7 @@ function TabbedContent(props: Props) {
 
 	return (
 		<div className={tabbedContentCls}>
-			<Row className="tab-container" xs={1} sm={content.length % 7}>
+			<Row className="tab-container">
 				{content.map(({label}, i) => (
 					<Col
 						key={i}
@@ -95,12 +95,6 @@ const tabbedContentCls = css`{
 		.tab-container {
 			background-color: #ffffff1a;
 			font-size: 22px;
-		}
-	}
-
-	@media (min-width: 576px) {
-		.tab-container {
-			max-height: 53px;
 		}
 	}
 }`;

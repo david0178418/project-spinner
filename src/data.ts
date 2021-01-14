@@ -24,7 +24,32 @@ const Root: PortfolioItem[] = [
 			description: '',
 			imagePreviews: [],
 			subContents: [{
-				label: '8/2015 - 4/2018',
+				label: '8/15-Present',
+				content: /*html*/`
+					<h3>Principal Software Engineer - Gerson Lehrman Group (GLG)</h3>
+					<p>Austin, TX</p>
+					
+					<h3>Responsibilities/Accomplishments</h3>
+					<ul>
+						<li>Developed tools for team at crucial stage of the business cycle that saved over $1 million dollar per year of potentially lost business.</li>
+						<li>Developed Zendesk-embeded application to sufficiently surface appropriate client data for the given context.</li>
+						<li>Developed embedable widget to collect internal customer feedback/pain points and identify opportunities for improved user satisfaction.</li>
+						<li>Created strategy to refactor and update key legacy software UI. Embedded a completely new React UI within a existing AngularJS application and allowed users to freely toggle between them until new development reached feature parity. 
+						<li>Partnered to create internal feature flag system.</li>
+					</ul>
+					
+					<h3>Technologies</h3>
+					<ul>
+						<li>React</li>
+						<li>SQL Server</li>
+						<li>Azure Cosmos DB</li>
+						<li>NodeJS</li>
+						<li>Typescript</li>
+						<li>AngularJS</li>
+					</ul>
+				`,
+			}, {
+				label: '8/15-4/18',
 				content: /*html*/`
 					<h3>Staff UI Engineer - HomeAway</h3>
 					<p>
@@ -49,7 +74,7 @@ const Root: PortfolioItem[] = [
 							Early adopter of GraphQL and part of larger strategic effort to spread the technology across the company.
 						</li>
 						<li>
-							Created first sharable, full vertical slice of user functionality, aided by GraphQL adoption.
+							Created first shareable, full vertical slice of user functionality, aided by GraphQL adoption.
 						</li>
 						<li>
 							Paved the way for teams to migrate from Java to Node by resolving critical first-adopter issues.
@@ -64,51 +89,154 @@ const Root: PortfolioItem[] = [
 
 					<h4>Technologies</h4>
 					<ul>
-						<li>
-							React
-						</li>
-						<li>
-							Redux
-						</li>
-						<li>
-							BackboneJS
-						</li>
-						<li>
-							Typescript
-						</li>
-						<li>
-							GraphQL
-						</li>
-						<li>
-							Apollo
-						</li>
-						<li>
-							Babel
-						</li>
-						<li>
-							Webpack
-						</li>
-						<li>
-							NodeJS
-						</li>
-						<li>
-							HapiJS
-						</li>
-						<li>
-							Less
-						</li>
-						<li>
-							Gulp
-						</li>
-						<li>
-							RequireJS
-						</li>
+						<li>React</li>
+						<li>Redux</li>
+						<li>BackboneJS</li>
+						<li>Typescript</li>
+						<li>GraphQL</li>
+						<li>Apollo</li>
+						<li>Babel</li>
+						<li>Webpack</li>
+						<li>NodeJS</li>
+						<li>HapiJS</li>
+						<li>Less</li>
+						<li>Gulp</li>
+						<li>RequireJS</li>
 					</ul>
 				`,
 			}, {
-				label: '4/2012 - 8/2015',
+				label: '4/12-8/15',
 				content: /*html*/`
+					<h3>Senior UI Developer - Spredfast</h3>
+					<p>Austin, TX</p>
 					
+					<h4>Responsibilities/Accomplishments</h4>
+					<ul>
+						<li>Created rich, interactive user interfaces and dashboards for enterprise customers.</li>
+						<li>Member of core UI architecture team which determined patterns and best practices for the wider team.</li>
+						<li>Spearheaded investigation of Flux frameworks for potential integration with existing system.</li>
+						<li>Identified and proposed solutions for Flux integration challenges.</li>
+						<li>Investigated conversion of legacy Gradle/r.js/Requirejs build to Webpack.</li>
+					</ul>
+					
+					<h4>Technologies</h4>
+					<ul>
+						<li>React</li>
+						<li>Flux</li>
+						<li>CanJS</li>
+						<li>Node</li>
+						<li>Sass</li>
+						<li>less</li>
+						<li>Bower</li>
+						<li>Grunt</li>
+						<li>RequireJS</li>
+					</ul>
+				`,
+			}, {
+				label: '2/11-4/12',
+				content: /*html*/`
+					<h3>Senior Web Developer - Easton-Bell Sports, Inc</h3>
+					<p>Irving, TX</p>
+
+					<h4>Responsibilities/Accomplishments</h4>
+					<ul>
+						<li>
+							Chief front-end technologist for high traffic marketing and e-commerce sites across all company brands (Riddell, Giro, Easton, Bell Sports, Blackburn).
+						</li>
+						<li>
+							Owned management of code repositories and code integrity.
+						</li>
+						<li>
+							Worked closely with design and marketing teams to create interactive branding mini-sites.
+						</li>
+						<li>
+							Augmented a number of front-end interfaces on marketing sites by replacing Adobe Flash implementations with more efficient javascript and HTML.
+						</li>
+						<li>
+							Charged with up-training team on development techniques and principals (with major emphasis on javascript).
+						</li>
+					</ul>
+
+					<h4>Technologies</h4>
+					<ul>
+						<li>PHP</li>
+						<li>Javascript</li>
+						<li>BackboneJS</li>
+						<li>jQuery</li>
+						<li>Magento</li>
+						<li>Grunt</li>
+					</ul>
+				`,
+			}, {
+				label: '12/09-2/11',
+				content: /*html*/`
+					<h3>Developer Team Lead - Distribion, Inc (new entity split from New Media Gateway)</h3>
+					<p>Dallas, TX</p>
+					
+					<h4>Responsibilities/Accomplishments</h4>
+					<ul>
+						<li>Continually identified and implemented system changes to maintain/increase performance.</li>
+						<li>Performed database migrations and code releases.</li>
+						<li>Responsible for interfacing with customers and managing top-tier customer issues.</li>
+						<li>Draft, prioritize, and assign development tickets to developers.</li>
+						<li>Effectively provided guidance to developers for miscellaneous system questions and troubleshooting of coding issues.</li>
+						<li>Performed developer code reviews and coaching sessions to maintain quality.</li>
+					</ul>
+					
+					<h4>Technologies</h4>
+					<ul>
+						<li>PHP</li>
+						<li>PostgresSql</li>
+						<li>Javascript</li>
+						<li>jQUery</li>
+					</ul>
+				`,
+			}, {
+				label: '3/08-12/09',
+				content: /*html*/`
+					<h3>Web Application Developer - New Media Gateway (parent company of Distribion)</h3>
+					<p>Dallas, TX</p>
+					
+					<h3>Responsibilities/Accomplishments</h3>
+					<ul>
+						<li>Responsible for development and maintenance of PHP, PostgresSQL, and Javascript on the flagship product in both team and individual projects.</li>
+						<li>Designed efficient database schemas for new applications.</li>
+						<li>Utilized client-side processing in Javascript to lighten server load (DOM building, AJAX response parsing, UI manipulation) in new reporting applications.</li>
+						<li>Effectively implemented new client solutions by integrating with a variety of partner company services via REST and SOAP interfaces.</li>
+						<li>Success of product team aided in creation of new child company, "Distribion, Inc".</li>
+					</ul>
+					
+					<h3>Technologies</h3>
+					<ul>
+						<li>PHP</li>
+						<li>PostgresSql</li>
+						<li>Javascript</li>
+						<li>jQUery</li>
+					</ul>
+				`,
+			}, {
+				label: '8/07-3/08',
+				content: /*html*/`
+					<h3>Application Developer - Simmons Corp</h3>
+					<p>Richardson, TX</p>
+					
+					<h4>Responsibilities/Accomplishments</h4>
+					<ul>
+						<li>Rapidly created custom reports using Crystal Reports in VB6 and VB.Net.</li>
+						<li>Proposed, designed, and implemented a C#.Net solution for automation of critical tasks involving file/data collection and monitoring across dozens of local systems.</li>
+						<li>Worked closely with electrical engineers to develop head-end software for newly developed node polling system.</li>
+						<li>Rapidly developed numerous tools in C#.Net to aid in diagnosis of issues with primary company products.</li>
+						<li>Developed microprocessor code in proprietary C library for Rabbit microcontrollers.</li>
+					</ul>
+					
+					<h4>Technologies</h4>
+					<ul>
+						<li>C</li>
+						<li>C#</li>
+						<li>VB.net</li>
+						<li>VB6</li>
+						<li>SourceSafe</li>
+					</ul>
 				`,
 			}],
 			links: [],
