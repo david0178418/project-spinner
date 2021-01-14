@@ -4,7 +4,7 @@ const Root: PortfolioItem[] = [
 	{
 		id: 'projects',
 		label: 'Projects',
-		mainImage: 'https://via.placeholder.com/600x600?text=Projects',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'folder-open',
 		wheelIconColor: '#f1d592',
 		parentCategories: [
@@ -14,7 +14,7 @@ const Root: PortfolioItem[] = [
 	{
 		id: 'work-history',
 		label: 'Work History',
-		mainImage: 'https://via.placeholder.com/600x600?text=Work+History',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'business',
 		wheelIconColor: '#aaaaaa',
 		parentCategories: [
@@ -116,7 +116,7 @@ const Root: PortfolioItem[] = [
 	}, {
 		id: 'contact',
 		label: 'Contact',
-		mainImage: 'https://via.placeholder.com/600x600?text=Contact',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'person',
 		parentCategories: [
 			'root',
@@ -145,7 +145,7 @@ const Root: PortfolioItem[] = [
 	}, {
 		id: 'about',
 		label: 'About Me',
-		mainImage: 'https://via.placeholder.com/600x600?text=Projects',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'help-circle',
 		wheelIconColor: '#24a0ed',
 		parentCategories: [
@@ -158,7 +158,7 @@ const Projects: PortfolioItem[] = [
 	{
 		id: 'projects-all',
 		label: 'All Projects',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'apps',
 		parentCategories: [
 			'projects',
@@ -166,7 +166,7 @@ const Projects: PortfolioItem[] = [
 	}, {
 		id: 'projects-apps',
 		label: 'Apps',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'phone-portrait-sharp',
 		wheelIconColor: '#949494',
 		parentCategories: [
@@ -176,7 +176,7 @@ const Projects: PortfolioItem[] = [
 	{
 		id: 'projects-demos',
 		label: 'Fun & Games',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'logo-xbox',
 		parentCategories: [
 			'projects',
@@ -185,7 +185,7 @@ const Projects: PortfolioItem[] = [
 	{
 		id: 'projects-sites',
 		label: 'Sites',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'globe-outline',
 		wheelIconColor: '#0077be',
 		parentCategories: [
@@ -198,7 +198,7 @@ const ProjectSites: PortfolioItem[] = [
 	{
 		id: 'projects-sites-blog',
 		label: 'Personal Blog',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelImage: '/images/wheel-logos/blog-avatar.png',
 		parentCategories: [
 			'projects-sites',
@@ -208,7 +208,7 @@ const ProjectSites: PortfolioItem[] = [
 	{
 		id: 'projects-sites-indiecomicrack',
 		label: 'IndieComic Rack',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelImage: '/images/wheel-logos/icr-logo.jpg',
 		page: {
 			description: '',
@@ -224,7 +224,7 @@ const ProjectSites: PortfolioItem[] = [
 	{
 		id: 'projects-sites-fullviewnews',
 		label: 'FullView News',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelImage: '/images/wheel-logos/fvn-logo.jpg',
 		page: {
 			description: '',
@@ -240,7 +240,7 @@ const ProjectSites: PortfolioItem[] = [
 	{
 		id: 'projects-sites-old-portfolio',
 		label: 'Old Portfolio',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		mainVideo: '/preview-videos/old-portfolio.mp4',
 		wheelIcon: 'folder',
 		wheelIconColor: '#999999',
@@ -280,7 +280,7 @@ const ProjectSites: PortfolioItem[] = [
 	{
 		id: 'projects-sites-portfolio',
 		label: 'Portfolio',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'folder',
 		wheelIconColor: '#f1d592',
 		page: {
@@ -288,7 +288,7 @@ const ProjectSites: PortfolioItem[] = [
 			imagePreviews: [
 				{
 					description: 'asdfasdfsa',
-					url: 'https://via.placeholder.com/768x576?text=Node',
+					url: '/images/wheel-main-images/soon.svg',
 				},
 			],
 			links: [],
@@ -315,7 +315,7 @@ const ProjectSites: PortfolioItem[] = [
 	{
 		id: 'projects-sites-argdigger',
 		label: 'ArgDigger',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'bookmarks',
 		wheelIconColor: '#4ba7cb',
 		parentCategories: [
@@ -353,7 +353,7 @@ const ProjectFunGames: PortfolioItem[] = [
 	{
 		id: 'project-demos-set',
 		label: 'Set',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelImage: '/images/wheel-logos/set-card.png',
 		parentCategories: [
 			'projects-demos',
@@ -375,7 +375,7 @@ const ProjectFunGames: PortfolioItem[] = [
 	{
 		id: 'project-demos-meteor',
 		label: 'Meteor',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'game-controller',
 		parentCategories: [
 			'projects-demos',
@@ -385,7 +385,7 @@ const ProjectFunGames: PortfolioItem[] = [
 	{
 		id: 'project-demos-snake',
 		label: 'Snake',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'game-controller',
 		parentCategories: [
 			'projects-demos',
@@ -395,7 +395,7 @@ const ProjectFunGames: PortfolioItem[] = [
 	{
 		id: 'project-demos-Worm',
 		label: 'Worm',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'game-controller',
 		parentCategories: [
 			'projects-demos',
@@ -405,7 +405,7 @@ const ProjectFunGames: PortfolioItem[] = [
 	{
 		id: 'project-demos-rts',
 		label: 'Space RTS',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'game-controller',
 		parentCategories: [
 			'projects-demos',
@@ -415,7 +415,7 @@ const ProjectFunGames: PortfolioItem[] = [
 	{
 		id: 'project-demos-rts',
 		label: 'Place Value Illustrator',
-		mainImage: 'https://via.placeholder.com/768x576?text=Node',
+		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'game-controller',
 		parentCategories: [
 			'projects-demos',
@@ -433,7 +433,7 @@ const ProjectFunGames: PortfolioItem[] = [
 			imagePreviews: [
 				{
 					description: 'asdfasdfsa',
-					url: 'https://via.placeholder.com/768x576?text=Node',
+					url: '/images/wheel-main-images/soon.svg',
 				},
 			],
 		},
@@ -453,7 +453,7 @@ const items = [
 // 	{
 // 		id: 'javascript',
 // 		label: 'javascript',
-// 		mainImage: 'https://via.placeholder.com/500x550?text=Javascript',
+// 		mainImage: '/images/wheel-main-images/soon.svg',
 // 		wheelImage: '/images/wheel-logos/javascript-logo.png',
 // 		parentCategories: [
 // 			'typescript',
@@ -461,7 +461,7 @@ const items = [
 // 	}, {
 // 		id: 'pwa',
 // 		label: 'pwa',
-// 		mainImage: 'https://via.placeholder.com/700x550?text=PWA',
+// 		mainImage: '/images/wheel-main-images/soon.svg',
 // 		wheelImage: '/images/wheel-logos/pwa-logo.png',
 // 		parentCategories: [
 // 			'typescript',
@@ -469,14 +469,14 @@ const items = [
 // 	}, {
 // 		id: 'react',
 // 		label: 'React',
-// 		mainImage: 'https://via.placeholder.com/600x600?text=React',
+// 		mainImage: '/images/wheel-main-images/soon.svg',
 // 		wheelImage: '/images/wheel-logos/react-logo.webp',
 // 		parentCategories: [
 // 		],
 // 	}, {
 // 		id: 'angular',
 // 		label: 'angular',
-// 		mainImage: 'https://via.placeholder.com/550x550?text=Angular',
+// 		mainImage: '/images/wheel-main-images/soon.svg',
 // 		wheelImage: '/images/wheel-logos/angular-logo.png',
 // 		parentCategories: [
 // 		],
