@@ -27,6 +27,10 @@ function MainContent(props: Props) {
 	const activeIndex = useDebounce(bufferedIndex, 500);
 	const selectedItem = items[activeIndex];
 	const isPortrait = orientation === Orientation.Portrait;
+
+	if(!selectedItem) {
+		return <>Coming Soon...</>;
+	}
 	const {
 		mainImage,
 		mainVideo,

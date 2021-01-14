@@ -253,6 +253,9 @@ const Root: PortfolioItem[] = [
 		page: {
 			description: /*html*/`
 				<style>
+					.email a {
+						color: #ffffff;
+					}
 					.email button {
 						border: 0;
 						border-radius: 5px;
@@ -287,7 +290,7 @@ const Projects: PortfolioItem[] = [
 	{
 		id: 'projects-all',
 		label: 'All Projects',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/gotta-make.svg',
 		wheelIcon: 'apps',
 		parentCategories: [
 			'projects',
@@ -295,7 +298,7 @@ const Projects: PortfolioItem[] = [
 	}, {
 		id: 'projects-apps',
 		label: 'Apps',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/gotta-make.svg',
 		wheelIcon: 'phone-portrait-sharp',
 		wheelIconColor: '#949494',
 		parentCategories: [
@@ -305,7 +308,7 @@ const Projects: PortfolioItem[] = [
 	{
 		id: 'projects-demos',
 		label: 'Fun & Games',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/gotta-make.svg',
 		wheelIcon: 'logo-xbox',
 		parentCategories: [
 			'projects',
@@ -314,7 +317,7 @@ const Projects: PortfolioItem[] = [
 	{
 		id: 'projects-sites',
 		label: 'Sites',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/gotta-make.svg',
 		wheelIcon: 'globe-outline',
 		wheelIconColor: '#0077be',
 		parentCategories: [
@@ -327,23 +330,35 @@ const ProjectSites: PortfolioItem[] = [
 	{
 		id: 'projects-sites-blog',
 		label: 'Personal Blog',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/blog.png',
 		wheelImage: '/images/wheel-logos/blog-avatar.png',
 		parentCategories: [
 			'projects-sites',
 			'projects-all',
 		],
+		page: {
+			description: '',
+			subContents: [],
+			imagePreviews: [],
+			links: [{
+				label: 'Open',
+				url: 'https://davidgranado.com',
+			}],
+		},
 	},
 	{
 		id: 'projects-sites-indiecomicrack',
 		label: 'IndieComic Rack',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/indiecomicrack.png',
 		wheelImage: '/images/wheel-logos/icr-logo.jpg',
 		page: {
 			description: '',
 			imagePreviews: [],
 			subContents: [],
-			links: [],
+			links: [{
+				label: 'Open',
+				url: 'https://indiecomicrack.com',
+			}],
 		},
 		parentCategories: [
 			'projects-sites',
@@ -353,13 +368,16 @@ const ProjectSites: PortfolioItem[] = [
 	{
 		id: 'projects-sites-fullviewnews',
 		label: 'FullView News',
-		mainImage: '/images/wheel-main-images/soon.svg',
+		mainImage: '/images/wheel-main-images/fullviewnews.png',
 		wheelImage: '/images/wheel-logos/fvn-logo.jpg',
 		page: {
 			description: '',
 			imagePreviews: [],
 			subContents: [],
-			links: [],
+			links: [{
+				label: 'Open',
+				url: 'https://fullview.news',
+			}],
 		},
 		parentCategories: [
 			'projects-sites',
@@ -413,40 +431,11 @@ const ProjectSites: PortfolioItem[] = [
 		wheelIcon: 'folder',
 		wheelIconColor: '#f1d592',
 		page: {
-			description: 'foooo',
-			imagePreviews: [
-				{
-					description: 'asdfasdfsa',
-					url: '/images/wheel-main-images/soon.svg',
-				},
-			],
+			description: 'This...this right here.  You\'re looking at it😄.',
+			imagePreviews: [],
 			links: [],
-			subContents: [
-				{
-					label: 'Fooooo 1',
-					content: 'Baaaar 1',
-				},
-				{
-					label: 'Fooooo 2',
-					content: 'Baaaar 2',
-				},
-				{
-					label: 'Fooooo 3',
-					content: 'Baaaar 3',
-				},
-			],
+			subContents: [],
 		},
-		parentCategories: [
-			'projects-sites',
-			'projects-all',
-		],
-	},
-	{
-		id: 'projects-sites-argdigger',
-		label: 'ArgDigger',
-		mainImage: '/images/wheel-main-images/soon.svg',
-		wheelIcon: 'bookmarks',
-		wheelIconColor: '#4ba7cb',
 		parentCategories: [
 			'projects-sites',
 			'projects-all',
@@ -465,6 +454,23 @@ const ProjectApps: PortfolioItem[] = [
 			'projects-apps',
 			'projects-all',
 		],
+		page: {
+			description: '',
+			subContents: [],
+			links: [
+				{
+					label: 'Landing Page',
+					url: 'https://shoplystr.com',
+				}, {
+					label: 'Web App',
+					url: 'https://shoplystr.app',
+				}, {
+					label: 'Google Play Store',
+					url: 'https://play.google.com/store/apps/details?id=com.shoplystr.app&utm_source=portfolio&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1',
+				},
+			],
+			imagePreviews: [],
+		},
 	}, {
 		id: 'projects-apps-phungible',
 		label: 'Phungible',
@@ -475,6 +481,17 @@ const ProjectApps: PortfolioItem[] = [
 			'projects-apps',
 			'projects-all',
 		],
+		page: {
+			description: '',
+			subContents: [],
+			links: [
+				{
+					label: 'Open',
+					url: 'https://phungible.app',
+				},
+			],
+			imagePreviews: [],
+		},
 	},
 ];
 
@@ -510,40 +527,21 @@ const ProjectFunGames: PortfolioItem[] = [
 			'projects-demos',
 			'projects-all',
 		],
+		page: {
+			description: '',
+			subContents: [],
+			links: [
+				{
+					label: 'Open',
+					url: 'https://davidgranado.com/projects/meteor/',
+				},
+			],
+			imagePreviews: [],
+		},
 	},
 	{
 		id: 'project-demos-snake',
 		label: 'Snake',
-		mainImage: '/images/wheel-main-images/soon.svg',
-		wheelIcon: 'game-controller',
-		parentCategories: [
-			'projects-demos',
-			'projects-all',
-		],
-	},
-	{
-		id: 'project-demos-Worm',
-		label: 'Worm',
-		mainImage: '/images/wheel-main-images/soon.svg',
-		wheelIcon: 'game-controller',
-		parentCategories: [
-			'projects-demos',
-			'projects-all',
-		],
-	},
-	{
-		id: 'project-demos-rts',
-		label: 'Space RTS',
-		mainImage: '/images/wheel-main-images/soon.svg',
-		wheelIcon: 'game-controller',
-		parentCategories: [
-			'projects-demos',
-			'projects-all',
-		],
-	},
-	{
-		id: 'project-demos-rts',
-		label: 'Place Value Illustrator',
 		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'game-controller',
 		parentCategories: [
@@ -556,13 +554,82 @@ const ProjectFunGames: PortfolioItem[] = [
 			links: [
 				{
 					label: 'Open',
-					url: 'https://davidgranado.com/projects/counter/',
+					url: 'https://davidgranado.com/projects/snake/',
+				},
+			],
+			imagePreviews: [],
+		},
+	},
+	{
+		id: 'project-demos-Worm',
+		label: 'Worm',
+		mainImage: '/images/wheel-main-images/soon.svg',
+		wheelIcon: 'game-controller',
+		parentCategories: [
+			'projects-demos',
+			'projects-all',
+		],
+		page: {
+			description: '',
+			subContents: [],
+			links: [
+				{
+					label: 'Play It Now',
+					url: 'https://davidgranado.com/projects/worm/',
+				}, {
+					label: 'Blog Entry',
+					url: 'https://blog.davidgranado.com/2016/10/04/worm/',
+				},
+			],
+			imagePreviews: [],
+		},
+	},
+	{
+		id: 'project-demos-rts',
+		label: 'Space RTS',
+		mainImage: '/images/wheel-main-images/soon.svg',
+		wheelIcon: 'game-controller',
+		parentCategories: [
+			'projects-demos',
+			'projects-all',
+		],
+		page: {
+			description: '',
+			subContents: [],
+			links: [
+				{
+					label: 'Play It Now',
+					url: 'https://davidgranado.com/projects/space-rts/',
+				}, {
+					label: 'Blog Entry',
+					url: 'https://blog.davidgranado.com/2016/10/03/snake/',
 				},
 			],
 			imagePreviews: [
 				{
 					description: 'asdfasdfsa',
 					url: '/images/wheel-main-images/soon.svg',
+				},
+			],
+		},
+	},
+	{
+		id: 'place-value-illustrator',
+		label: 'Place Value Illustrator',
+		mainImage: '/images/wheel-main-images/soon.svg',
+		wheelIcon: 'game-controller',
+		parentCategories: [
+			'projects-demos',
+			'projects-all',
+		],
+		page: {
+			description: 'A simple project to visualize counting and place values.',
+			subContents: [],
+			imagePreviews: [],
+			links: [
+				{
+					label: 'Open',
+					url: 'https://davidgranado.com/projects/counter/',
 				},
 			],
 		},
