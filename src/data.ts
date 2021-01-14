@@ -31,10 +31,10 @@ const Root: PortfolioItem[] = [
 					
 					<h3>Responsibilities/Accomplishments</h3>
 					<ul>
-						<li>Developed tools for team at crucial stage of the business cycle that saved over $1 million dollar per year of potentially lost business.</li>
+						<li>Developed tools for client-facing team at crucial stage of the business cycle that saved over $1 million dollar per year of potentially lost business.</li>
 						<li>Developed Zendesk-embeded application to sufficiently surface appropriate client data for the given context.</li>
-						<li>Developed embedable widget to collect internal customer feedback/pain points and identify opportunities for improved user satisfaction.</li>
-						<li>Created strategy to refactor and update key legacy software UI. Embedded a completely new React UI within a existing AngularJS application and allowed users to freely toggle between them until new development reached feature parity. 
+						<li>Developed embeddable widget to collect internal customer feedback/pain points and identify opportunities for improved user satisfaction.</li>
+						<li>Created strategy to refactor and update key legacy software UI. Embedded a completely new React UI within an existing AngularJS application and allowed users to freely toggle between them until new development reached feature parity.</li>
 						<li>Partnered to create internal feature flag system.</li>
 					</ul>
 					
@@ -153,9 +153,6 @@ const Root: PortfolioItem[] = [
 						<li>
 							Augmented a number of front-end interfaces on marketing sites by replacing Adobe Flash implementations with more efficient javascript and HTML.
 						</li>
-						<li>
-							Charged with up-training team on development techniques and principals (with major emphasis on javascript).
-						</li>
 					</ul>
 
 					<h4>Technologies</h4>
@@ -182,6 +179,7 @@ const Root: PortfolioItem[] = [
 						<li>Draft, prioritize, and assign development tickets to developers.</li>
 						<li>Effectively provided guidance to developers for miscellaneous system questions and troubleshooting of coding issues.</li>
 						<li>Performed developer code reviews and coaching sessions to maintain quality.</li>
+						<li>Charged with up-training team on development techniques and principles (with major emphasis on javascript).</li>
 					</ul>
 					
 					<h4>Technologies</h4>
