@@ -1,16 +1,34 @@
 <!doctype html><html><head><meta charset="UTF-8"><title>Some RTS/Tower Defense Game</title><style>body {
-				background-color: #444;
-				margin: 0;
-				padding: 0;
-				overflow: hidden;
-				cursor: default;
-				text-align: center;
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
-			#phaser {
-				display: inline-block;
-				position: relative;
-			}</style><script>window.PIXI = {};</script></head><body><div id="phaser"><div id="ui"></div></div><script src="vendor.js"></script><script src="bundle.js"></script></body></html>
+		background-color: #444;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		cursor: default;
+		text-align: center;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	#phaser {
+		display: inline-block;
+		position: relative;
+	}</style><script>window.PIXI = {};</script></head>
+	<body>
+		<div id="phaser">
+			<div id="ui"></div>
+		</div>
+		<p style="color: white;">
+			Incomplete demo<br/>
+			<small>
+				WASD to pan camera. Zoom in/out with mouse wheel.<br/>
+				Left click to select units and controlled planets. Drag to select multiple units.<br/>
+				Left click to move units or set rally points for planets.<br/>
+				Hold shift to set multiple waypoints.<br/>
+				Control new planets by sending colony ship to unoccupied planet.<br/>
+			</small>
+		</p>
+		<script src="vendor.js"></script>
+		<script src="bundle.js"></script>
+	</body>
+</html>
