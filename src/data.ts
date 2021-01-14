@@ -533,7 +533,7 @@ const ProjectFunGames: PortfolioItem[] = [
 			links: [
 				{
 					label: 'Open',
-					url: 'https://davidgranado.com/projects/meteor/',
+					url: 'https://davidgranado.com/projects/meteor-game/',
 				},
 			],
 			imagePreviews: [],
