@@ -40,7 +40,7 @@ function ContentView(props: Props) {
 						))}
 					</ul>
 				)}
-				<p dangerouslySetInnerHTML={{__html: content.description}}/>
+				<div dangerouslySetInnerHTML={{__html: content.description}}/>
 				{content.subContents && (
 					<TabbedContent
 						content={content.subContents}

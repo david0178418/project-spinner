@@ -122,7 +122,21 @@ const Root: PortfolioItem[] = [
 			'root',
 		],
 		page: {
-			description: `
+			description: /*html*/`
+				<style>
+					.email button {
+						border: 0;
+						border-radius: 5px;
+					}
+					.active button {
+						display: none;
+					}
+				</style>
+				<div class="email" onClick="this.classList.add('active')">
+					<a onclick="setTimeout(() => {const name='davidjgranado',domain='gmail.com',email=name+'@'+domain;this.innerText=email;this.href='mailto:'+email;}, 0)">
+						<button>Reveal Email</button>
+					</a>
+				</div>
 			`,
 			imagePreviews: [],
 			subContents: [],
