@@ -43,6 +43,7 @@ const Root: PortfolioItem[] = [
 						<li>React</li>
 						<li>SQL Server</li>
 						<li>Azure Cosmos DB</li>
+						<li>Webpack</li>
 						<li>NodeJS</li>
 						<li>Typescript</li>
 						<li>AngularJS</li>

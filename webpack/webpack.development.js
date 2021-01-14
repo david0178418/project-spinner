@@ -44,6 +44,10 @@ module.exports = {
 				{
 					from: resolve(__dirname, '../src/static'),
 				},
+				{
+					from: resolve(__dirname, '../node_modules/bootstrap/dist/css/bootstrap.min.css'),
+					to: resolve(__dirname, '../build/'),
+				},
 			],
 		}),
 		new MiniCssExtractPlugin({
