@@ -46,6 +46,10 @@ function WheelView({items}: Props) {
 					)}
 				/>
 			</div>
+			<div className="instructions">
+				<ion-icon name="information-circle-outline"></ion-icon> Navigate with arrow keys.<br/>
+				<ion-icon name="alert-circle-outline"></ion-icon> Incomplete and under active development.
+			</div>
 		</div>
 	);
 }
@@ -53,6 +57,18 @@ function WheelView({items}: Props) {
 const layout = css`{
 	display: flex;
 	overflow: hidden;
+
+	.instructions {
+		position: fixed;
+		left: 20px;
+		bottom: 20px;
+		font-size: 20px;
+		color: #c1c1c1;
+
+		.portrait & {
+			display: none;
+		}
+	}
 
 	.left-pane {
 		flex: 1;
