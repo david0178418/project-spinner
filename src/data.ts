@@ -454,7 +454,7 @@ const ProjectApps: PortfolioItem[] = [
 		],
 		page: {
 			description: '',
-			subContents: [],
+			imagePreviews: [],
 			links: [
 				{
 					label: 'Landing Page',
@@ -467,7 +467,17 @@ const ProjectApps: PortfolioItem[] = [
 					url: 'https://play.google.com/store/apps/details?id=com.shoplystr.app&utm_source=portfolio&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1',
 				},
 			],
-			imagePreviews: [],
+			subContents: [{
+				label: 'Motivation',
+				content: /*html*/`
+					
+				`,
+			}, {
+				label: 'Technology',
+				content: /*html*/`
+
+				`,
+			}],
 		},
 	}, {
 		id: 'projects-apps-phungible',
@@ -480,8 +490,13 @@ const ProjectApps: PortfolioItem[] = [
 			'projects-all',
 		],
 		page: {
-			description: '',
-			subContents: [],
+			description: `
+				<p>
+					A simple budgeting app for those with simple "paycheck in, bills/expenses out".
+					It provides the ability to project how much amoney you'll have on any given day,
+					assuming you stick to your proposed budget.
+				</p>
+			`,
 			links: [
 				{
 					label: 'Open',
@@ -489,6 +504,54 @@ const ProjectApps: PortfolioItem[] = [
 				},
 			],
 			imagePreviews: [],
+			subContents: [{
+				label: 'Motivation',
+				content: /*html*/`
+					<p>
+						When I was younger, I wanted to find some software solution
+						for tracking my money.  When I shopped around, it seemed like
+						everything was geared squarely at CPAs.  Given that I had
+						no assets, a paycheck, and bills, I wanted something simple
+						that would help me determine how much money I would have
+						on a given day and flag when I might go red.
+					</p>
+					<p>
+						This app has taken on a couple of incarnations. The earliest
+						of which was written in C#.  This latest iteration is a rewrite
+						of an Angular/couchdb version I'd developed.
+					</p>
+					<p>
+						Unfortunately, my financial situation is a bit more complex
+						than when I first came up with this idea, meaning I have yet
+						to give this an extended to run.  I used this as more of an
+						excuse to try out Ionic's new React version.
+					</p>
+					<p>
+						In the end, I'm quite happy with the results
+					</p>
+				`,
+			}, {
+				label: 'Technologies Used',
+				content: /*html*/`
+					<ul>
+						<li>React</li>
+						<li>Ionic</li>
+						<li>RXJS</li>
+						<li>Typescript</li>
+						<li>SASS</li>
+						<li>Webpack</li>
+						<li>
+							Firebase
+							<ul>
+								<li>Cloud Functions</li>
+								<li>Hosting</li>
+								<li>Firestore</li>
+								<li>Auth</li>
+							</ul>
+						</li>
+					</ul>
+				`,
+			}],
 		},
 	},
 ];
