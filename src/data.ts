@@ -453,7 +453,7 @@ const ProjectApps: PortfolioItem[] = [
 			'projects-all',
 		],
 		page: {
-			description: '',
+			description: 'A simple shopping list app with realtime shared lists.',
 			imagePreviews: [],
 			links: [
 				{
@@ -470,12 +470,52 @@ const ProjectApps: PortfolioItem[] = [
 			subContents: [{
 				label: 'Motivation',
 				content: /*html*/`
-					
+					<p>
+						This project was made simply because I have a horrible memory.
+						And it was starting to get me into trouble when I would go to the
+						store and forget one of the three items my wife sent me to get.
+					</p>
+					<p>
+						We had tried using some list solutions like Wonderlist,
+						but it didn't seem to quite fit our workflow.  AND it always
+						seemed to be having issues as well.
+					</p>
+					<p>
+						Additionally, there was one feature she was looking for, but
+						couldn't seem to find. She wished for the ability to save
+						lists of things she commonly bought together and make a
+						new list from those.
+					</p>
+					<p>
+						This seemed simple enough, so I decided to use this as an
+						excuse to give a combination of Ionic and the Firebase
+						platform a try.
+					</p>
+					<p>
+						As a result, I've become huge fans of both.
+					</p>
 				`,
 			}, {
-				label: 'Technology',
+				label: 'Technologies Used',
 				content: /*html*/`
-
+					<ul>
+						<li>Angular</li>
+						<li>Ionic</li>
+						<li>RXJS</li>
+						<li>Typescript</li>
+						<li>SASS</li>
+						<li>Webpack</li>
+						<li>
+							Firebase
+							<ul>
+								<li>Cloud Functions</li>
+								<li>Firestore</li>
+								<li>Cloud Messaging</li>
+								<li>Auth</li>
+								<li>Hosting</li>
+							</ul>
+						</li>
+					</ul>
 				`,
 			}],
 		},
@@ -544,9 +584,10 @@ const ProjectApps: PortfolioItem[] = [
 							Firebase
 							<ul>
 								<li>Cloud Functions</li>
-								<li>Hosting</li>
+								<li>Cloud Storage</li>
 								<li>Firestore</li>
 								<li>Auth</li>
+								<li>Hosting</li>
 							</ul>
 						</li>
 					</ul>
