@@ -336,11 +336,19 @@ const ProjectSites: PortfolioItem[] = [
 		],
 		page: {
 			description: '',
-			subContents: [],
 			imagePreviews: [],
 			links: [{
 				label: 'Open',
 				url: 'https://davidgranado.com',
+			}],
+			subContents: [ {
+				label: 'Technologies Used',
+				content: /*html*/`
+					<ul>
+						<li>Hexo</li>
+						<li>Firebase Hosting</li>
+					</ul>
+				`,
 			}],
 		},
 	},
@@ -368,19 +376,40 @@ const ProjectSites: PortfolioItem[] = [
 		label: 'FullView News',
 		mainImage: '/images/wheel-main-images/fullviewnews.png',
 		wheelImage: '/images/wheel-logos/fvn-logo.jpg',
-		page: {
-			description: '',
-			imagePreviews: [],
-			subContents: [],
-			links: [{
-				label: 'Open',
-				url: 'https://fullview.news',
-			}],
-		},
 		parentCategories: [
 			'projects-sites',
 			'projects-all',
 		],
+		page: {
+			description: '',
+			imagePreviews: [],
+			links: [{
+				label: 'Open',
+				url: 'https://fullview.news',
+			}],
+			subContents: [ {
+				label: 'Technologies Used',
+				content: /*html*/`
+					<ul>
+						<li>React</li>
+						<li>NextJS</li>
+						<li>ReactBootstrap</li>
+						<li>Typescript</li>
+						<li>SASS</li>
+						<li>Webpack</li>
+						<li>
+							Firebase
+							<ul>
+								<li>Cloud Functions</li>
+								<li>Firestore</li>
+								<li>Cloud Storage</li>
+								<li>Hosting</li>
+							</ul>
+						</li>
+					</ul>
+				`,
+			}],
+		},
 	},
 	{
 		id: 'projects-sites-old-portfolio',
@@ -399,7 +428,6 @@ const ProjectSites: PortfolioItem[] = [
 				short order.  It wasn't meant to be more utilitarian.  That's to say, it's absolutely <em>hideous</em>
 				but got the job done of collecting much of my work into one spot.
 			`,
-			subContents: [],
 			links: [
 				{
 					label: 'Open',
@@ -420,6 +448,24 @@ const ProjectSites: PortfolioItem[] = [
 				// 	url: '/images/preview-images/old-portfolio/old-portfolio-3.png',
 				// },
 			],
+			subContents: [ {
+				label: 'Technologies Used',
+				content: /*html*/`
+					<ul>
+						<li>React</li>
+						<li>SemanticUI</li>
+						<li>Typescript</li>
+						<li>Webpack</li>
+						<li>
+							Firebase
+							<ul>
+								<li>Cloud Functions</li>
+								<li>Hosting</li>
+							</ul>
+						</li>
+					</ul>
+				`,
+			}],
 		},
 	},
 	{
@@ -428,16 +474,29 @@ const ProjectSites: PortfolioItem[] = [
 		mainImage: '/images/wheel-main-images/soon.svg',
 		wheelIcon: 'folder',
 		wheelIconColor: '#f1d592',
-		page: {
-			description: 'This...this right here.  You\'re looking at it😄.',
-			imagePreviews: [],
-			links: [],
-			subContents: [],
-		},
 		parentCategories: [
 			'projects-sites',
 			'projects-all',
 		],
+		page: {
+			description: 'This...this right here.  You\'re looking at it😄.',
+			imagePreviews: [],
+			links: [],
+			subContents: [ {
+				label: 'Technologies Used',
+				content: /*html*/`
+					<ul>
+						<li>React</li>
+						<li>FramerMotion</li>
+						<li>React-Bootstrap</li>
+						<li>Typescript</li>
+						<li>SASS</li>
+						<li>Webpack</li>
+						<li>Firebase Hosting</li>
+					</ul>
+				`,
+			}],
+		},
 	},
 ];
 
