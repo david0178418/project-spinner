@@ -360,10 +360,27 @@ const ProjectSites: PortfolioItem[] = [
 		page: {
 			description: '',
 			imagePreviews: [],
-			subContents: [],
 			links: [{
 				label: 'Open',
 				url: 'https://indiecomicrack.com',
+			}],
+			subContents: [{
+				label: 'Technologies',
+				content: /*html*/`
+					<ul>
+						<li>React</li>
+						<li>SemanticUI</li>
+						<li>Typescript</li>
+						<li>Webpack</li>
+						<li>
+							Firebase
+							<ul>
+								<li>Cloud Functions</li>
+								<li>Hosting</li>
+							</ul>
+						</li>
+					</ul>
+				`,
 			}],
 		},
 		parentCategories: [
@@ -448,24 +465,7 @@ const ProjectSites: PortfolioItem[] = [
 				// 	url: '/images/preview-images/old-portfolio/old-portfolio-3.png',
 				// },
 			],
-			subContents: [ {
-				label: 'Technologies Used',
-				content: /*html*/`
-					<ul>
-						<li>React</li>
-						<li>SemanticUI</li>
-						<li>Typescript</li>
-						<li>Webpack</li>
-						<li>
-							Firebase
-							<ul>
-								<li>Cloud Functions</li>
-								<li>Hosting</li>
-							</ul>
-						</li>
-					</ul>
-				`,
-			}],
+			subContents: [],
 		},
 	},
 	{
