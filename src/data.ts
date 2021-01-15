@@ -263,7 +263,7 @@ const Root: PortfolioItem[] = [
 					}
 				</style>
 				<div class="email" onClick="this.classList.add('active')">
-					<a onclick="setTimeout(() => {const name='davidjgranado',domain='gmail.com',email=name+'@'+domain;this.innerText=email;this.href='mailto:'+email;}, 0)">
+					<a onclick="setTimeout(() => {const name='david',domain='davidgranado.com',email=name+'@'+domain;this.innerText=email;this.href='mailto:'+email;}, 0)">
 						<button>Reveal Email</button>
 					</a>
 				</div>
