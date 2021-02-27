@@ -85,7 +85,6 @@ module.exports = merge(envConfig, {
 		// 	],
 		// }),
 		new HtmlWebpackPlugin({
-			publicPath: '',
 			template: resolve(__dirname, '../src/index.html'),
 		}),
 	],
