@@ -23,7 +23,11 @@ function CategoryPage() {
 		<PageTransition>
 			<button
 				title="Back"
-				className={backButtonCls} onClick={() => history.goBack()}
+				className={backButtonCls} onClick={() => {
+					(history.length > 2) ?
+						history.goBack():
+						history.push('/');
+				}}
 			>
 				<ion-icon name="arrow-back-circle-outline"></ion-icon>
 			</button>
