@@ -1,7 +1,7 @@
 import {
 	Switch,
 	Route,
-	HashRouter as Router,
+	BrowserRouter as Router,
 } from 'react-router-dom';
 import urlJoin from 'url-join';
 import { AnimatePresence } from 'framer-motion';
