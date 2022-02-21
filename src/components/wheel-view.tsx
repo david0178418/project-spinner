@@ -48,7 +48,7 @@ function WheelView({items}: Props) {
 			</div>
 			<div className="instructions">
 				<ion-icon name="information-circle-outline"></ion-icon> Navigate with arrow keys.<br/>
-				<ion-icon name="alert-circle-outline"></ion-icon> Incomplete and under active development.
+				<ion-icon name="alert-circle-outline"></ion-icon> Incomplete and under active development. ({(window.innerWidth / window.innerHeight).toFixed(2)})
 			</div>
 		</div>
 	);
