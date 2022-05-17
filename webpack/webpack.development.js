@@ -15,7 +15,9 @@ module.exports = {
 		filename: '[name].bundle.js',
 	},
 	devServer: {
-		contentBase: path.join(__dirname, '../build'),
+		static: {
+			directory: path.join(__dirname, 'public'),
+		},
 		historyApiFallback: true,
 		compress: true,
 		port: 9000,

@@ -1,6 +1,6 @@
 
 import {
-	FC,
+	FC, ReactNode,
 } from 'react';
 import clsx from 'clsx';
 import { css } from 'linaria';
@@ -13,6 +13,7 @@ interface WheelItemProps {
 	index: number;
 	scale: number;
 	vertical?: boolean;
+	children?: ReactNode;
 }
 
 export

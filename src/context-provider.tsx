@@ -1,8 +1,9 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, ReactNode, useEffect, useState } from 'react';
 import { OrientationContext } from '@common/contexts';
 import { getOrientation } from '@common/utils';
 
 interface Props {
+	children?: ReactNode;
 }
 
 export

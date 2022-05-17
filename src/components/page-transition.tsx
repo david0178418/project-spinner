@@ -1,8 +1,12 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
+interface Props {
+	children?: ReactNode;
+}
+
 export
-const PageTransition: FC = ({children}) => (
+const PageTransition: FC<Props> = ({children}) => (
 	<motion.div
 		animate="enter"
 		initial="exit"

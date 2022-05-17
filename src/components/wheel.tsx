@@ -45,6 +45,7 @@ interface Props {
 	vertical?: boolean;
 	itemContent(item: PortfolioItem): ReactNode;
 	onChange(newIndex: number): any;
+	children?: ReactNode;
 }
 
 export
