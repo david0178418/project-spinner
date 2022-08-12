@@ -353,6 +353,65 @@ const ProjectSites: PortfolioItem[] = [
 		},
 	},
 	{
+		id: 'projects-sites-notso-social',
+		label: 'NotSo.Social',
+		mainImage: '/images/wheel-main-images/notso.social.png',
+		wheelImage: '/images/wheel-logos/notso.social.logo.png',
+		page: {
+			description: '',
+			imagePreviews: [
+				{
+					description: 'asdfasdfsa',
+					url: '/images/preview-images/not-so-social/not-so-social-0.png',
+				},
+				{
+					description: 'asdfasdfsa',
+					url: '/images/preview-images/not-so-social/not-so-social-1.png',
+				},
+				{
+					description: 'asdfasdfsa',
+					url: '/images/wheel-main-images/notso.social.png',
+				},
+			],
+			links: [{
+				label: 'Open',
+				url: 'https://notso.social',
+			}],
+			subContents: [{
+				label: 'About',
+				content: /*html*/`
+					<p>
+						This is a project that has yet to formally "launch" as of writing.
+					</p>
+					<p>
+						<a href="http://notso.social" target="__blank">NotSo.Social</a> is testing a different way of ranking content from user feedback.
+						Rather than users using unlimited "votes" or "likes", ranking of content is a finite
+						resource, forcing users to pick and choose that content that they actually value.
+					</p>
+					<p>
+						For more about the thoughts and motivations beheind the site, see the <a href="http://notso.social/faq" target="__blank"">FAQ</a>.
+					</p>
+				`,
+			}, {
+				label: 'Technologies',
+				content: /*html*/`
+					<ul>
+						<li>React</li>
+						<li>Nextjs</li>
+						<li>Typescript</li>
+						<li>Mui</li>
+						<li>MongoDB</li>
+						<li>Vercel</li>
+					</ul>
+				`,
+			}],
+		},
+		parentCategories: [
+			'projects-sites',
+			'projects-all',
+		],
+	},
+	{
 		id: 'projects-sites-indiecomicrack',
 		label: 'IndieComic Rack',
 		mainImage: '/images/wheel-main-images/indiecomicrack.png',

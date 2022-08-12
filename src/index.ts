@@ -1,11 +1,12 @@
-import { createElement } from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { App } from './app';
 
 import 'swiped-events';
 
-render(
-	createElement(App),
-	document.getElementById('app'),
-);
+const el = document.getElementById('app');
 
+if(el) {
+	const root = createRoot(el);
+	
+	root.render(App());
+}
