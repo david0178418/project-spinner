@@ -242,7 +242,7 @@ const verticalCls = css`
 `;
 
 const horizontalCls = css`
-	height: 100%;
+	height: 80%;
 	width: var(--wheel-size);
 
 	.wheel-container {
