@@ -14,7 +14,7 @@ const CategoryPath = urlJoin(RoutePaths.Category, ':categoryId');
 export
 function Routes() {
 	return (
-		<Router>
+		<Router basename={process.env.BASE_URL}>
 			<Route
 				render={({ location }) => (
 					<AnimatePresence exitBeforeEnter initial={false}>
