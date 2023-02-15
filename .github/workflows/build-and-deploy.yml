@@ -32,11 +32,7 @@ jobs:
       - run: npm ci
       - run: npm run build:prod
         env:
-          BASE_URL: ${{ steps.deployment.outputs.page_url }}
-      - run: echo $BASE_URL / $TEST
-        env:
-          TEST: 123
-          BASE_URL: ${{ steps.deployment.outputs.page_url }}
+          BASE_URL: "/project-spinner/" # See how to pull this from the env
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
