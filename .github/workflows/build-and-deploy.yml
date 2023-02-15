@@ -32,6 +32,8 @@ jobs:
       - run: npm ci
       - run: echo "BASE_URL=${{ steps.deployment.outputs.page_url }}" >> $GITHUB_ENV
       - run: npm run build:prod
+        env:
+          BASE_URL: ${{ steps.deployment.outputs.page_url }}
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
@@ -39,7 +41,6 @@ jobs:
         with:
           # Upload the coverage directory from the repository
           path: './build'
-      - run: echo "Deploying to $BASE_URL"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
