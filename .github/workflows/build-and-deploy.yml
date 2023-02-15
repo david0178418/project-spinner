@@ -30,9 +30,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - run: npm ci
-      - run: echo "BASE_URL=${{ steps.deployment.outputs.page_url }}" >> $GITHUB_ENV
       - run: npm run build:prod
         env:
+          BASE_URL: ${{ steps.deployment.outputs.page_url }}
+      - run: echo $BASE_URL / $TEST
+        env:
+          TEST: 123
           BASE_URL: ${{ steps.deployment.outputs.page_url }}
       - name: Setup Pages
         uses: actions/configure-pages@v2
