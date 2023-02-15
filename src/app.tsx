@@ -3,7 +3,7 @@ import { ContextProvider } from './context-provider';
 import { Routes } from './routes';
 import { OrientationWrapper } from '@components/orientation-wrapper';
 
-import './app.scss';
+import './app.css';
 
 export
 function App() {
