@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const {
 	NODE_ENV = '',
+	BASE_URL = '/',
 } = process.env;
 
 const IS_DEV = NODE_ENV === 'development';
@@ -34,7 +35,7 @@ module.exports = merge(envConfig, {
 	},
 	output: {
 		path: resolve(__dirname, '../build'),
-		publicPath: '/',
+		publicPath: BASE_URL,
 	},
 	module: {
 		rules: [
