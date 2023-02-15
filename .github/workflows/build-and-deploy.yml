@@ -40,7 +40,7 @@ jobs:
         with:
           # Upload the coverage directory from the repository
           path: './build'
+      - run: echo "Deploying to $BASE_URL"
       - name: Deploy to GitHub Pages
         id: deployment
-        run: echo "Deploying to $BASE_URL"
         uses: actions/deploy-pages@v1
