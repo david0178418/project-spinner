@@ -72,6 +72,7 @@ module.exports = merge(envConfig, {
 		new DefinePlugin({
 			'process.env': {
 				'NODE_ENV': JSON.stringify(NODE_ENV),
+				'BASE_URL': JSON.stringify(BASE_URL),
 			},
 		}),
 		new CleanWebpackPlugin(),
